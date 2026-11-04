@@ -1,0 +1,55 @@
+{
+  "version": 10,
+  "cmakeMinimumRequired": { "major": 3, "minor": 29, "patch": 0 },
+
+  "configurePresets": [
+    {
+      "name": "common", "hidden": true, "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      }
+    },
+    { "name": "linux-base",   "hidden": true, "inherits": "common", "generator": "Ninja",                 "condition": { "type": "equals", "lhs": "${hostSystemName}", "rhs": "Linux"   } },
+    { "name": "macos-base",   "hidden": true, "inherits": "common", "generator": "Ninja",                 "condition": { "type": "equals", "lhs": "${hostSystemName}", "rhs": "Darwin"  } },
+    { "name": "windows-base", "hidden": true, "inherits": "common", "generator": "Visual Studio 17 2022", "condition": { "type": "equals", "lhs": "${hostSystemName}", "rhs": "Windows" } },
+
+    { "name": "clang", "hidden": true, "cacheVariables": { "CMAKE_C_COMPILER": "clang", "CMAKE_CXX_COMPILER": "clang++" } },
+
+    { "name": "debug",   "hidden": true, "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug" }, "warnings": { "deprecated": true } },
+    { "name": "release", "hidden": true, "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }, "errors": { "deprecated": true } },
+
+    { "name": "linux-debug",   "inherits": [ "linux-base", "debug",   "clang" ] },
+    { "name": "linux-release", "inherits": [ "linux-base", "release", "clang" ] },
+    { "name": "macos-debug",   "inherits": [ "macos-base", "debug",   "clang" ] },
+    { "name": "macos-release", "inherits": [ "macos-base", "release", "clang" ] },
+    { "name": "windows",       "inherits": [ "windows-base" ] }
+  ],
+
+  "buildPresets": [
+    { "name": "common-build", "hidden": true },
+
+    { "name": "linux-debug",   "configurePreset": "linux-debug",   "inherits": "common-build" },
+    { "name": "linux-release", "configurePreset": "linux-release", "inherits": "common-build" },
+    { "name": "macos-debug",   "configurePreset": "macos-debug",   "inherits": "common-build" },
+    { "name": "macos-release", "configurePreset": "macos-release", "inherits": "common-build" },
+
+    { "name": "windows-debug",   "configurePreset": "windows", "configuration": "Debug",   "inherits": "common-build" },
+    { "name": "windows-release", "configurePreset": "windows", "configuration": "Release", "inherits": "common-build" }
+  ],
+
+  "testPresets": [
+    { "name": "common-test", "hidden": true, "output": { "outputOnFailure": true }, "execution": { "jobs": 0, "stopOnFailure": false } },
+
+    { "name": "linux-debug",   "configurePreset": "linux-debug",   "inherits": "common-test" },
+    { "name": "linux-release", "configurePreset": "linux-release", "inherits": "common-test" },
+    { "name": "macos-debug",   "configurePreset": "macos-debug",   "inherits": "common-test" },
+    { "name": "macos-release", "configurePreset": "macos-release", "inherits": "common-test" },
+
+    { "name": "windows-debug",   "configurePreset": "windows", "configuration": "Debug",   "inherits": "common-test" },
+    { "name": "windows-release", "configurePreset": "windows", "configuration": "Release", "inherits": "common-test" }
+  ],
+
+  "packagePresets": [],
+
+  "workflowPresets": []
+}
