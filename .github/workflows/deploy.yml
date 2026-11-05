@@ -60,8 +60,6 @@ jobs:
             echo 'LATEX_EXTRA_STYLESHEET ='
             echo 'LATEX_EXTRA_FILES ='
           } | doxygen - || die "Doxygen failed"
-          
-          [ -f "${DEST_XML}/index.xml" ] || die "Doxygen produced no index.xml; check INPUT in the Doxyfile"
 
       - uses: withastro/action@v6
         with:

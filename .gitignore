@@ -1,6 +1,9 @@
 # Build outputs
 /build/
+
+# Astro build outputs
 /astro/.astro/
+/astro/node_modules/
 
 # CMake artifacts
 CMakeCache.txt
