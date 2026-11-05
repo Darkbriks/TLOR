@@ -80,6 +80,9 @@ export function composeLoaders(...loaders) {
  *                 suits a C surface, where a header is the unit a reader
  *                 already thinks in; `symbol` suits a large C++ surface, at
  *                 roughly two and a half times the file count.
+ * @param {string} [options.base] The site's base path, e.g.
+ *                 `import.meta.env.BASE_URL` from the content config. Falls
+ *                 back to `/${LIARA_DOCS_REPO}`, then to the site root.
  * @param {string} [options.sourceUrl] Base URL for "declared in" links, e.g.
  *                 `https://github.com/liara-engine/liara-interfaces/blob/main`.
  * @param {string} [options.label='API reference'] Title of the section index.
@@ -98,6 +101,7 @@ export function doxygenLoader(options = {}) {
     const {
         xmlDir = DEFAULT_XML_DIR,
         split = 'file',
+        base,
         sourceUrl,
         label = 'API reference',
         exclude,
@@ -119,11 +123,11 @@ export function doxygenLoader(options = {}) {
             }
 
             // `import.meta.env.BASE_URL` is not available to a loader, so the
+            // content config hands it over as `base`. Without it, the
             // deployment prefix is reconstructed the same way the preset does.
             const repo = process.env.LIARA_DOCS_REPO || '';
-            const apiBase = repo
-                ? `/${repo}/${API_DIRECTORY}`
-                : `/${API_DIRECTORY}`;
+            const prefix = (base ?? (repo ? `/${repo}` : '')).replace(/\/+$/, '');
+            const apiBase = `${prefix}/${API_DIRECTORY}`;
 
             const highlight = await createHighlight(split === 'symbol' ? 'cpp' : 'c');
 
