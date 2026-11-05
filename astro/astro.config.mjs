@@ -6,8 +6,8 @@ import { API_GROUPS } from './api/groups.mjs';
 export const SECTIONS = Object.freeze({ about: 'about', guide: 'guides', api: 'api' });
 
 export default defineConfig({
-    site: "https://darkbriks.github.io/TLOR/dev",
-    base: "/TLOR/dev",
+    site: "https://darkbriks.github.io/TLOR",
+    base: "/TLOR",
     trailingSlash: 'always',
     build: {
         format: 'directory',
