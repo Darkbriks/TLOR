@@ -120,10 +120,9 @@ export function doxygenLoader(options = {}) {
 
             // `import.meta.env.BASE_URL` is not available to a loader, so the
             // deployment prefix is reconstructed the same way the preset does.
-            const version = process.env.LIARA_DOCS_VERSION || 'dev';
             const repo = process.env.LIARA_DOCS_REPO || '';
             const apiBase = repo
-                ? `/${repo}/${version}/${API_DIRECTORY}`
+                ? `/${repo}/${API_DIRECTORY}`
                 : `/${API_DIRECTORY}`;
 
             const highlight = await createHighlight(split === 'symbol' ? 'cpp' : 'c');
