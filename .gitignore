@@ -1,6 +1,6 @@
 # Build outputs
 /build/
-/.astro/
+/astro/.astro/
 
 # CMake artifacts
 CMakeCache.txt
