@@ -1,0 +1,84 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # Full history, so each page's "Last updated" date is its own last
+          # commit rather than the one being built (astro/src/routeData.ts).
+          fetch-depth: 0
+
+      - run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen
+
+      - id: prepare
+        run: |
+          log() { echo "$*"; }
+          die() { echo "::error::$*"; exit 1; }
+
+          readonly SRC="${PWD}"
+          readonly SRC_GUIDES="${SRC}/docs"
+          readonly SRC_API="${SRC}/include"
+          readonly DEST_ABOUT="${SRC}/astro/src/content/docs/about"
+          readonly DEST_GUIDES="${SRC}/astro/src/content/docs/guides"
+          readonly DEST_XML="${SRC}/astro/build/xml/xml"
+
+          mkdir -p "${DEST_ABOUT}" "${DEST_GUIDES}"
+
+          cp -a "${SRC}/README.md" "${DEST_ABOUT}/README.md" || log "no README.md content"
+          cp -a "${SRC_GUIDES}/." "${DEST_GUIDES}/" || log "no docs/ content"
+        
+          mkdir -p "$(dirname "${DEST_XML}")"
+          {
+            cat "${SRC}/Doxyfile"
+            echo
+            echo "INPUT = ${SRC_API}"
+            echo 'GENERATE_XML = YES'
+            echo 'GENERATE_HTML = NO'
+            echo 'GENERATE_LATEX = NO'
+            echo 'XML_PROGRAMLISTING = NO'
+            echo 'INTERNAL_DOCS = YES'
+            echo 'SORT_MEMBER_DOCS = NO'
+            echo 'SORT_BRIEF_DOCS = NO'
+            echo "OUTPUT_DIRECTORY = $(dirname "${DEST_XML}")"
+            echo "XML_OUTPUT = $(basename "${DEST_XML}")"
+            echo 'QUIET = YES'
+            echo 'HTML_HEADER ='
+            echo 'HTML_FOOTER ='
+            echo 'HTML_STYLESHEET ='
+            echo 'HTML_EXTRA_STYLESHEET ='
+            echo 'HTML_EXTRA_FILES ='
+            echo 'LAYOUT_FILE ='
+            echo 'LATEX_HEADER ='
+            echo 'LATEX_FOOTER ='
+            echo 'LATEX_EXTRA_STYLESHEET ='
+            echo 'LATEX_EXTRA_FILES ='
+          } | doxygen - || die "Doxygen failed"
+
+      - uses: withastro/action@v6
+        with:
+          path: astro
+          node-version: 26
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

@@ -1,6 +1,19 @@
 # Build outputs
 /build/
 
+# Astro build outputs
+/astro/.astro/
+/astro/node_modules/
+/astro/dist/
+
+# Filled by the documentation workflow, or by a local build
+/astro/src/content/docs/
+/astro/build/
+
+# Python
+.venv/
+__pycache__/
+
 # CMake artifacts
 CMakeCache.txt
 CMakeFiles/

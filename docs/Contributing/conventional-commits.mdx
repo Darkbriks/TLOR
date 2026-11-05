@@ -1,0 +1,68 @@
+---
+title: Conventional Commits
+description: How commit messages are written in this repository.
+sidebar:
+  order: 2
+---
+
+Commit messages follow
+[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). A
+type at the start of each message says what kind of change the commit is, so
+the history can be read at a glance:
+
+```text
+fix: update 404 page links to point to the correct repository and hub
+feat: add Doxygen installation step to deployment configuration
+docs: add basic Git commands to README.md
+chore: add .gitignore
+```
+
+## 1. Format
+
+```text
+<type>(<scope>): <description>
+
+<body>
+
+<footers>
+```
+
+- **type**, required: one of the types below.
+- **scope**, optional: the part of the project the change touches, in
+  parentheses: `feat(routing): …`.
+- **description**, required: what the commit does, in the imperative
+  (*add*, not *added* or *adds*), in lower case, without a full stop, and
+  short enough to fit on one line.
+- **body**, optional, after a blank line: why the change was made, when the
+  description is not enough.
+- **footers**, optional, after another blank line: `Refs: #12`,
+  `Co-authored-by: Name <email>`.
+
+## 2. Types
+
+| Type | For |
+| --- | --- |
+| `feat` | A new feature |
+| `fix` | A bug fix |
+| `docs` | Documentation only: `docs/`, the README, comments |
+| `refactor` | A code change that neither fixes a bug nor adds a feature |
+| `test` | Adding or correcting tests |
+| `build` | The build or the dependencies: `CMakeLists.txt`, presets, requirement files |
+| `ci` | The GitHub Actions workflows |
+| `style` | Formatting only, with no change in behaviour |
+| `chore` | Anything else that is not code: `.gitignore`, project files |
+| `revert` | Undoing an earlier commit |
+
+Scopes are free, but a few recurring ones make the history easier to filter.
+
+## 3. Breaking changes
+
+A change that breaks what used to work, such as a new input format, is marked
+with `!` after the type, and explained in a `BREAKING CHANGE` footer:
+
+```text
+feat(routing)!: read routes from CSV instead of JSON
+
+BREAKING CHANGE: routes.json is no longer read; existing route files
+must be converted.
+```

@@ -1,0 +1,142 @@
+---
+title: Git basics
+description: The few Git commands needed to work on TLOR, for those who rarely use Git.
+sidebar:
+  order: 1
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+Git keeps the history of the project. Everyone works on their own copy of the
+repository, records changes as commits, and shares them by pushing them to
+GitHub. This page covers what is needed day to day;
+[Pro Git](https://git-scm.com/book/en/v2) covers everything else.
+
+## 1. Set up Git once
+
+Tell Git who you are, with the e-mail address of your GitHub account so that
+your commits are attributed to you:
+
+```bash frame="terminal"
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+```
+
+To clone and push over SSH, create a key and register it on GitHub:
+
+```bash frame="terminal"
+ssh-keygen -t ed25519 -C "you@example.com"
+```
+
+Copy the content of the `.pub` file it creates (`~/.ssh/id_ed25519.pub`) into
+GitHub, under *Settings › SSH and GPG keys › New SSH key*. Then check that
+GitHub recognizes you with `ssh -T git@github.com`, and
+[clone the repository](../../bootstrap/build-and-run/#1-get-the-code).
+
+## 2. Vocabulary
+
+| Word | Meaning |
+| --- | --- |
+| Repository | The project and its whole history |
+| Commit | A recorded set of changes, with a message saying what they do |
+| Branch | A line of commits. `main` is the shared one |
+| Remote | The copy of the repository on GitHub, called `origin` |
+| Staging area | The changes selected for the next commit |
+
+## 3. Everyday workflow
+
+<Steps>
+
+1. Start from an up-to-date `main`:
+
+   ```bash frame="terminal"
+   git switch main
+   git pull
+   ```
+
+2. Create a branch for your change, named after what it does:
+
+   ```bash frame="terminal"
+   git switch -c feat/demand-prediction
+   ```
+
+3. Work, then check what changed:
+
+   ```bash frame="terminal"
+   git status
+   git diff
+   ```
+
+4. Select the files to commit, and commit them with a
+   [conventional message](../conventional-commits/):
+
+   ```bash frame="terminal"
+   git add src/prediction.cpp include/prediction.hpp
+   git commit -m "feat(prediction): add fill level forecast"
+   ```
+
+5. Push the branch to GitHub. The first push of a branch needs `-u`:
+
+   ```bash frame="terminal"
+   git push -u origin feat/demand-prediction
+   ```
+
+   After that, `git push` is enough.
+
+6. On GitHub, open a pull request from your branch into `main`, so that the
+   others can read the change before it is merged.
+
+</Steps>
+
+<Aside type="caution" title="Check before adding everything">
+`git add .` stages every change in the folder, including files you did not
+mean to commit. Look at `git status` first. Build outputs (`build/`) and
+Python environments (`.venv/`) are ignored, so they never show up there.
+</Aside>
+
+## 4. Keeping a branch up to date
+
+When `main` has moved on while you worked, bring its changes into your
+branch:
+
+```bash frame="terminal"
+git switch main
+git pull
+git switch feat/demand-prediction
+git merge main
+```
+
+If Git reports a **conflict**, the same lines were changed on both sides. Open
+each file it lists, keep the right version of the part between the
+`<<<<<<<` and `>>>>>>>` markers, delete the markers, then finish the merge:
+
+```bash frame="terminal"
+git add <file>
+git commit
+```
+
+CLion and VS Code both have a merge tool that does the same with buttons.
+
+## 5. Undoing things
+
+| Situation | Command |
+| --- | --- |
+| Throw away the changes to a file | `git restore <file>` |
+| Take a file back out of the staging area | `git restore --staged <file>` |
+| Fix the last commit, before pushing it | `git add <file>`, then `git commit --amend` |
+| Put unfinished work aside to switch branch | `git stash`, and later `git stash pop` |
+| Undo a commit that is already pushed | `git revert <commit>`, which adds a commit undoing it |
+
+<Aside type="danger" title="Never rewrite what is already pushed">
+`git commit --amend`, `git reset` and `git push --force` change existing
+commits. On a branch others have pulled, and on `main` above all, that breaks
+their copy. Use `git revert` instead.
+</Aside>
+
+## 6. Looking around
+
+| Command | Shows |
+| --- | --- |
+| `git log --oneline --graph` | The history, one line per commit |
+| `git show <commit>` | What a commit changed |
+| `git branch -a` | Every branch, local and on GitHub |

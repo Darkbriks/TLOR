@@ -1,0 +1,189 @@
+---
+title: Map tools
+description: Set up Python for the two route visualization tools in Maps/, and run them.
+sidebar:
+  order: 3
+---
+
+import { Aside, TabItem, Tabs } from '@astrojs/starlight/components';
+
+`Maps/` holds two Python tools, provided with the default project files, that
+draw routes on a map of the Serre-Ponçon area. They do not depend on the C++
+program: they read the routes it computes from files.
+
+| Tool | Folder | Result | Internet |
+| --- | --- | --- | --- |
+| Offline map | `Maps/offline map/` | An image, `maps/map_routes.png` | Not needed |
+| Online map | `Maps/online map/` | An animated map in a Jupyter notebook | Needed, for the map tiles and the OSRM routing server |
+
+<Aside type="caution" title="The README in each folder is partly wrong">
+It comes with the course and names files that do not exist here
+(`Serpenson.json`, `tools/display_routes.ipynb`), and its install commands
+are no longer enough. Follow this page instead.
+</Aside>
+
+## 1. Data
+
+Each tool has the same files in its own `data/` folder:
+
+| File | Content |
+| --- | --- |
+| `points.csv` | The 328 collection points, then the depot on the last line (index 328) |
+| `distances.json` | 329 × 329 matrix of travel distances, in metres, indexed like `points.csv` |
+| `durations.json` | The same for travel times, in seconds |
+| `Serre-poncon.json` | The roads of the area |
+| `exemple_routes.json` | Example input: a list of routes, each a list of indices into `points.csv`, starting and ending at the depot |
+| `exemple_points_service_time.csv` | Example input: the service time of each point in seconds, depot included |
+
+To draw your own routes, write two files in the format of the two examples.
+
+## 2. Python
+
+Use **Python 3.11**. The versions pinned by the tools have no ready-made
+packages for Python 3.12 or newer, so pip would try to compile them and fail.
+The offline map also needs Tk.
+
+<Tabs syncKey="os">
+<TabItem label="Linux">
+
+Debian 12 ships Python 3.11:
+
+```bash frame="terminal"
+sudo apt install python3 python3-venv python3-tk
+```
+
+Ubuntu 24.04 ships 3.12; install 3.11 next to it from the deadsnakes PPA:
+
+```bash frame="terminal"
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt install python3.11 python3.11-venv python3.11-tk
+```
+
+On other distributions, install Python 3.11 with its `venv` and Tk
+modules from the package manager.
+
+</TabItem>
+<TabItem label="macOS">
+
+Install Python 3.11 with the installer from
+[python.org](https://www.python.org/downloads/macos/); it includes Tk. The
+interpreter is then called `python3.11`.
+
+</TabItem>
+<TabItem label="Windows">
+
+Install Python 3.11 with the installer from
+[python.org](https://www.python.org/downloads/windows/), keeping the
+*tcl/tk* and *py launcher* options. The interpreter is then called with
+`py -3.11`.
+
+</TabItem>
+</Tabs>
+
+## 3. Install
+
+The two tools need different versions of numpy, so each gets its own virtual
+environment, in its own folder. Both are created once; afterwards, only the
+activation line is needed.
+
+<Tabs syncKey="os">
+<TabItem label="Linux">
+
+```bash frame="terminal" title="Offline map"
+cd "Maps/offline map"
+python3.11 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements_offline.txt "numpy<2"
+```
+
+```bash frame="terminal" title="Online map"
+cd "Maps/online map"
+python3.11 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements_online.txt folium requests polyline notebook
+```
+
+</TabItem>
+<TabItem label="macOS">
+
+```bash frame="terminal" title="Offline map"
+cd "Maps/offline map"
+python3.11 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements_offline.txt "numpy<2"
+```
+
+```bash frame="terminal" title="Online map"
+cd "Maps/online map"
+python3.11 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements_online.txt folium requests polyline notebook
+```
+
+</TabItem>
+<TabItem label="Windows">
+
+```powershell frame="terminal" title="Offline map"
+cd "Maps\offline map"
+py -3.11 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements_offline.txt "numpy<2"
+```
+
+```powershell frame="terminal" title="Online map"
+cd "Maps\online map"
+py -3.11 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements_online.txt folium requests polyline notebook
+```
+
+If PowerShell refuses to run `Activate.ps1`, allow local scripts once with
+`Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`.
+
+</TabItem>
+</Tabs>
+
+The packages added on the command line fill gaps in the requirement files:
+
+- **`numpy<2`**: the offline requirements leave numpy free, pip picks a 2.x
+  version, and the pinned pandas and matplotlib, built against numpy 1, fail
+  to import.
+- **`folium requests polyline notebook`**: the online map imports the first
+  three, and `notebook` provides Jupyter itself. None of them is in
+  `requirements_online.txt`.
+
+`deactivate` leaves the virtual environment.
+
+## 4. Run
+
+### Offline map
+
+With its environment active, from `Maps/offline map/`:
+
+```bash frame="terminal"
+python display_map_offline.py
+```
+
+The files to draw are set in `main()`, at the end of the script:
+`routes_file_path`, `service_times_file_path`, and two switches,
+`_display_pickup_order` to number the stops and `_display_info` to print each
+route's distance and duration. The result is written to `maps/map_routes.png`;
+nothing opens on screen.
+
+<Aside type="note">
+`maps/map_routes.png` is tracked by git, so every run shows it as modified.
+Commit it only on purpose.
+</Aside>
+
+### Online map
+
+With its environment active, from `Maps/online map/`:
+
+```bash frame="terminal"
+jupyter notebook display_routes.ipynb
+```
+
+The notebook opens in the browser. Its first cell reinstalls the
+requirements and can be skipped; the second sets the files to draw, in the
+same way as `main()` above, and displays the map. Each route gets its own
+color.

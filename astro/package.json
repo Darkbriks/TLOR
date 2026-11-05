@@ -1,0 +1,46 @@
+{
+  "name": "@liara/starlight-preset",
+  "type": "module",
+  "version": "0.1.0",
+  "license": "MIT",
+
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+
+  "dependencies": {
+    "@astrojs/starlight": "^0.42.0",
+    "astro": "^7.2.9",
+    "sharp": "^0.35.3",
+    "@xmldom/xmldom": "^0.9.12",
+    "astro-mermaid": "^2.1.0"
+  },
+
+  "exports": {
+    "./package.json": "./package.json",
+    "./api": "./api/loader.mjs",
+    "./styles/tokens.css": "./styles/tokens.css",
+    "./styles/theme.css": "./styles/theme.css",
+    "./styles/api.css": "./styles/api.css",
+    "./styles/fonts.css": "./styles/fonts.css",
+    "./styles/hub.css": "./styles/hub.css",
+    "./components/SiteTitle.astro": "./components/SiteTitle.astro",
+    "./components/AccessibilityToggle.astro": "./components/AccessibilityToggle.astro",
+    "./components/Head.astro": "./components/Head.astro",
+    "./components/PageTitle.astro": "./components/PageTitle.astro",
+    "./components/ReadingPreferences.astro": "./components/ReadingPreferences.astro",
+    "./components/LiaraSelect.astro": "./components/LiaraSelect.astro",
+    "./components/ThemeSelect.astro": "./components/ThemeSelect.astro"
+  },
+  "files": [
+    "api",
+    "styles",
+    "components",
+    "public",
+    "sections.mjs"
+  ]
+}
