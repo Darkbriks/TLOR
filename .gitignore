@@ -10,6 +10,10 @@
 /astro/src/content/docs/
 /astro/build/
 
+# Python
+.venv/
+__pycache__/
+
 # CMake artifacts
 CMakeCache.txt
 CMakeFiles/
