@@ -1,0 +1,88 @@
+---
+title: Requirements
+description: What to install before building TLOR, on Linux, macOS and Windows.
+sidebar:
+  order: 1
+---
+
+import { LinkCard, TabItem, Tabs } from '@astrojs/starlight/components';
+
+TLOR is a C++23 program built with CMake. The Python tools in `Maps/` are
+independent of it and have [their own page](../map-tools/).
+
+| Tool | Version | Used for |
+| --- | --- | --- |
+| Git | any recent | Getting the code |
+| CMake | **3.31 or newer** | `CMakePresets.json` uses format version 10, which older versions cannot read |
+| Clang and Ninja | C++23 support | Compiling on Linux and macOS |
+| Visual Studio 2022 | with the C++ workload | Compiling on Windows |
+
+The tabs below remember your choice on every page of this section.
+
+<Tabs syncKey="os">
+<TabItem label="Linux">
+
+Install Git, Clang, Ninja and CMake from your distribution:
+
+```bash frame="terminal" title="Debian, Ubuntu"
+sudo apt install git clang ninja-build cmake
+```
+
+```bash frame="terminal" title="Fedora"
+sudo dnf install git clang ninja-build cmake
+```
+
+```bash frame="terminal" title="Arch"
+sudo pacman -S git clang ninja cmake
+```
+
+Then check `cmake --version`. Some distributions ship an older CMake (Ubuntu
+24.04 has 3.28). If yours is below 3.31, install a newer one with
+`sudo snap install cmake --classic` on Ubuntu, or from
+[cmake.org/download](https://cmake.org/download/).
+
+</TabItem>
+<TabItem label="macOS">
+
+Apple's command line tools provide Git and Clang;
+[Homebrew](https://brew.sh) provides the rest:
+
+```bash frame="terminal"
+xcode-select --install
+brew install cmake ninja
+```
+
+The presets call `clang` and `clang++`, which resolve to Apple Clang.
+
+</TabItem>
+<TabItem label="Windows">
+
+1. Install [Visual Studio 2022](https://visualstudio.microsoft.com/vs/)
+   (the Community edition is enough) with the **Desktop development with
+   C++** workload. The `windows` preset asks for the Visual Studio 2022
+   generator by name, so another version of Visual Studio will not do.
+
+2. Install Git and CMake, from PowerShell:
+
+   ```powershell frame="terminal"
+   winget install Git.Git
+   winget install Kitware.CMake
+   ```
+
+3. Open a new PowerShell window, so that `git` and `cmake` are on the `PATH`.
+
+</TabItem>
+</Tabs>
+
+## Check
+
+```bash frame="terminal"
+git --version
+cmake --version
+```
+
+<LinkCard
+	title="Build and run"
+	href="../build-and-run/"
+	description="Get the code, then configure, build and run it."
+/>

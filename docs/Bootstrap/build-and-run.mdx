@@ -1,0 +1,100 @@
+---
+title: Build and run
+description: Get the code, then configure, build and run TLOR with the CMake presets, on each platform.
+sidebar:
+  order: 2
+---
+
+import { Aside, LinkCard, TabItem, Tabs } from '@astrojs/starlight/components';
+
+## 1. Get the code
+
+```bash frame="terminal"
+git clone git@github.com:darkbriks/TLOR.git
+cd TLOR
+```
+
+Cloning over SSH needs an SSH key registered on GitHub; see
+[Git basics](../../contributing/git-basics/#1-set-up-git-once). Without one,
+clone `https://github.com/darkbriks/TLOR.git` instead.
+
+## 2. Build and run
+
+Every command runs from the root of the repository. `CMakePresets.json` holds
+the whole configuration (generator, compiler, build type, output directory),
+so building takes the same two commands for everyone:
+
+<Tabs syncKey="os">
+<TabItem label="Linux">
+
+```bash frame="terminal"
+cmake --preset linux-debug
+cmake --build --preset linux-debug
+./build/linux-debug/bin/TLOR
+```
+
+</TabItem>
+<TabItem label="macOS">
+
+```bash frame="terminal"
+cmake --preset macos-debug
+cmake --build --preset macos-debug
+./build/macos-debug/bin/TLOR
+```
+
+</TabItem>
+<TabItem label="Windows">
+
+```powershell frame="terminal"
+cmake --preset windows
+cmake --build --preset windows-debug
+.\build\windows\bin\Debug\TLOR.exe
+```
+
+On Windows, a single configure preset (`windows`) serves both build types;
+the build preset chooses between Debug and Release.
+
+</TabItem>
+</Tabs>
+
+The first command, which configures the build, only needs to run once. After
+that, `cmake --build` is enough: it re-runs the configuration by itself when
+`CMakeLists.txt` changes. Every `.cpp` file under `src/` is compiled, and
+headers go in `include/`, so adding a file needs no CMake edit.
+
+## 3. Presets
+
+| Platform | Configure preset | Build preset | Executable |
+| --- | --- | --- | --- |
+| Linux | `linux-debug`, `linux-release` | same names | `build/linux-<type>/bin/TLOR` |
+| macOS | `macos-debug`, `macos-release` | same names | `build/macos-<type>/bin/TLOR` |
+| Windows | `windows` | `windows-debug`, `windows-release` | `build\windows\bin\<Debug or Release>\TLOR.exe` |
+
+Use the debug presets while developing, and the release ones to time the
+program. `cmake --list-presets` only lists the presets of the platform it runs
+on.
+
+CLion, Visual Studio, and VS Code with the CMake Tools extension all read
+`CMakePresets.json`: pick the preset of your platform rather than creating a
+configuration by hand. The build also writes `compile_commands.json` into its
+directory, for clangd and other tools.
+
+## 4. When something goes wrong
+
+| Message | Cause |
+| --- | --- |
+| `In-source builds are not supported` | `cmake` was run without a preset. Delete the `CMakeCache.txt` and `CMakeFiles/` it created at the root, then use the commands above. |
+| CMake cannot read `CMakePresets.json` | CMake is older than 3.31; see [Requirements](../requirements/). |
+| `Cannot use disabled configure preset` | The preset belongs to another platform. |
+| `could not find any instance of Visual Studio` | Visual Studio 2022 or its C++ workload is missing. |
+
+<Aside type="tip">
+When the build behaves strangely after a large change, delete the preset's
+directory under `build/` and configure again.
+</Aside>
+
+<LinkCard
+	title="Map tools"
+	href="../map-tools/"
+	description="Set up Python to draw the computed routes on a map."
+/>
