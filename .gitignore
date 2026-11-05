@@ -1,6 +1,9 @@
 # Build outputs
 /build/
 
+# Personal files that stay out of git: to-do lists, notes on work in progress...
+/local/
+
 # Astro build outputs
 /astro/.astro/
 /astro/node_modules/
