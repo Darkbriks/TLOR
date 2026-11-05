@@ -31,7 +31,6 @@ jobs:
 
           mkdir -p "${DEST_ABOUT}" "${DEST_GUIDES}"
 
-          cp -a "${SRC_CONFIG}" "${DEST_CONFIG}"
           cp -a "${SRC}/README.md" "${DEST_ABOUT}/README.md" || log "no README.md content"
           cp -a "${SRC_GUIDES}/." "${DEST_GUIDES}/" || log "no docs/ content"
         
