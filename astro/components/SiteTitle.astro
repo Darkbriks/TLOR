@@ -1,0 +1,62 @@
+---
+/**
+ * Liara Engine — the site title, with the module and version switchers
+ * beside it.
+ */
+import Default from '@astrojs/starlight/components/SiteTitle.astro';
+---
+
+<div class="liara-title">
+    <a class="liara-title__home" href="/" aria-label="Liara Engine documentation hub"
+       title="Documentation hub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 10.5 12 3l9 7.5" /><path d="M5 9.5V21h14V9.5" />
+        </svg>
+    </a>
+
+    <div class="liara-title__name">
+        <Default {...Astro.props}><slot /></Default>
+    </div>
+</div>
+
+<style>
+    .liara-title {
+        display: flex;
+        align-items: center;
+        gap: var(--liara-space-3, 0.75rem);
+        min-width: 0;
+    }
+
+    .liara-title__home {
+        display: inline-flex;
+        flex: none;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        border-radius: var(--liara-radius-md, 8px);
+        color: var(--liara-text-secondary);
+    }
+
+    .liara-title__home svg {
+        width: 1.15rem;
+        height: 1.15rem;
+    }
+
+    .liara-title__home:hover {
+        background: var(--liara-bg-elevated);
+        color: var(--liara-text-link);
+    }
+
+    .liara-title__name {
+        display: flex;
+        min-width: 0;
+        flex: 0 1 auto;
+        overflow: hidden;
+    }
+
+    .liara-title__name :global(.site-title > span) {
+        text-overflow: ellipsis;
+    }
+</style>

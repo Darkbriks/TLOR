@@ -1,4 +1,69 @@
+---
+title: About this module
+description: The shared Astro/Starlight preset, the site tools, and the builder image behind every Liara Engine documentation site.
+sidebar:
+  order: 0
+---
+
 # TLOR
+
+## Dependencies by platform
+
+### Linux
+
+**C++ application:**
+
+- CMake 3.29 or newer
+- Ninja
+- Clang (`clang` and `clang++`) with C++23 support
+
+**Python map tools:**
+
+- Python 3.9 or newer
+- `pip` and `venv`
+- `python3-tk` for the offline map
+- Install the Python packages from `Maps/offline map/requirements_offline.txt`
+  and/or `Maps/online map/requirements_online.txt`
+
+### macOS
+
+**C++ application:**
+
+- Xcode Command Line Tools
+- CMake 3.29 or newer
+- Ninja
+- LLVM/Clang with C++23 support
+
+**Python map tools:**
+
+- Python 3.9 or newer
+- `pip` and `venv`
+- Tk support for the offline map
+- Install the Python packages from `Maps/offline map/requirements_offline.txt`
+  and/or `Maps/online map/requirements_online.txt`
+
+### Windows
+
+**C++ application:**
+
+- CMake 3.29 or newer
+- Visual Studio 2022 with the **Desktop development with C++** workload
+  (MSVC and C++23 support)
+- PowerShell to run the commands below
+
+**Python map tools:**
+
+- Python 3.9 or newer
+- `pip` and `venv`
+- Install the Python packages from `Maps\offline map\requirements_offline.txt`
+  and/or `Maps\online map\requirements_online.txt`
+
+The Python dependencies can be installed from the repository root with:
+
+```bash
+python -m pip install -r "Maps/offline map/requirements_offline.txt"
+python -m pip install -r "Maps/online map/requirements_online.txt"
+```
 
 ## Build and run
 
