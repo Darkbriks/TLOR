@@ -1,0 +1,128 @@
+---
+title: Data rules
+description: Identifiers, units, dates and file formats shared by every part of TLOR, and what to know about the source files.
+sidebar:
+  order: 1
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+Every part of the project reads files that another part writes. As long as
+all of them follow these rules, a mock input can be replaced by the real one,
+and one method by another, without touching the code that reads it. Changing
+a rule is a decision for the whole team, and the commit that applies it is a
+[breaking change](../../contributing/conventional-commits/#3-breaking-changes).
+
+## 1. Identifiers
+
+- A collection point is identified by its **index**, an integer from `0` to
+  `327`: the `index` column of `points.csv`, and the `Identifier` column of
+  the Excel file and of `Linear Prediction.csv`. The `identifiant` column of
+  `points.csv` (`05111pc00001`) is not used as a key.
+- The **depot is `328`**, the last line of `points.csv`.
+- Indices never change, because the distance and duration matrices are indexed
+  by them: `distances[i][j]` is the road distance from point `i` to point `j`.
+
+### 1.1 Points left out
+
+Only 300 of the 328 points have data. The others keep their index, so that
+the matrices stay valid, but they never appear in a schedule or a route.
+
+| Points | Reason |
+| --- | --- |
+| 25, 52, 53, 56, 57, 87, 134, 145, 189, 192, 208, 215, 226, 229, 232, 234, 256, 257, 259, 260, 261, 265, 268, 275, 276, 327 | They no longer exist (`Maps/Disappeared points .rtf`) |
+| 117, 174 | Still in `points.csv`, but absent from the collections and from the prediction |
+
+## 2. Units and values
+
+| Quantity | Unit | Example |
+| --- | --- | --- |
+| Waste, truck and container capacity | kilogram | `daily_kg`, `capacity_kg` |
+| Distance | metre | `distances.json` |
+| Duration, service time | second | `durations.json`, `service_time` |
+| Fill rate, collection threshold | fraction from 0 to 1 | `0.85`, not `85` |
+| Date | `YYYY-MM-DD` | `2023-04-14` |
+
+Values are converted only to display them: kilometres, hours and percentages
+belong in reports and maps, never in the files the program exchanges.
+
+Some sources give volumes in litres (`Daily (L)`, `Collected volume`,
+`Total volume`). They are converted to kilograms when they are read. The
+density is not the same everywhere, from about 8 to 33 litres per kilogram,
+but it is constant for a given point: use each point's own ratio, which
+`Linear Prediction.csv` gives by listing both values, never a single global
+one.
+
+<Aside type="caution" title="The matrices are not symmetric">
+Roads are not the same in both directions, so `distances[i][j]` and
+`distances[j][i]` differ for most pairs, and the same goes for durations.
+Reversing a route, or a part of one as 2-opt does, changes its length:
+compute the cost again instead of reusing it.
+</Aside>
+
+## 3. Files
+
+### 3.1 Shared fields
+
+Whatever file they appear in, these fields have the same name and meaning:
+
+| Field | Meaning |
+| --- | --- |
+| `point_id` | Index of a collection point, from `0` to `327` |
+| `depot_id` | `328` |
+| `date` | `YYYY-MM-DD` |
+| `current_kg` | Waste currently in the container |
+| `capacity_kg` | Capacity of the container |
+| `daily_kg` | Predicted waste generated per day |
+| `distance[i][j]` | Road distance from `i` to `j`, in metres |
+| `duration[i][j]` | Travel time from `i` to `j`, in seconds |
+| `route` | `[328, point_1, point_2, …, 328]` |
+
+New column names follow the same pattern: `snake_case`, and a `_kg` suffix
+for masses (`predicted_kg`). Distances and durations need no suffix, since
+they are always in metres and seconds.
+
+### 3.2 CSV files
+
+UTF-8, a header line, `;` as separator and `.` as decimal mark, like the
+source files.
+
+### 3.3 Routes and service times
+
+The map tools read these two formats, so any result written in them can be
+drawn as is.
+
+- **Routes** are a JSON list of routes, each a list of indices that starts and
+  ends at the depot, as in `exemple_routes.json`:
+
+  ```json
+  [
+      [328, 0, 2, 3, 7, 4, 5, 1, 328],
+      [328, 6, 18, 22, 9, 8, 328]
+  ]
+  ```
+
+- **Service times** are a CSV file with a `service_time` header, then one line
+  per point in index order, depot included (329 values), in seconds, as in
+  `exemple_points_service_time.csv`.
+
+## 4. Source files
+
+The files supplied with the project are **read-only**. Cleaning produces new
+files; the originals stay as they were supplied, so that every result can be
+traced back to them, and the supplied prediction stays available as a
+fallback.
+
+| File | Content | To know when reading it |
+| --- | --- | --- |
+| `Data/Actual_Situation_Spring2023.xlsx` | The 2,165 collections actually made from 2023-04-14 to 2023-06-15, one row per point collected, grouped by `Turn number` (one tour) | Dates are Excel serial numbers (`45030` is 2023-04-14). `Rate` is the fill rate, from 0 to 1. `Collected volume` and `Total volume` are in litres. The header `Collected Kg ` ends with a space. |
+| `Data/Linear Prediction.csv` | Daily and cumulative waste of the 300 points over the same 63 days, in kilograms and litres | The header has a space after each `;` (`Identifier; Date; Daily (Kg); …`): trim the column names. |
+| `Maps/*/data/points.csv` | The 328 points, then the depot: label, code, address, municipality, coordinates | Names have accents: read it as UTF-8. |
+| `Maps/*/data/distances.json`, `durations.json` | 329 × 329 matrices, in metres and seconds | Not symmetric, see §2. |
+| `Maps/Disappeared points .rtf` | The 26 points that no longer exist | RTF, and the file name has a space before `.rtf`. |
+
+## 5. Mock data
+
+Mock and synthetic inputs follow these rules too: same identifiers, units and
+formats as the real files, so that the real file can replace them without any
+change to the code.

@@ -17,3 +17,5 @@ The documentation is at [darkbriks.github.io/TLOR](https://darkbriks.github.io/T
   dependencies, build and run, on Linux, macOS and Windows, and the map tools.
 - [Contributing](https://darkbriks.github.io/TLOR/guides/contributing/git-basics/):
   Git basics and commit message conventions.
+- [Project rules](https://darkbriks.github.io/TLOR/guides/project-rules/data-rules/):
+  identifiers, units and file formats, code, and how the team works together.

@@ -1,0 +1,46 @@
+---
+title: Code rules
+description: Language, platforms, layout, interfaces and documentation of the TLOR code.
+sidebar:
+  order: 2
+---
+
+## 1. Language and platforms
+
+- Standard **C++23**, without compiler extensions: `CMakeLists.txt` turns them
+  off.
+- The code builds on the three platforms, with the compilers of the presets:
+  Clang on Linux, Apple Clang on macOS, and MSVC from Visual Studio 2022 on
+  Windows. A C++23 feature that one of them does not support yet cannot be
+  used.
+- Builds always go through a preset, into `build/<preset>/`; see
+  [Build and run](../../bootstrap/build-and-run/). Running times are measured
+  with a release preset.
+
+## 2. Layout
+
+- Sources go in `src/` and headers in `include/`. CMake finds new files by
+  itself.
+- Implementation details go under a `detail/`, `internal/` or `impl/`
+  directory, or are marked `@internal`, which keeps them out of the API
+  reference.
+
+## 3. Every solution is checked
+
+A schedule or a set of routes is checked against the constraints of the
+problem before it is used, compared or drawn, by a check that does not share
+code with the method that produced it:
+
+- every route starts and ends at the depot, `328`;
+- every point selected for the day is visited exactly once, and no
+  [point left out](../data-rules/#11-points-left-out) appears;
+- the load of a truck never exceeds its capacity, in kilograms;
+- a route, travel and service times included, fits in the maximum duration;
+- no more trucks are used than are available;
+- no container overflows between two collections.
+
+## 4. Documentation
+
+Public headers are documented with Javadoc-style Doxygen comments, starting
+with a `@file` block, since the API reference is generated from them. See
+[Documenting headers](../../documentation/writing-pages/#5-documenting-headers).
