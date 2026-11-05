@@ -3,14 +3,7 @@
  */
 
 import { API_GROUPS } from '../api/groups.mjs';
-
-const SECTIONS = Object.freeze({ about: 'about', guide: 'guides', api: 'api' });
-
-export const SECTION_LABELS = Object.freeze({
-    [SECTIONS.about]: 'About',
-    [SECTIONS.guide]: 'Guide',
-    [SECTIONS.api]: 'API reference',
-});
+import { SECTIONS, SECTION_LABELS } from '../sections.mjs';
 
 const API_GROUP_LABELS = new Map(API_GROUPS.map((group) => [group.dir, group.label]));
 
@@ -35,15 +28,14 @@ function sectionHref(sidebar, label) {
  * @param {string} options.base      Astro's `BASE_URL`, with its trailing slash.
  * @param {string} options.entryId   The route's collection id, e.g. `api/classes/x`.
  * @param {string} options.module    Human-readable module name.
- * @param {string} options.version   Version segment being read.
  * @param {Array}  [options.sidebar] `Astro.locals.starlightRoute.sidebar`.
  * @param {boolean} [options.isRoot] Whether this *is* the module's landing
  *                                   page, rather than a page below it.
- * @returns {Array<{label, href?, badge?, home?, current?}>}
+ * @returns {Array<{label, href?, home?, current?}>}
  */
-export function breadcrumbTrail({ base, entryId, module, version, sidebar, isRoot = false }) {
+export function breadcrumbTrail({ base, entryId, module, sidebar, isRoot = false }) {
     const trail = [
-        { label: module, href: isRoot ? undefined : base, badge: version, current: isRoot, home: true },
+        { label: module, href: isRoot ? undefined : base, current: isRoot, home: true },
     ];
 
     const [section, group] = String(entryId ?? '').split('/');

@@ -6,6 +6,10 @@
 /astro/node_modules/
 /astro/dist/
 
+# Filled by the documentation workflow, or by a local build
+/astro/src/content/docs/
+/astro/build/
+
 # CMake artifacts
 CMakeCache.txt
 CMakeFiles/

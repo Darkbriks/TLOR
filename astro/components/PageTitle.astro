@@ -48,7 +48,6 @@ const trail = breadcrumbTrail({
                         {crumb.label}
                     </span>
                 )}
-                {crumb.badge && <span class="liara-crumbs__badge">{crumb.badge}</span>}
             </li>
         ))}
     </ol>
@@ -127,16 +126,5 @@ const trail = breadcrumbTrail({
         width: 0.95em;
         height: 0.95em;
         flex: none;
-    }
-
-    .liara-crumbs__badge {
-        padding: 0.05em 0.5em;
-        border: var(--liara-border-width-default) solid var(--liara-brand-primary);
-        border-radius: var(--liara-radius-pill);
-        background: var(--liara-brand-primary-soft);
-        color: var(--liara-brand-primary-dark);
-        font-family: var(--liara-font-mono);
-        font-size: var(--liara-text-xs);
-        white-space: nowrap;
     }
 </style>

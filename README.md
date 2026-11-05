@@ -1,6 +1,6 @@
 ---
-title: About this module
-description: The shared Astro/Starlight preset, the site tools, and the builder image behind every Liara Engine documentation site.
+title: About TLOR project
+description: About TLOR project
 sidebar:
   order: 0
 ---

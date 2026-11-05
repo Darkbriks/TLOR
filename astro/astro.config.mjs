@@ -2,8 +2,7 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import mermaid from 'astro-mermaid';
 import { API_GROUPS } from './api/groups.mjs';
-
-export const SECTIONS = Object.freeze({ about: 'about', guide: 'guides', api: 'api' });
+import { SECTIONS, SECTION_LABELS } from './sections.mjs';
 
 export default defineConfig({
     site: "https://darkbriks.github.io/TLOR",
@@ -30,27 +29,27 @@ export default defineConfig({
                 href: `https://github.com/darkbriks/TLOR`,
             }],
             editLink: {
-                baseUrl: `https://github.com/darkbriks/TLOR/edit/main/docs/`,
+                baseUrl: `https://github.com/darkbriks/TLOR/edit/main/`,
             },
+            routeMiddleware: './src/routeData.ts',
+            disable404Route: true,
             components: {
                 SiteTitle: '@liara/starlight-preset/components/SiteTitle.astro',
                 ThemeSelect: '@liara/starlight-preset/components/ReadingPreferences.astro',
                 Head: '@liara/starlight-preset/components/Head.astro',
                 PageTitle: '@liara/starlight-preset/components/PageTitle.astro',
-                Sidebar: '@liara/starlight-preset/components/Sidebar.astro',
-                MobileMenuFooter: '@liara/starlight-preset/components/MobileMenuFooter.astro',
             },
             sidebar: [
                 {
-                    label: 'About',
+                    label: SECTION_LABELS[SECTIONS.about],
                     items: [{ autogenerate: { directory: SECTIONS.about } }],
                 },
                 {
-                    label: 'Guide',
+                    label: SECTION_LABELS[SECTIONS.guide],
                     items: [{ autogenerate: { directory: SECTIONS.guide } }],
                 },
                 {
-                    label: 'API reference',
+                    label: SECTION_LABELS[SECTIONS.api],
                     items: [
                         { label: 'Overview', link: `${SECTIONS.api}/` },
                         ...API_GROUPS.map((group) => ({

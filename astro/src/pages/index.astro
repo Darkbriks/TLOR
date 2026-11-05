@@ -4,6 +4,7 @@
  */
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import { getCollection } from 'astro:content';
+import { SECTIONS } from '../../sections.mjs';
 
 const base = import.meta.env.BASE_URL;
 const title = 'TLOR';
@@ -18,12 +19,6 @@ const allDocs = await getCollection('docs');
 const sectionIndex = (section) => allDocs.find((entry) => entry.id === section || entry.id === `${section}/index`) ?? null;
 const bySection = (section) => allDocs.filter((entry) => entry.id === section || entry.id.startsWith(`${section}/`));
 
-// Collection ids are relative to src/content/docs/, so no `docs/` prefix.
-const SECTIONS = {
-    guide: 'guides',
-    api: 'api',
-    about: 'about',
-};
 const guides = bySection(SECTIONS.guide);
 const apiPages = bySection(SECTIONS.api);
 const aboutPages = bySection(SECTIONS.about)
@@ -36,7 +31,7 @@ const firstGuide = sectionIndex(SECTIONS.guide)
 const exploreCards = [
     firstGuide && {
         title: 'Guide',
-        description: 'Tutorials, concepts, and how-tos for this module.',
+        description: 'Tutorials, concepts, and how-tos for the project.',
         href: hrefFor(firstGuide.id),
     },
     apiPages.length > 0 && {

@@ -33,7 +33,6 @@
     "./components/Head.astro": "./components/Head.astro",
     "./components/PageTitle.astro": "./components/PageTitle.astro",
     "./components/ReadingPreferences.astro": "./components/ReadingPreferences.astro",
-    "./components/Sidebar.astro": "./components/Sidebar.astro",
     "./components/LiaraSelect.astro": "./components/LiaraSelect.astro",
     "./components/ThemeSelect.astro": "./components/ThemeSelect.astro"
   },
@@ -41,6 +40,7 @@
     "api",
     "styles",
     "components",
-    "public"
+    "public",
+    "sections.mjs"
   ]
 }

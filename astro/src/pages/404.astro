@@ -6,7 +6,7 @@ import HubLayout from '../layouts/HubLayout.astro';
 import { NOT_FOUND_MESSAGES } from '../data/not-found-messages.js';
 ---
 
-<HubLayout title="404 — Liara Engine" description="This page could not be found.">
+<HubLayout title="404 — TLOR" description="This page could not be found.">
     <main class="nf">
         <div class="nf__decor" aria-hidden="true">
             <div class="nf__blob nf__blob--pink"></div>
@@ -18,14 +18,14 @@ import { NOT_FOUND_MESSAGES } from '../data/not-found-messages.js';
 
             <p class="nf__code" aria-hidden="true">4<span class="nf__code-zero">0</span>4</p>
 
-            <h1 class="nf__title">Even Liara couldn't dig this one up.</h1>
+            <h1 class="nf__title">Even the solver couldn't find a route to this one.</h1>
 
             <p class="nf__message" data-nf-message>{NOT_FOUND_MESSAGES[0]}</p>
 
             <code class="nf__path" data-nf-path hidden></code>
 
             <div class="nf__cta">
-                <a class="hub-button hub-button--primary" href="/TLOR">Back to the hub</a>
+                <a class="hub-button hub-button--primary" href="/TLOR/">Back to the hub</a>
                 <a class="hub-button hub-button--secondary" href="https://github.com/darkbriks/TLOR/issues">Report a broken link</a>
             </div>
         </div>

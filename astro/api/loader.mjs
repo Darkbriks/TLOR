@@ -34,12 +34,13 @@ import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { buildApiPages } from './pages.mjs';
 import { createHighlight } from './highlight.mjs';
+import { SECTIONS } from '../sections.mjs';
 
 /** Where the API section lives in the URL space. Authored prose and
  *  generated reference are kept apart because generated slugs churn when
  *  the code is refactored and must not be able to shadow a hand-written
  *  page whose URL is meant to stay linkable. */
-const API_DIRECTORY = 'api';
+const API_DIRECTORY = SECTIONS.api;
 
 const DEFAULT_XML_DIR = 'build/xml/xml';
 

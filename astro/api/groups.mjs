@@ -33,6 +33,9 @@ export const API_GROUPS = Object.freeze([
     },
 ]);
 
+const COMPOUND_FALLBACK_GROUP = 'classes';
+const MEMBER_FALLBACK_GROUP = 'functions';
+
 const COMPOUND_GROUPS = new Map(
     API_GROUPS.flatMap((group) => group.compounds.map((kind) => [kind, group.dir])),
 );
@@ -42,11 +45,11 @@ const MEMBER_GROUPS = new Map(
 );
 
 export function groupForCompound(kind) {
-    return COMPOUND_GROUPS.get(kind) ?? API_FALLBACK_GROUP;
+    return COMPOUND_GROUPS.get(kind) ?? COMPOUND_FALLBACK_GROUP;
 }
 
 export function groupForMember(kind) {
-    return MEMBER_GROUPS.get(kind) ?? API_FALLBACK_GROUP;
+    return MEMBER_GROUPS.get(kind) ?? MEMBER_FALLBACK_GROUP;
 }
 
 export default API_GROUPS;

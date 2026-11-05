@@ -593,7 +593,7 @@ function indexAnonymousTypes(compounds) {
     for (const compound of compounds) {
         const owner = anonymousOwner(compound.name);
         if (!owner) continue;
-        index.set(`${owner.parent} ${owner.path.join('.')}`, compound);
+        index.set(`${owner.parent}\0${owner.path.join('.')}`, compound);
     }
     return index;
 }
@@ -622,7 +622,7 @@ function expandAnonymousTypes(compound, index, path = [], depth = 0) {
 
     for (const member of compound.members) {
         const here = [...path, member.name];
-        const inner = index.get(`${root} ${here.join('.')}`);
+        const inner = index.get(`${root}\0${here.join('.')}`);
         if (!inner) continue;
 
         inner.anonymousRoot = root;

@@ -15,6 +15,10 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7
+        with:
+          # Full history, so each page's "Last updated" date is its own last
+          # commit rather than the one being built (astro/src/routeData.ts).
+          fetch-depth: 0
 
       - run: |
           sudo apt-get update
@@ -68,8 +72,6 @@ jobs:
         with:
           path: astro
           node-version: 26
-          # env:
-        # PUBLIC_POKEAPI: 'https://pokeapi.co/api/v2' # Use single quotation marks for the variable value. (optional)
 
   deploy:
     needs: build
