@@ -18,10 +18,11 @@ const allDocs = await getCollection('docs');
 const sectionIndex = (section) => allDocs.find((entry) => entry.id === section || entry.id === `${section}/index`) ?? null;
 const bySection = (section) => allDocs.filter((entry) => entry.id === section || entry.id.startsWith(`${section}/`));
 
+// Collection ids are relative to src/content/docs/, so no `docs/` prefix.
 const SECTIONS = {
-    guide: 'docs/guides',
-    api: 'docs/api',
-    about: 'docs/about',
+    guide: 'guides',
+    api: 'api',
+    about: 'about',
 };
 const guides = bySection(SECTIONS.guide);
 const apiPages = bySection(SECTIONS.api);

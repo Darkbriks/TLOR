@@ -43,8 +43,7 @@ function sectionHref(sidebar, label) {
  */
 export function breadcrumbTrail({ base, entryId, module, version, sidebar, isRoot = false }) {
     const trail = [
-        { label: 'Documentation hub', href: '/', home: true },
-        { label: module, href: isRoot ? undefined : base, badge: version, current: isRoot },
+        { label: module, href: isRoot ? undefined : base, badge: version, current: isRoot, home: true },
     ];
 
     const [section, group] = String(entryId ?? '').split('/');
