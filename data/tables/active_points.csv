@@ -1,330 +1,330 @@
-point_id,label,identifiant,addresse?,commune,code_postal,latitude,longitude,capacity_l,minimum_observed_capacity_l,maximum_observed_capacity_l,capacity_variant_count,capacity_observation_count,is_depot,in_actual,in_prediction,listed_disappeared,active,status_reason
-0,mairie de puy sanières,05111pc00001,1169 route des puys,puy-sanieres,5200,44.556359,6.43679,10000.0,5000.0,10000.0,2.0,7.0,False,True,True,False,True,present_in_actual_and_prediction
-1,pibou bas,05111pc00002,2 rue du morgon,puy-sanieres,5200,44.546959,6.421536,5000.0,5000.0,5000.0,1.0,7.0,False,True,True,False,True,present_in_actual_and_prediction
-2,nouveau village,05108pc00003,68 rue de la baume,puy-saint-eusebe,5200,44.561828,6.411584,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-3,le villard,05108pc00004,23 route de réallon,puy-saint-eusebe,5200,44.567129,6.401163,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-4,le chef lieu,05114pc00005,31 charrière des voûtes,reallon,5160,44.595123,6.364527,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-5,les gourniers,05114pc00006,14 charrière de viarette,reallon,5160,44.615133,6.332942,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-6,les rousses école,05114pc00007,21 charrière du gallant,reallon,5160,44.578025,6.377433,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-7,les méans,05114pc00008,105 charrière de la combe,reallon,5160,44.585197,6.382586,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-8,pav gare,05164pc00009,1 route de réallon,savines-le-lac,5160,44.535573,6.391094,10000.0,5000.0,10000.0,2.0,8.0,False,True,True,False,True,present_in_actual_and_prediction
-9,la treille,05164pc00010,3 route des puys,savines-le-lac,5160,44.539313,6.399622,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-10,picoune,05164pc00011,6 impasse coste béraude,savines-le-lac,5160,44.536785,6.385521,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-11,pré d'emeraude,05164pc00012,1 rue des chardonnerets,savines-le-lac,5160,44.516502,6.374076,5000.0,5000.0,5000.0,1.0,5.0,False,True,True,False,True,present_in_actual_and_prediction
-12,relais fleuri,05164pc00013,12 rue du forest,savines-le-lac,5160,44.525306,6.400949,15000.0,10000.0,15000.0,2.0,14.0,False,True,True,False,True,present_in_actual_and_prediction
-13,place lacaou,05164pc00014,12 rue du forest,savines-le-lac,5160,44.524473,6.402656,9000.0,4000.0,9000.0,2.0,8.0,False,True,True,False,True,present_in_actual_and_prediction
-14,pompiers / hlm,05164pc00015,3 rue serre verger,savines-le-lac,5160,44.525393,6.406207,5000.0,5000.0,5000.0,1.0,7.0,False,True,True,False,True,present_in_actual_and_prediction
-15,sortie savines le lac coté embrun / station service,05164pc00016,3 rue du champ raoux,savines-le-lac,5160,44.526257,6.408558,5000.0,5000.0,5000.0,1.0,6.0,False,True,True,False,True,present_in_actual_and_prediction
-16,eden lac,05164pc00017,1 rue de l’oratoire,savines-le-lac,5160,44.526793,6.408632,5000.0,5000.0,5000.0,1.0,8.0,False,True,True,False,True,present_in_actual_and_prediction
-17,cimetière,05164pc00018,9 rue des eaux douces,savines-le-lac,5160,44.527335,6.403661,5000.0,5000.0,5000.0,1.0,7.0,False,True,True,False,True,present_in_actual_and_prediction
-18,hameau chérines,05164pc00019,7 route de savines,savines-le-lac,5160,44.559946,6.379651,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-19,r de l'oratoire r de l'ounie,05164pc00020,5 rue de l’ounié,savines-le-lac,5160,44.527368,6.40772,5000.0,5000.0,5000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-20,plage,05164pc00021,1 rue de la combette,savines-le-lac,5160,44.528127,6.40602,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-21,office de tourisme (ot),05164pc00022,8 rue des marronniers,savines-le-lac,5160,44.526259,6.403469,10000.0,10000.0,10000.0,1.0,9.0,False,True,True,False,True,present_in_actual_and_prediction
-22,camping les eygoires (municipal savines le lac),05164pc00024,4 route du sauze,savines-le-lac,5160,44.519519,6.387515,10000.0,10000.0,10000.0,1.0,6.0,False,True,True,False,True,present_in_actual_and_prediction
-23,rue de la combette/ hlm,05164pc00025,2 rue saint-férréol,savines-le-lac,5160,44.526994,6.405391,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-24,centre village,05163pc00026,764 route du village,le sauze-du-lac,5160,44.526994,6.405391,5000.0,5000.0,5000.0,1.0,8.0,False,True,True,False,True,present_in_actual_and_prediction
-25,cimetière,05163pc00027,72 chemin du cimetière,le sauze-du-lac,5160,44.479102,6.315134,,,,,,False,False,False,True,False,listed_as_disappeared
-26,port st pierre,05163pc00028,650 chemin de port saint-pierre,le sauze-du-lac,5160,44.476396,6.31621,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-27,plage port st pierre,05163pc00029,1226 chemin de port saint-pierre,le sauze-du-lac,5160,44.467598,6.323621,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-28,les chevaliers,04154pc00030,pré de capitaine,pontis,5160,44.508781,6.363622,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-29,pav centre village,05130pc00031,135 route de chorges,saint apollinaire,5160,44.555691,6.360185,5000.0,5000.0,5000.0,1.0,6.0,False,True,True,False,True,present_in_actual_and_prediction
-30,les crozans,05130pc00032,1638 route de savines,saint apollinaire,5160,44.549308,6.36286,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-31,ponts des vignes (rn 94),05106pc00033,1 impasse du pré,prunieres,5230,44.531968,6.325218,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-32,place de la mairie,05106pc00034,30 route de prunières,prunieres,5230,44.542344,6.332655,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-33,pra perier,05106pc00035,25 route de pra périer,prunieres,5230,44.540427,6.338296,5000.0,5000.0,5000.0,1.0,5.0,False,True,True,False,True,present_in_actual_and_prediction
-34,le serre,05106pc00036,162 route de chabrière,prunieres,5230,44.54947,6.328987,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-35,centre village / bascule / eglise,05106pc00037,2 route de chabrière,prunieres,5230,44.543702,6.326666,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-36,pra prunier,05114pc00038,77 charrière des chalets d’estive,reallon,5160,44.577244,6.365925,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-37,parking central,05114pc00039,584 charrière grande de pra goudin,reallon,5160,44.575953,6.361514,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-38,bas de la station,05114pc00040,4 charrière grande de pra goudin,reallon,5160,44.574402,6.365035,10000.0,10000.0,10000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-39,devant commerces,05114pc00041,388 charrière grande de pra goudin,reallon,5160,44.577214,6.363201,10000.0,10000.0,10000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-40,centre  de vacances chadenas,05111pc00042,319 chemin de chadenas,puy-sanieres,5200,44.547358,6.461433,5000.0,5000.0,5000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-41,ime centre jean cluzel,05164pc00043,17 route de réallon,savines-le-lac,5160,44.538977,6.378694,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-42,cv vtf les pigneroux,05164pc00044,1 route des pigneroux,savines-le-lac,5160,44.551868,6.376052,5000.0,5000.0,5000.0,1.0,5.0,False,True,True,False,True,present_in_actual_and_prediction
-43,camping le roustou,05106pc00045,32 chemin du roustou,prunieres,5230,44.523053,6.340976,10000.0,5000.0,10000.0,2.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-44,camping le nautic,05106pc00046,255 route du lac,prunieres,5230,44.527258,6.358344,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-45,cv ccas / maison centrale,05164pc00047,1 route du sauze,savines-le-lac,5160,44.517926,6.384902,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-46,montagne aux marmottes,05163pc00048,444 route départementale 954,le sauze-du-lac,5160,44.47243,6.327381,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-47,demoiselles coiffées / souvenirs,05163pc00049,507 route des demoiselles coiffées,le sauze-du-lac,5160,44.494644,6.340876,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-48,camping la palatrière,05163pc00050,201 route d’orbanne,le sauze-du-lac,5160,44.498575,6.344786,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-49,camping de st apollinaire,05130pc00051,2353 route du lac,saint apollinaire,5160,44.561583,6.346529,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-50,camping les granges,04154pc00052,,pontis,5160,44.51404,6.364286,5000.0,5000.0,5000.0,1.0,7.0,False,True,True,False,True,present_in_actual_and_prediction
-51,camping les chappas,04154pc00053,,pontis,5160,44.514355,6.362179,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-52,jeunesse et avenir,04154pc00054,,pontis,5160,44.509928,6.355159,,,,,,False,False,False,True,False,listed_as_disappeared
-53,centre vacances val ubaye,05012pc00055,1214 chemin de la serbie,baratier,5200,44.526126,6.500747,,,,,,False,False,False,True,False,listed_as_disappeared
-54,hôtel restaurant les peupliers,05012pc00056,239 chemin de lesdier,baratier,5200,44.536388,6.491931,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-55,décheterie de savines le lac,05164pc00057,2 chemin de la chapelle,savines-le-lac,5160,44.545509,6.393907,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-56,optex,05164pc00058,7 avenue du faubourg,savines-le-lac,5160,44.523307,6.399009,,,,,,False,False,False,True,False,listed_as_disappeared
-57,gcu camping / snack,05164pc00059,3 allee des alouettes,savines-le-lac,5160,44.516639,6.376639,,,,,,False,False,False,True,False,listed_as_disappeared
-58,cv ccas  / camp d'ados / pré d'emeraude,05164pc00060,4 impasse de la galinette,savines-le-lac,5160,44.517377,6.369304,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-59,pré d'emeraude / la plage,05164pc00061,6 rue des chardonnerets,savines-le-lac,5160,44.519106,6.37241,4000.0,4000.0,4000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-60,maison de retraite savines le lac,05164pc00062,2 rue des marronniers,savines-le-lac,5160,44.526869,6.404488,5000.0,5000.0,5000.0,1.0,16.0,False,True,True,False,True,present_in_actual_and_prediction
-61,centre village,04154pc00063,champ audin,pontis,5160,44.503941,6.357085,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-62,riou bourdou,05164pc00064,,savines-le-lac,5160,44.530368,6.37143,3000.0,3000.0,3000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-63,les gourres,05106pc00065,6 chemin des blanchons,prunieres,5230,44.55281,6.326178,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-64,"le moulin, petit liou, ctm",05012pc00066,230 route des vachères,baratier,5200,44.549218,6.48752,10000.0,5000.0,10000.0,2.0,9.0,False,True,True,False,True,present_in_actual_and_prediction
-65,"le viautaud, direction la mûre",05012pc00067,762 route de pra fouran,baratier,5200,44.541682,6.492813,5000.0,5000.0,5000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-66,square charles gieu,05012pc00068,102 impasse du serre,baratier,5200,44.539092,6.48763,5000.0,5000.0,5000.0,1.0,5.0,False,True,True,False,True,present_in_actual_and_prediction
-67,"embranchement ailloud, imp des aubépines",05012pc00069,17 impasse des aubépines,baratier,5200,44.541171,6.490093,5000.0,5000.0,5000.0,1.0,7.0,False,True,True,False,True,present_in_actual_and_prediction
-68,square des baladins,05012pc00070,376 chemin des fruits d’or,baratier,5200,44.539818,6.486499,5000.0,5000.0,5000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-69,pav le provence,05164pc00071,7 avenue du faubourg,savines-le-lac,5160,44.522403,6.39957,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-70,parking du cimetière,05012pc00072,10 chemin de lesdier,baratier,5200,44.538369,6.491999,10000.0,10000.0,10000.0,1.0,7.0,False,True,True,False,True,present_in_actual_and_prediction
-71,"entrée village, place des lavandières",05012pc00073,28 place des lavandières,baratier,5200,44.5383,6.496947,5000.0,5000.0,5000.0,1.0,7.0,False,True,True,False,True,present_in_actual_and_prediction
-72,pav pont de vachères,05012pc00074,1765 route des orres,baratier,5200,44.537649,6.497446,5000.0,5000.0,5000.0,1.0,6.0,False,True,True,False,True,present_in_actual_and_prediction
-73,baie des italiens / eaux douces,05045pc00075,,crots,5200,44.531262,6.429998,10000.0,10000.0,10000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-74,sortie embrun,05045pc00076,466 rue de vicherette,crots,5230,44.537871,6.474201,5000.0,5000.0,5000.0,1.0,13.0,False,True,True,False,True,present_in_actual_and_prediction
-75,ecole de crots,05045pc00077,route de chanterenne,crots,5200,44.533991,6.468497,5000.0,5000.0,5000.0,1.0,7.0,False,True,True,False,True,present_in_actual_and_prediction
-76,pav sortie de gap,05045pc00078,60 route de chanterenne,crots,5200,44.533314,6.46717,10000.0,5000.0,10000.0,2.0,14.0,False,True,True,False,True,present_in_actual_and_prediction
-77,parking au dessus de la mairie / picomtal,05045pc00079,154 avenue du château,crots,5200,44.532887,6.470976,5000.0,5000.0,5000.0,1.0,14.0,False,True,True,False,True,present_in_actual_and_prediction
-78,route du poët croisement route de baratier,05045pc00080,7 rue du poët,crots,5200,44.531571,6.481536,5000.0,5000.0,5000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-79,entrée du forest,05045pc00081,5 chemin du forest,crots,5200,44.524612,6.467943,5000.0,5000.0,5000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-80,quartier st jean,05045pc00082,83 route de beauvillard,crots,5200,44.511218,6.468579,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-81,les thozans parking / la montagne,05045pc00083,151 chemin de la draye,crots,5200,44.495129,6.471867,5000.0,5000.0,5000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-82,montmirail,05045pc00084,10 route de montmirail,crots,5200,44.531589,6.439892,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-83,sortie beauvillard,05045pc00085,200 chemin du canal,crots,5200,44.520352,6.457252,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-84,abbaye de boscodon,05045pc00086,3815 route de boscodon,crots,5200,44.499784,6.456003,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-85,za des moulins,05045pc00087,593 chemin du lac,crots,5200,44.529064,6.447605,4000.0,4000.0,4000.0,1.0,14.0,False,True,True,False,True,present_in_actual_and_prediction
-86,les dourioux,05045pc00088,11 chemin des bosquis,crots,5200,44.508045,6.469142,5000.0,5000.0,5000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-87,camping du petit liou,05012pc00089,25 ancienne route de baratier,baratier,5200,44.546849,6.49053,,,,,,False,False,False,True,False,listed_as_disappeared
-88,chemin des sarments,05046pc00090,19 rue des vignes,embrun,5200,44.562353,6.486729,5000.0,5000.0,5000.0,1.0,5.0,False,True,True,False,True,present_in_actual_and_prediction
-89,la chaussière,05046pc00091,4 rue du bois vézin,embrun,5200,44.567943,6.501936,10000.0,5000.0,10000.0,2.0,15.0,False,True,True,False,True,present_in_actual_and_prediction
-90,parking paramart,05046pc00092,19bis avenue du general nicolas,embrun,5200,44.568081,6.497755,5000.0,5000.0,5000.0,1.0,7.0,False,True,True,False,True,present_in_actual_and_prediction
-91,bd pasteur bas,05046pc00093,12 boulevard pasteur,embrun,5200,44.56343,6.492777,10000.0,10000.0,10000.0,1.0,9.0,False,True,True,False,True,present_in_actual_and_prediction
-92,bd pasteur crédit agricole,05046pc00094,42 boulevard pasteur,embrun,5200,44.565044,6.495005,5000.0,5000.0,5000.0,1.0,13.0,False,True,True,False,True,present_in_actual_and_prediction
-93,bd pasteur farandole,05046pc00095,13 rue de la tannerie,embrun,5200,44.564165,6.493576,10000.0,5000.0,10000.0,2.0,17.0,False,True,True,False,True,present_in_actual_and_prediction
-94,bd pasteur la poste,05046pc00096,25 boulevard pasteur,embrun,5200,44.565579,6.496121,5000.0,5000.0,5000.0,1.0,5.0,False,True,True,False,True,present_in_actual_and_prediction
-95,pav piscine,05046pc00097,11 hameau du lac,embrun,5200,44.551121,6.481862,5000.0,5000.0,5000.0,1.0,6.0,False,True,True,False,True,present_in_actual_and_prediction
-96,pav plan d'eau commerces,05046pc00098,10 avenue du lac,embrun,5200,44.550952,6.478112,5000.0,5000.0,5000.0,1.0,10.0,False,True,True,False,True,present_in_actual_and_prediction
-97,parc des 4 soleils,05046pc00099,27 avenue des acacias,embrun,5200,44.555434,6.481998,15000.0,5000.0,15000.0,3.0,16.0,False,True,True,False,True,present_in_actual_and_prediction
-98,parking de la libération - leader price,05046pc00100,2 esplanade de la résistance,embrun,5200,44.562419,6.491968,5000.0,5000.0,5000.0,1.0,16.0,False,True,True,False,True,present_in_actual_and_prediction
-99,les chardouires,05046pc00101,78 route de chalvet,embrun,5200,44.574739,6.500121,10000.0,10000.0,10000.0,1.0,7.0,False,True,True,False,True,present_in_actual_and_prediction
-100,pav rue dunant (derrière la gare),05046pc00102,1 avenue du general nicolas,embrun,5200,44.566477,6.49524,5000.0,5000.0,5000.0,1.0,8.0,False,True,True,False,True,present_in_actual_and_prediction
-101,vignes iv pav,05046pc00103,2 rue saint-georges,embrun,5200,44.561658,6.484701,5000.0,5000.0,5000.0,1.0,5.0,False,True,True,False,True,present_in_actual_and_prediction
-102,cimetière pav,05046pc00104,4 route des puys,embrun,5200,44.559865,6.484853,5000.0,5000.0,5000.0,1.0,6.0,False,True,True,False,True,present_in_actual_and_prediction
-103,st surnin hlm,05046pc00105,5 rue du mont guillaume,embrun,5200,44.57008,6.507153,5000.0,5000.0,5000.0,1.0,8.0,False,True,True,False,True,present_in_actual_and_prediction
-104,aire des gens du voyage,05046pc00106,route de la madeleine,embrun,5200,44.55424,6.50032,5000.0,5000.0,5000.0,1.0,5.0,False,True,True,False,True,present_in_actual_and_prediction
-105,avenue des acacias / terrains de tennis / rés lupins,05046pc00107,19 avenue des acacias,embrun,5200,44.554418,6.480138,5000.0,5000.0,5000.0,1.0,8.0,False,True,True,False,True,present_in_actual_and_prediction
-106,chemin de chadenas / face rés petit nice,05046pc00108,30 chemin de chadenas,embrun,5200,44.553904,6.478034,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-107,pontfrache,05046pc00109,41 avenue charles de gaulle,embrun,5200,44.569909,6.502133,5000.0,5000.0,5000.0,1.0,16.0,False,True,True,False,True,present_in_actual_and_prediction
-108,immeuble champ de mars,05046pc00110,7 avenue de verdun,embrun,5200,44.565944,6.498144,5000.0,5000.0,5000.0,1.0,8.0,False,True,True,False,True,present_in_actual_and_prediction
-109,chemin des croix,05046pc00111,8 rue du maréchal de lattre de tassigny,embrun,5200,44.565061,6.499288,5000.0,5000.0,5000.0,1.0,8.0,False,True,True,False,True,present_in_actual_and_prediction
-110,edf / route de st andré,05046pc00112,23 rue edouard przybylski,embrun,5200,44.566887,6.501399,5000.0,5000.0,5000.0,1.0,11.0,False,True,True,False,True,present_in_actual_and_prediction
-111,hlm rochassons,05046pc00113,10 rue des rochassons,embrun,5200,44.566097,6.500498,5000.0,5000.0,5000.0,1.0,17.0,False,True,True,False,True,present_in_actual_and_prediction
-112,gare sncf / jardins du réal,05046pc00114,5 avenue charles de gaulle,embrun,5200,44.567219,6.49787,5000.0,5000.0,5000.0,1.0,13.0,False,True,True,False,True,present_in_actual_and_prediction
-113,le moulin (montée de chalvet),05046pc00115,10 route de chalvet,embrun,5200,44.570897,6.498936,5000.0,5000.0,5000.0,1.0,6.0,False,True,True,False,True,present_in_actual_and_prediction
-114,oratoire chalvet,05046pc00116,1 chemin du clot des nevières,embrun,5200,44.581171,6.503171,5000.0,5000.0,5000.0,1.0,5.0,False,True,True,False,True,present_in_actual_and_prediction
-115,champ bossu,05046pc00117,8 route de caléyères,embrun,5200,44.567043,6.492188,10000.0,10000.0,10000.0,1.0,6.0,False,True,True,False,True,present_in_actual_and_prediction
-116,au dessus marigny / rue des pins,05046pc00118,20 rue des pins,embrun,5200,44.565736,6.48813,5000.0,5000.0,5000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-117,rue isnel centre / côté mairie,05046pc00119,1 rue isnel,embrun,5200,44.564002,6.496174,,,,,,False,False,False,False,False,absent_from_actual_and_prediction
-118,rue des vendanges / rue des violettes,05046pc00120,16 rue des violettes,embrun,5200,44.564163,6.488271,5000.0,5000.0,5000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-119,av des vignes /rue des vendanges,05046pc00121,1 hameau des vignes,embrun,5200,44.562273,6.483677,5000.0,5000.0,5000.0,1.0,6.0,False,True,True,False,True,present_in_actual_and_prediction
-120,pervenches - cîmes : au dessus de st esprit / bât peller,05046pc00122,10 rue du saint esprit,embrun,5200,44.562357,6.488349,5000.0,5000.0,5000.0,1.0,6.0,False,True,True,False,True,present_in_actual_and_prediction
-121,face centre aéré / tour des portes,05046pc00123,18 promenade du tour des portes,embrun,5200,44.565397,6.493121,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-122,au-dessus du lep / weldom,05046pc00124,4 rue de la plaine sous le roc,embrun,5200,44.556137,6.484111,5000.0,5000.0,5000.0,1.0,16.0,False,True,True,False,True,present_in_actual_and_prediction
-123,la truite qui parle / bar des pêcheurs,05046pc00125,2 impasse des merisiers,embrun,5200,44.552574,6.484344,10000.0,5000.0,10000.0,2.0,5.0,False,True,True,False,True,present_in_actual_and_prediction
-124,pont fourré,05046pc00126,28 avenue justin gras,embrun,5200,44.558788,6.48425,5000.0,5000.0,5000.0,1.0,17.0,False,True,True,False,True,present_in_actual_and_prediction
-125,haut de la belotte / st jacques,05046pc00127,30 route de caléyères,embrun,5200,44.566105,6.486039,5000.0,5000.0,5000.0,1.0,7.0,False,True,True,False,True,present_in_actual_and_prediction
-126,petit puy / les terrasses,05046pc00128,2 route du petit puy,embrun,5200,44.561846,6.470994,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-127,hameau caléyère,05046pc00129,66 route de caléyères,embrun,5200,44.571278,6.483528,5000.0,5000.0,5000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-128,square lapeyrouse,05046pc00130,1 rue pierre et marie curie,embrun,5200,44.562624,6.493601,5000.0,5000.0,5000.0,1.0,16.0,False,True,True,False,True,present_in_actual_and_prediction
-129,le boussolenc,05046pc00131,25 avenue charles de gaulle,embrun,5200,44.568343,6.500316,5000.0,5000.0,5000.0,1.0,9.0,False,True,True,False,True,present_in_actual_and_prediction
-130,hlm le roc / devant hôpital,05046pc00132,13 rue pierre et marie curie,embrun,5200,44.561734,6.493021,5000.0,5000.0,5000.0,1.0,9.0,False,True,True,False,True,present_in_actual_and_prediction
-131,rue sénateur bonniard,05046pc00133,6 rue du senateur bonniard,embrun,5200,44.562876,6.496055,5000.0,5000.0,5000.0,1.0,15.0,False,True,True,False,True,present_in_actual_and_prediction
-132,rue des acacias / rue du rif clair,05046pc00134,12 avenue des acacias,embrun,5200,44.55319,6.479328,5000.0,5000.0,5000.0,1.0,5.0,False,True,True,False,True,present_in_actual_and_prediction
-133,ste marthe,05046pc00135,15 chemin de chadenas,embrun,5200,44.557891,6.48224,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-134,chemin de l'aigle,05098pc00136,4 chemin de l’aigle,les orres,5200,44.494385,6.554539,,,,,,False,False,False,True,False,listed_as_disappeared
-135,côte chamois,05046pc00137,1 chemin cote chamois,embrun,5200,44.561952,6.490615,5000.0,5000.0,5000.0,1.0,8.0,False,True,True,False,True,present_in_actual_and_prediction
-136,chanchore,05046pc00138,70 route de la madeleine,embrun,5200,44.542333,6.497518,10000.0,10000.0,10000.0,1.0,9.0,False,True,True,False,True,present_in_actual_and_prediction
-137,place de l'archevêché,05046pc00139,rue de l’archevéché,embrun,5200,44.562665,6.495395,5000.0,5000.0,5000.0,1.0,16.0,False,True,True,False,True,present_in_actual_and_prediction
-138,place dosse,05046pc00140,22 place du general dosse,embrun,5200,44.564964,6.49602,5000.0,5000.0,5000.0,1.0,9.0,False,True,True,False,True,present_in_actual_and_prediction
-139,camping les grillons,05046pc00141,1 route de la madeleine,embrun,5200,44.548105,6.49628,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-140,place aux herbes,05046pc00142,16 place du general dosse,embrun,5200,44.56488,6.495881,5000.0,5000.0,10000.0,2.0,23.0,False,True,True,False,True,present_in_actual_and_prediction
-141,rue victor maurel,05046pc00143,45 rue victor maurel,embrun,5200,44.5646,6.497253,5000.0,5000.0,5000.0,1.0,16.0,False,True,True,False,True,present_in_actual_and_prediction
-142,bd pasteur cinema,05046pc00144,29 boulevard pasteur,embrun,5200,44.565566,6.496542,5000.0,5000.0,5000.0,1.0,17.0,False,True,True,False,True,present_in_actual_and_prediction
-143,delaroche pav,05046pc00145,18 rue colonel bonnet,embrun,5200,44.5639,6.49797,10000.0,5000.0,10000.0,2.0,15.0,False,True,True,False,True,present_in_actual_and_prediction
-144,face au super u / entraigues,05046pc00146,1 avenue des métiers,embrun,5200,44.551156,6.486694,5000.0,5000.0,5000.0,1.0,7.0,False,True,True,False,True,present_in_actual_and_prediction
-145,déchèterie,05046pc00147,,embrun,5200,44.585437,6.515581,,,,,,False,False,False,True,False,listed_as_disappeared
-146,cna,05046pc00148,64 chemin de chadenas,embrun,5200,44.548849,6.466587,5000.0,5000.0,5000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-147,cna touristes,05046pc00149,9 chemin de chadenas,embrun,5200,44.547431,6.466735,3000.0,3000.0,3000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-148,chalets de chalvet,05046pc00150,1 rue de la tarriere,embrun,5200,44.577952,6.497808,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-149,rue des capucines,05046pc00151,15 rue des capucines,embrun,5200,44.563752,6.485537,5000.0,5000.0,5000.0,1.0,7.0,False,True,True,False,True,present_in_actual_and_prediction
-150,rue de la levée,05046pc00152,32 rue de la levee,embrun,5200,44.55454,6.482018,5000.0,5000.0,5000.0,1.0,5.0,False,True,True,False,True,present_in_actual_and_prediction
-151,le diamant / l'eterlou,05046pc00153,31 route de chalvet,embrun,5200,44.573696,6.501765,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-152,la robeyère,05046pc00154,19 rue de la robéyère,embrun,5200,44.559627,6.488378,5000.0,5000.0,5000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-153,le vautisse,05046pc00155,46 promenade du tour des portes,embrun,5200,44.562941,6.490977,5000.0,5000.0,5000.0,1.0,5.0,False,True,True,False,True,present_in_actual_and_prediction
-154,paradis,05046pc00156,4 chemin de paradis,embrun,5200,44.567369,6.506,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-155,st surnin rue du razis,05046pc00157,4 rue du razis,embrun,5200,44.569999,6.50608,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-156,les orres sortie village sortie côté station,05098pc00158,2 impasse serre-lacroix,les orres,5200,44.512886,6.554414,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-157,les violettes,05046pc00159,2 allée des fonts couvertes,embrun,5200,44.564802,6.49053,5000.0,5000.0,5000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-158,st esprit hlm,05046pc00160,1 rue des allieres,embrun,5200,44.562539,6.488873,5000.0,5000.0,5000.0,1.0,7.0,False,True,True,False,True,present_in_actual_and_prediction
-159,château de caleyère,05046pc00161,96 route de caléyères,embrun,5200,44.575339,6.476133,5000.0,5000.0,5000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-160,praveyral,05044pc00162,115 rue du brunel,crevoux,5200,44.546452,6.595205,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-161,la chalp,05044pc00163,1 route du parpaillon,crevoux,5200,44.547742,6.619333,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-162,centre village,05044pc00164,41 rue de la cime,crevoux,5200,44.547544,6.607383,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-163,station,05044pc00165,14 route de pra vesqua,crevoux,5200,44.546489,6.605832,15000.0,15000.0,15000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-164,foyer de ski de fond,05044pc00166,7 chemin des arnauds,crevoux,5200,44.548107,6.624334,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-165,beauregard / lot les miroirs du lac,05156pc00167,15 route de beauregard,saint-sauveur,5200,44.548077,6.500547,5000.0,5000.0,5000.0,1.0,5.0,False,True,True,False,True,present_in_actual_and_prediction
-166,pav st sauveur,05156pc00168,1474 route de saint sauveur,saint-sauveur,5200,44.526434,6.519761,5000.0,5000.0,5000.0,1.0,8.0,False,True,True,False,True,present_in_actual_and_prediction
-167,les augustins / inter route des charniers,05156pc00169,348 route de saint sauveur,saint-sauveur,5200,44.539219,6.520989,5000.0,5000.0,5000.0,1.0,8.0,False,True,True,False,True,present_in_actual_and_prediction
-168,les manins / les gaillards,05156pc00170,1369 route des manins,saint-sauveur,5200,44.531836,6.526889,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-169,le coin bas,05156pc00171,282 route du coin,saint-sauveur,5200,44.555492,6.527133,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-170,hameau des salettes,05156pc00172,159 route des sallettes,saint-sauveur,5200,44.521339,6.520823,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-171,les sagnettes,05098pc00173,6 route des sagnettes,les orres,5200,44.50989,6.53525,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-172,les orres sortie village,05098pc00174,1 rue de l’arenier,les orres,5200,44.512166,6.545302,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-173,le mélezet caserne,05098pc00175,3 rue du cadran solaire,les orres,5200,44.503869,6.555301,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-174,le forest,05098pc00176,1 impasse clot des lilas,les orres,5200,44.515211,6.563068,,,,,,False,False,False,False,False,absent_from_actual_and_prediction
-175,les ribes,05098pc00177,11 rue de vachères,les orres,5200,44.512602,6.569166,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-176,le mélezet entrée,05098pc00178,2 rue de pra chapelle,les orres,5200,44.506134,6.554228,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-177,le mélezet bas,05098pc00179,20 rue font cordeille,les orres,5200,44.503364,6.550166,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-178,pramouton,05098pc00180,20 route du boussolenc,les orres,5200,44.49685,6.554881,5000.0,5000.0,5000.0,1.0,7.0,False,True,True,False,True,present_in_actual_and_prediction
-179,descente immeuble tennis hlm,05098pc00181,4 chemin de l’aigle,les orres,5200,44.494433,6.554605,10000.0,5000.0,10000.0,2.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-180,intersection rn prébois / l'estomac,05098pc00182,2 route de bois méans,les orres,5200,44.491136,6.553369,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-181,pav des trois chemins,05098pc00184,54 chemin de croty,les orres,5200,44.516427,6.533457,5000.0,5000.0,5000.0,1.0,5.0,False,True,True,False,True,present_in_actual_and_prediction
-182,champs laccas,05098pc00185,16 traverse sainte-marguerite,les orres,5200,44.499608,6.555465,5000.0,5000.0,5000.0,1.0,6.0,False,True,True,False,True,present_in_actual_and_prediction
-183,le milieu intersection d994/d39,05128pc00186,mille hommes,saint-andre-d embrun,5200,44.591699,6.535586,5000.0,5000.0,5000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-184,chabret,05128pc00187,le chabret,saint-andre-d embrun,5200,44.60358,6.547764,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-185,chef-lieu,05128pc00188,80 place de la mairie,saint-andre-d embrun,5200,44.586194,6.534313,5000.0,5000.0,5000.0,1.0,7.0,False,True,True,False,True,present_in_actual_and_prediction
-186,les lagiers,05128pc00189,594 route de saluces,saint-andre-d embrun,5200,44.582892,6.534957,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-187,serre lombard,05128pc00190,2515 route de crévoux,saint-andre-d embrun,5200,44.57812,6.52622,10000.0,5000.0,10000.0,2.0,7.0,False,True,True,False,True,present_in_actual_and_prediction
-188,les rencuraux,05128pc00191,4730 route de crévoux,saint-andre-d embrun,5200,44.572738,6.534754,10000.0,5000.0,10000.0,2.0,7.0,False,True,True,False,True,present_in_actual_and_prediction
-189,la pinée,05128pc00192,la pinèe,saint-andre-d embrun,5200,44.581028,6.528903,,,,,,False,False,False,True,False,listed_as_disappeared
-190,le villard,05128pc00193,le villard,saint-andre-d embrun,5200,44.564916,6.547009,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-191,serre bellon,05128pc00194,serre bellon,saint-andre-d embrun,5200,44.567005,6.521033,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-192,route de prébois haut,05098pc00195,12 chemin du riou sec,les orres,5200,44.490767,6.556655,,,,,,False,False,False,True,False,listed_as_disappeared
-193,centre village la forge,05036pc00196,35 rue des aubergeries,chateauroux-les-alpes,5380,44.613151,6.520265,5000.0,5000.0,5000.0,1.0,13.0,False,True,True,False,True,present_in_actual_and_prediction
-194,pav  tourrache,05036pc00197,17 avenue de la gare,chateauroux-les-alpes,5380,44.611564,6.525283,10000.0,5000.0,10000.0,2.0,10.0,False,True,True,False,True,present_in_actual_and_prediction
-195,parking mairie,05036pc00198,2 descente castel rudolphi,chateauroux-les-alpes,5380,44.613457,6.521837,10000.0,10000.0,10000.0,1.0,8.0,False,True,True,False,True,present_in_actual_and_prediction
-196,stade municipal,05036pc00199,18 chemin des aubépines,chateauroux-les-alpes,5380,44.609536,6.52431,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-197,en face du garage collet,05036pc00200,39 route d’italie,chateauroux-les-alpes,5380,44.616872,6.521039,5000.0,5000.0,5000.0,1.0,8.0,False,True,True,False,True,present_in_actual_and_prediction
-198,fontfourane,05036pc00201,34 routes des chamousses,chateauroux-les-alpes,5380,44.621947,6.530552,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-199,st marcellin,05036pc00202,430 route saint-marcellin,chateauroux-les-alpes,5380,44.619664,6.525003,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-200,derrière cimetière communal,05036pc00203,50 chemin des pins,chateauroux-les-alpes,5380,44.614714,6.517396,10000.0,5000.0,10000.0,2.0,6.0,False,True,True,False,True,present_in_actual_and_prediction
-201,chapelle st roch,05036pc00204,883 route de saint-roch,chateauroux-les-alpes,5380,44.608563,6.512949,10000.0,10000.0,10000.0,1.0,7.0,False,True,True,False,True,present_in_actual_and_prediction
-202,les garcins / les taxils,05036pc00205,10 chemin des chènevières,chateauroux-les-alpes,5380,44.613815,6.53128,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-203,camping les pins,05036pc00206,2 impasse camping les pins,chateauroux-les-alpes,5380,44.616008,6.517415,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-204,camping du rabioux,05036pc00207,1500 route de la vague,chateauroux-les-alpes,5380,44.620804,6.546134,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-205,camping les cariamas,05036pc00208,999 chemins des traverses,chateauroux-les-alpes,5380,44.602998,6.522264,5000.0,5000.0,5000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-206,camping les eygas,05036pc00209,617 chemin de fontmoline,chateauroux-les-alpes,5380,44.601649,6.527447,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-207,camping la garenne (municipal crots),05045pc00211,1170 route de la plage,crots,5200,44.538318,6.454667,10000.0,10000.0,10000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-208,camping manu,05045pc00212,route de la plage,crots,5200,44.538086,6.457303,,,,,,False,False,False,True,False,listed_as_disappeared
-209,st etienne,05036pc00213,1147 route de saint-êtienne,chateauroux-les-alpes,5380,44.628345,6.532019,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-210,les bartavelles,05045pc00214,807 route de gap,crots,5200,44.542298,6.478694,5000.0,5000.0,5000.0,1.0,7.0,False,True,True,False,True,present_in_actual_and_prediction
-211,camping la clapière (municipal embrun),05046pc00215,10 avenue du lac,embrun,5200,44.551077,6.477788,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-212,camping les tourelles,05046pc00216,5 chemin de ste marthe,embrun,5200,44.558417,6.482232,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-213,camping la vieille ferme,05046pc00217,12 allée du méâle,embrun,5200,44.554015,6.485847,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-214,camping la madeleine,05046pc00218,1940 route de la madeleine,embrun,5200,44.556992,6.507277,5000.0,5000.0,5000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-215,camping les esparons,05046pc00219,344 route de la madeleine,embrun,5200,44.544683,6.49818,,,,,,False,False,False,True,False,listed_as_disappeared
-216,camping la tour,05046pc00220,7 route de la madeleine,embrun,5200,44.555564,6.506069,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-217,st claude,05036pc00221,4 impasse des argousiers,chateauroux-les-alpes,5380,44.609174,6.518586,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-218,futur antérieur,05046pc00222,43 route de chalvet,embrun,5200,44.574495,6.504044,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-219,cité scolaire honoré romane,05046pc00223,10 chemin des rossignols,embrun,5200,44.568094,6.494468,5000.0,5000.0,5000.0,1.0,6.0,False,True,True,False,True,present_in_actual_and_prediction
-220,hôpital,05046pc00224,8 rue pierre et marie curie,embrun,5200,44.560897,6.49335,5000.0,5000.0,5000.0,1.0,22.0,False,True,True,False,True,present_in_actual_and_prediction
-221,route de prébois bas,05098pc00225,2 chemin du riou sec,les orres,5200,44.490663,6.553707,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-222,lep,05046pc00226,11 chemin sous le roc,embrun,5200,44.55675,6.486398,5000.0,5000.0,5000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-223,hôtel restau château de la robeyère,05046pc00227,24 avenue justin gras,embrun,5200,44.559713,6.486228,5000.0,5000.0,5000.0,1.0,8.0,False,True,True,False,True,present_in_actual_and_prediction
-224,maison de retraite les chanterelles,05046pc00228,6 rue du maréchal de lattre de tassigny,embrun,5200,44.564429,6.498799,5000.0,5000.0,5000.0,1.0,15.0,False,True,True,False,True,present_in_actual_and_prediction
-225,maison de retraite lou village,05046pc00229,22 chemin des croix,embrun,5200,44.564787,6.501721,5000.0,5000.0,5000.0,1.0,16.0,False,True,True,False,True,present_in_actual_and_prediction
-226,super u,05046pc00230,17 avenue des métiers,embrun,5200,44.550527,6.488926,,,,,,False,False,False,True,False,listed_as_disappeared
-227,entraigues i / teuteu,05046pc00231,14 rue des bouilleurs de crue,embrun,5200,44.552124,6.491989,5000.0,5000.0,5000.0,1.0,15.0,False,True,True,False,True,present_in_actual_and_prediction
-228,entraigues ii / régie de l'eau,05046pc00232,2 rue des ardoisiers,embrun,5200,44.551709,6.489024,5000.0,5000.0,5000.0,1.0,5.0,False,True,True,False,True,present_in_actual_and_prediction
-229,vague du rabioux,05036pc00233,1500 route de la vague,chateauroux-les-alpes,5380,44.618041,6.544578,,,,,,False,False,False,True,False,listed_as_disappeared
-230,centre ucpa embrun,05046pc00234,4 impasse des merisiers,embrun,5200,44.551516,6.485039,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-231,cv ucpa les orres,05098pc00235,2 traverse sainte-marguerite,les orres,5200,44.497833,6.554532,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-232,centre de vacances epaf,05046pc00236,319 chemin de chadenas,embrun,5200,44.547349,6.461345,,,,,,False,False,False,True,False,listed_as_disappeared
-233,la garenne commerces,05045pc00237,1170 route de la plage,crots,5200,44.538987,6.455889,10000.0,10000.0,10000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-234,centre de vacances lou cabri,05012pc00238,84 impasse des baladins,baratier,5200,44.53907,6.484629,,,,,,False,False,False,True,False,listed_as_disappeared
-235,camping les airelles,05012pc00239,602 chemin de la serbie,baratier,5200,44.530846,6.501309,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-236,camping le verger,05012pc00240,8 impasse du vieux noyer,baratier,5200,44.538328,6.487338,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-237,centre de vacances lpm,05012pc00241,227 chemin des clôsures,baratier,5200,44.54004,6.495226,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-238,zone du liou derrière wc,05012pc00242,60 traverse des epis,baratier,5200,44.548083,6.481652,15000.0,5000.0,15000.0,3.0,18.0,False,True,True,False,True,present_in_actual_and_prediction
-239,intermarché (colonne om),05012pc00243,60 traverse des epis,baratier,5200,44.547372,6.481156,5000.0,5000.0,5000.0,1.0,23.0,False,True,True,False,True,present_in_actual_and_prediction
-240,mac do,05012pc00244,60 traverse des epis,baratier,5200,44.547801,6.482529,5000.0,5000.0,5000.0,1.0,22.0,False,True,True,False,True,present_in_actual_and_prediction
-241,bouygues route de st andré / l'air du temps,05046pc00245,13 rue edouard przybylski,embrun,5200,44.566936,6.500174,5000.0,5000.0,5000.0,1.0,12.0,False,True,True,False,True,present_in_actual_and_prediction
-242,hôtel le lac,05046pc00246,1 rue des chardons,embrun,5200,44.551371,6.48258,5000.0,5000.0,5000.0,1.0,5.0,False,True,True,False,True,present_in_actual_and_prediction
-243,rochelaire,05046pc00247,10 avenue charles de gaulle,embrun,5200,44.567235,6.499102,5000.0,5000.0,5000.0,1.0,8.0,False,True,True,False,True,present_in_actual_and_prediction
-244,tourmaline,05046pc00248,18 chemin des croix,embrun,5200,44.564631,6.501177,5000.0,5000.0,5000.0,1.0,8.0,False,True,True,False,True,present_in_actual_and_prediction
-245,les vignes iii / route des puys,05046pc00249,10 route des puys,embrun,5200,44.559596,6.478999,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-246,la gardette / route des puys,05046pc00250,1 rue du siebels,embrun,5200,44.560458,6.480021,5000.0,5000.0,5000.0,1.0,7.0,False,True,True,False,True,present_in_actual_and_prediction
-247,st alban,05036pc00251,,chateauroux-les-alpes,5380,44.635377,6.563243,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-248,za des moulins lotissement,05045pc00252,rue de la montagnette,crots,5200,44.530675,6.451246,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-249,gendarmerie,05098pc00253,1 chemin des mouflons,les orres,5200,44.493274,6.555625,10000.0,10000.0,10000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-250,allée des chamois,05098pc00254,1 allée des fouonts,les orres,5200,44.495239,6.557009,10000.0,10000.0,10000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-251,entrée station,05098pc00255,30 route du boussolenc,les orres,5200,44.492495,6.556172,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-252,centre station,05098pc00256,4 allée des chamois,les orres,5200,44.494258,6.557244,30000.0,5000.0,30000.0,3.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-253,résidence la gardette,05114pc00257,253 charrière grande de pra goudin,reallon,5160,44.576697,6.363793,10000.0,10000.0,10000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-254,résidence la comète,05114pc00258,388 charrière grande de pra goudin,reallon,5160,44.577254,6.362939,15000.0,15000.0,15000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-255,plan d'eau,05114pc00259,l’iscle,reallon,5160,44.606157,6.337895,3000.0,3000.0,3000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-256,centre station devant local carton,05098pc00260,7 place jean rippert,les orres,5200,44.485609,6.553238,,,,,,False,False,False,True,False,listed_as_disappeared
-257,parking de prébois,05098pc00261,5 route de bois méans,les orres,5200,44.488173,6.551733,,,,,,False,False,False,True,False,listed_as_disappeared
-258,semlore,05098pc00262,7 route de bois méans,les orres,5200,44.487651,6.5516,10000.0,10000.0,10000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-259,route d'accès à bois méans,05098pc00263,30 route de bois méans,les orres,5200,44.483471,6.551918,,,,,,False,False,False,True,False,listed_as_disappeared
-260,entrée haute bois méans (drapeaux),05098pc00264,28 route de bois méans,les orres,5200,44.482921,6.552531,,,,,,False,False,False,True,False,listed_as_disappeared
-261,au dessus caisse remontée,05098pc00265,32 route de bois méans,les orres,5200,44.483854,6.553024,,,,,,False,False,False,True,False,listed_as_disappeared
-262,en face caisse remontée,05098pc00266,32 route de bois méans,les orres,5200,44.483854,6.553024,10000.0,10000.0,10000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-263,sous caisse remontée,05098pc00267,27 route de bois méans,les orres,5200,44.484547,6.553299,10000.0,10000.0,10000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-264,bas route principale bois méans,05098pc00268,40 route de bois méans,les orres,5200,44.484905,6.552459,10000.0,10000.0,10000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-265,parking face spar,05098pc00269,40 route de bois méans,les orres,5200,44.484905,6.552459,,,,,,False,False,False,True,False,listed_as_disappeared
-266,parking point sous 8 à 8,05098pc00270,7 place jean rippert,les orres,5200,44.485461,6.553236,15000.0,15000.0,15000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-267,fond du parking,05098pc00271,20 place jean rippert,les orres,5200,44.485656,6.554266,15000.0,15000.0,15000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-268,parking devant chalet cartons,05098pc00272,15 place jean rippert,les orres,5200,44.485482,6.553967,,,,,,False,False,False,True,False,listed_as_disappeared
-269,fond point les monts du bois d'or,05098pc00273,7 place jean rippert,les orres,5200,44.485641,6.553242,10000.0,10000.0,10000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-270,neuvière / les girauds / les maures,05046pc00274,84 route de chalvet,embrun,5200,44.584421,6.502554,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-271,pep 05,05046pc00277,1 impasse du parpaillon,embrun,5200,44.572383,6.508502,5000.0,5000.0,5000.0,1.0,7.0,False,True,True,False,True,present_in_actual_and_prediction
-272,rue serre verger,05164pc00279,6 avenue de la combe d’or,savines-le-lac,5160,44.525909,6.405812,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-273,les closures / entrée lpm,05012pc00280,222 chemin des clôsures,baratier,5200,44.539832,6.495278,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-274,les terres du château,05012pc00281,388 chemin de lesdier,baratier,5200,44.534651,6.491381,5000.0,5000.0,5000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-275,entraigues ii,05012pc00282,1 rue de l’arenier,baratier,5200,44.512166,6.545256,,,,,,False,False,False,True,False,listed_as_disappeared
-276,entraigues i /cartons,05046pc00283,2 rue des meuniers,embrun,5200,44.552553,6.490416,,,,,,False,False,False,True,False,listed_as_disappeared
-277,l'eglise,05098pc00285,4 rue du commun,les orres,5200,44.514531,6.548515,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-278,rooftop,05046pc00284,5 chemin de chadenas,embrun,5200,44.551725,6.473497,5000.0,5000.0,5000.0,1.0,5.0,False,True,True,False,True,present_in_actual_and_prediction
-279,capitainerie,05164pc00280,4 promenade du théâtre,savines-le-lac,5160,44.528375,6.403366,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-280,paillote du lac,04154pc00064,93 route d’orbanne,pontis,5160,44.501504,6.345666,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-281,aire 1 les bertrands,05040pc00340,,chorges,5230,44.538429,6.291666,1000.0,1000.0,1000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-282,aire 2 le villard baie st michel,05106pc00066,2 chemin du port,prunieres,5230,44.529841,6.332718,5000.0,4000.0,5000.0,2.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-283,aire 3 parking rn 94,05106pc00067,,prunieres,5230,44.525041,6.350433,1000.0,1000.0,1000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-284,aire 4 la baie des pirates,05106pc00068,,prunieres,5230,44.525815,6.354673,1000.0,1000.0,1000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-285,aire 5 la bascule 1,05164pc00282,11 route de réallon,savines-le-lac,5160,44.535646,6.381809,1000.0,1000.0,1000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-286,aire 6 la bascule 2,05164pc00281,3 impasse coste béraude,savines-le-lac,5160,44.535477,6.384336,1000.0,1000.0,1000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-287,aire 7 savines-le-lac,05045pc00253,,crots,5200,44.528752,6.42585,1000.0,1000.0,1000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-288,aire 8 pré-buisson,05036pc00252,,chateauroux-les-alpes,5380,44.597068,6.523848,1000.0,1000.0,1000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-289,place du grand logis,05040pc00300,29 place du grand logis,chorges,5230,44.547214,6.277047,20000.0,15000.0,20000.0,2.0,17.0,False,True,True,False,True,present_in_actual_and_prediction
-290,parking centre jallut,05040pc00301,jallut parking,chorges,5230,44.546232,6.276634,5000.0,5000.0,5000.0,1.0,14.0,False,True,True,False,True,present_in_actual_and_prediction
-291,champ de foire,05040pc00302,111 avenue d’embrun,chorges,5230,44.544783,6.279518,5000.0,5000.0,5000.0,1.0,17.0,False,True,True,False,True,present_in_actual_and_prediction
-292,ecoles,05040pc00303,2 rue des ecoles,chorges,5230,44.544522,6.276952,5000.0,5000.0,5000.0,1.0,17.0,False,True,True,False,True,present_in_actual_and_prediction
-293,rue de la gare - commerces,05040pc00304,allée du 11 mars 1962,chorges,5230,44.545945,6.273763,10000.0,10000.0,10000.0,1.0,17.0,False,True,True,False,True,present_in_actual_and_prediction
-294,avenue du piolit,05040pc00305,8 place de chabrières,chorges,5230,44.547267,6.270437,5000.0,5000.0,5000.0,1.0,17.0,False,True,True,False,True,present_in_actual_and_prediction
-295,intermarché parking,05040pc00306,130 chemin du pontillas,chorges,5230,44.546374,6.270638,5000.0,5000.0,5000.0,1.0,17.0,False,True,True,False,True,present_in_actual_and_prediction
-296,hlm pré valière,05040pc00307,393 route des moulettes,chorges,5230,44.541699,6.279547,5000.0,5000.0,5000.0,1.0,14.0,False,True,True,False,True,present_in_actual_and_prediction
-297,hlm pré du château,05040pc00308,223 route de la montagne,chorges,5230,44.549925,6.27771,5000.0,5000.0,5000.0,1.0,17.0,False,True,True,False,True,present_in_actual_and_prediction
-298,résidence la pousterle ii,05040pc00309,532 route de la montagne,chorges,5230,44.549925,6.27771,5000.0,5000.0,5000.0,1.0,8.0,False,True,True,False,True,present_in_actual_and_prediction
-299,résidence les nays,05040pc00310,20 rue des nays,chorges,5230,44.549387,6.274927,5000.0,5000.0,5000.0,1.0,8.0,False,True,True,False,True,present_in_actual_and_prediction
-300,lotissement le pré vert,05040pc00311,3 rue de la coupa,chorges,5230,44.550632,6.272158,5000.0,5000.0,5000.0,1.0,8.0,False,True,True,False,True,present_in_actual_and_prediction
-301,sous le martouret,05040pc00312,1169 route de la montagne,chorges,5230,44.556369,6.276381,5000.0,5000.0,5000.0,1.0,8.0,False,True,True,False,True,present_in_actual_and_prediction
-302,le martouret,05040pc00313,2022 route de la montagne,chorges,5230,44.559861,6.271423,5000.0,5000.0,5000.0,1.0,7.0,False,True,True,False,True,present_in_actual_and_prediction
-303,les seymats,05040pc00314,2986 route des hameaux du lac,chorges,5230,44.543798,6.307406,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-304,les bernards,05040pc00315,1592 route des hameaux du lac,chorges,5230,44.537966,6.314323,5000.0,5000.0,5000.0,1.0,9.0,False,True,True,False,True,present_in_actual_and_prediction
-305,les chabes - le sépulcre,05040pc00316,314 route des hameaux du lac,chorges,5230,44.537087,6.303296,5000.0,5000.0,5000.0,1.0,8.0,False,True,True,False,True,present_in_actual_and_prediction
-306,route de st apollinaire,05040pc00317,2224 route de réallon,chorges,5230,44.549042,6.303048,5000.0,5000.0,5000.0,1.0,15.0,False,True,True,False,True,present_in_actual_and_prediction
-307,olliviers / chaussins,05040pc00318,3150 route d’203 bois sagnières,chorges,5230,44.53223,6.263595,5000.0,5000.0,5000.0,1.0,15.0,False,True,True,False,True,present_in_actual_and_prediction
-308,le fein,05040pc00319,,chorges,5230,44.516445,6.270032,5000.0,5000.0,5000.0,1.0,8.0,False,True,True,False,True,present_in_actual_and_prediction
-309,grande ile nord - bas autovision pl,05040pc00320,16 impasse du dévezet,chorges,5230,44.552002,6.256887,5010.0,10.0,5010.0,3.0,17.0,False,True,True,False,True,present_in_actual_and_prediction
-310,grande ile sud - hapian,05040pc00321,51 rue coste belle,chorges,5230,44.551244,6.257499,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-311,baie st michel entrée camping municipal,05040pc00322,1 impasse du pré,chorges,5230,44.528987,6.324281,10000.0,10000.0,10000.0,1.0,5.0,False,True,True,False,True,present_in_actual_and_prediction
-312,baie st michel parking plage,05040pc00323,1 lieu dit baie de saint michel,chorges,5230,44.524897,6.326624,10000.0,5000.0,10000.0,2.0,5.0,False,True,True,False,True,present_in_actual_and_prediction
-313,chanteloube entrée,05040pc00324,,chorges,5230,44.513763,6.304985,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-314,chanteloube parking,05040pc00325,,chorges,5230,44.509087,6.312239,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-315,vvf baie st michel,05040pc00326,1 lieu dit baie de saint michel,chorges,5230,44.525916,6.321836,5000.0,5000.0,5000.0,1.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-316,camping serre du lac,05040pc00327,,chorges,5230,44.52881,6.31926,5000.0,5000.0,5000.0,1.0,5.0,False,True,True,False,True,present_in_actual_and_prediction
-317,camping clé des champs,05040pc00328,,chorges,5230,44.526361,6.318803,5000.0,5000.0,5000.0,1.0,2.0,False,True,True,False,True,present_in_actual_and_prediction
-318,ecrins du lac l'ami soleil,05040pc00329,,chorges,5230,44.50387,6.304013,10000.0,5000.0,10000.0,2.0,4.0,False,True,True,False,True,present_in_actual_and_prediction
-319,intermarché pro,05040pc00330,185 route nationale 94,chorges,5230,44.546831,6.269503,5000.0,5000.0,5000.0,1.0,15.0,False,True,True,False,True,present_in_actual_and_prediction
-320,vacances bleues,05040pc00331,,chorges,5230,44.527536,6.287408,5000.0,5000.0,5000.0,1.0,9.0,False,True,True,False,True,present_in_actual_and_prediction
-321,camping la valière,05040pc00332,447 route des moulettes,chorges,5230,44.538888,6.280458,5000.0,5000.0,5000.0,1.0,1.0,False,True,True,False,True,present_in_actual_and_prediction
-322,vc les hyvans - btp vacances,05040pc00333,,chorges,5230,44.49785,6.303802,15010.0,10.0,15010.0,4.0,5.0,False,True,True,False,True,present_in_actual_and_prediction
-323,grande ile nord - haut axe hôtel,05040pc00334,67 rue de la source,chorges,5230,44.553354,6.258294,5000.0,5000.0,5000.0,1.0,17.0,False,True,True,False,True,present_in_actual_and_prediction
-324,rue du moulin,05040pc00335,779 chemin du moulin,chorges,5230,44.550976,6.282621,5000.0,5000.0,5000.0,1.0,8.0,False,True,True,False,True,present_in_actual_and_prediction
-325,relais total,05040pc00336,1401 route nationale 94,chorges,5230,44.551234,6.255413,5000.0,5000.0,5000.0,1.0,3.0,False,True,True,False,True,present_in_actual_and_prediction
-326,camping de campéole / baie de la chapelle,05040pc00337,1 lieu dit baie de saint michel,chorges,5230,44.52427,6.324417,5000.0,5000.0,5000.0,1.0,5.0,False,True,True,False,True,present_in_actual_and_prediction
-327,grande ile nord - parking club 30,05040pc00338,150 impasse du dévezet,chorges,5230,44.552718,6.255627,,,,,,False,False,False,True,False,listed_as_disappeared
-328,depot,,depot,embrun,5200,44.5862,6.51652,,,,,,True,False,False,False,False,depot
+point_id;label;identifiant;addresse?;commune;code_postal;latitude;longitude;capacity_l;minimum_observed_capacity_l;maximum_observed_capacity_l;capacity_variant_count;capacity_observation_count;capacity_kg;is_depot;in_actual;in_prediction;listed_disappeared;active;status_reason
+0;mairie de puy sanières;05111pc00001;1169 route des puys;puy-sanieres;5200;44.556359;6.43679;10000.0;5000.0;10000.0;2.0;7.0;717.5707175707175;False;True;True;False;True;present_in_actual_and_prediction
+1;pibou bas;05111pc00002;2 rue du morgon;puy-sanieres;5200;44.546959;6.421536;5000.0;5000.0;5000.0;1.0;7.0;370.69704147976415;False;True;True;False;True;present_in_actual_and_prediction
+2;nouveau village;05108pc00003;68 rue de la baume;puy-saint-eusebe;5200;44.561828;6.411584;5000.0;5000.0;5000.0;1.0;1.0;408.4418311633768;False;True;True;False;True;present_in_actual_and_prediction
+3;le villard;05108pc00004;23 route de réallon;puy-saint-eusebe;5200;44.567129;6.401163;5000.0;5000.0;5000.0;1.0;1.0;408.4418311633768;False;True;True;False;True;present_in_actual_and_prediction
+4;le chef lieu;05114pc00005;31 charrière des voûtes;reallon;5160;44.595123;6.364527;5000.0;5000.0;5000.0;1.0;2.0;456.53086938261237;False;True;True;False;True;present_in_actual_and_prediction
+5;les gourniers;05114pc00006;14 charrière de viarette;reallon;5160;44.615133;6.332942;5000.0;5000.0;5000.0;1.0;1.0;472.51535674909434;False;True;True;False;True;present_in_actual_and_prediction
+6;les rousses école;05114pc00007;21 charrière du gallant;reallon;5160;44.578025;6.377433;5000.0;5000.0;5000.0;1.0;1.0;516.5354330708661;False;True;True;False;True;present_in_actual_and_prediction
+7;les méans;05114pc00008;105 charrière de la combe;reallon;5160;44.585197;6.382586;5000.0;5000.0;5000.0;1.0;1.0;472.4905501889962;False;True;True;False;True;present_in_actual_and_prediction
+8;pav gare;05164pc00009;1 route de réallon;savines-le-lac;5160;44.535573;6.391094;10000.0;5000.0;10000.0;2.0;8.0;765.2745641566058;False;True;True;False;True;present_in_actual_and_prediction
+9;la treille;05164pc00010;3 route des puys;savines-le-lac;5160;44.539313;6.399622;5000.0;5000.0;5000.0;1.0;2.0;412.20412204122044;False;True;True;False;True;present_in_actual_and_prediction
+10;picoune;05164pc00011;6 impasse coste béraude;savines-le-lac;5160;44.536785;6.385521;5000.0;5000.0;5000.0;1.0;3.0;427.0296921222746;False;True;True;False;True;present_in_actual_and_prediction
+11;pré d'emeraude;05164pc00012;1 rue des chardonnerets;savines-le-lac;5160;44.516502;6.374076;5000.0;5000.0;5000.0;1.0;5.0;348.437121395687;False;True;True;False;True;present_in_actual_and_prediction
+12;relais fleuri;05164pc00013;12 rue du forest;savines-le-lac;5160;44.525306;6.400949;15000.0;10000.0;15000.0;2.0;14.0;1101.4606884288073;False;True;True;False;True;present_in_actual_and_prediction
+13;place lacaou;05164pc00014;12 rue du forest;savines-le-lac;5160;44.524473;6.402656;9000.0;4000.0;9000.0;2.0;8.0;694.5378951377428;False;True;True;False;True;present_in_actual_and_prediction
+14;pompiers / hlm;05164pc00015;3 rue serre verger;savines-le-lac;5160;44.525393;6.406207;5000.0;5000.0;5000.0;1.0;7.0;378.00465236495216;False;True;True;False;True;present_in_actual_and_prediction
+15;sortie savines le lac coté embrun / station service;05164pc00016;3 rue du champ raoux;savines-le-lac;5160;44.526257;6.408558;5000.0;5000.0;5000.0;1.0;6.0;390.02319521205004;False;True;True;False;True;present_in_actual_and_prediction
+16;eden lac;05164pc00017;1 rue de l’oratoire;savines-le-lac;5160;44.526793;6.408632;5000.0;5000.0;5000.0;1.0;8.0;371.34774029432043;False;True;True;False;True;present_in_actual_and_prediction
+17;cimetière;05164pc00018;9 rue des eaux douces;savines-le-lac;5160;44.527335;6.403661;5000.0;5000.0;5000.0;1.0;7.0;365.87286587286593;False;True;True;False;True;present_in_actual_and_prediction
+18;hameau chérines;05164pc00019;7 route de savines;savines-le-lac;5160;44.559946;6.379651;5000.0;5000.0;5000.0;1.0;1.0;516.5896682066359;False;True;True;False;True;present_in_actual_and_prediction
+19;r de l'oratoire r de l'ounie;05164pc00020;5 rue de l’ounié;savines-le-lac;5160;44.527368;6.40772;5000.0;5000.0;5000.0;1.0;4.0;401.3544729105418;False;True;True;False;True;present_in_actual_and_prediction
+20;plage;05164pc00021;1 rue de la combette;savines-le-lac;5160;44.528127;6.40602;5000.0;5000.0;5000.0;1.0;1.0;410.7862903225806;False;True;True;False;True;present_in_actual_and_prediction
+21;office de tourisme (ot);05164pc00022;8 rue des marronniers;savines-le-lac;5160;44.526259;6.403469;10000.0;10000.0;10000.0;1.0;9.0;768.4818217222974;False;True;True;False;True;present_in_actual_and_prediction
+22;camping les eygoires (municipal savines le lac);05164pc00024;4 route du sauze;savines-le-lac;5160;44.519519;6.387515;10000.0;10000.0;10000.0;1.0;6.0;810.8807843001881;False;True;True;False;True;present_in_actual_and_prediction
+23;rue de la combette/ hlm;05164pc00025;2 rue saint-férréol;savines-le-lac;5160;44.526994;6.405391;5000.0;5000.0;5000.0;1.0;3.0;322.34355312893746;False;True;True;False;True;present_in_actual_and_prediction
+24;centre village;05163pc00026;764 route du village;le sauze-du-lac;5160;44.526994;6.405391;5000.0;5000.0;5000.0;1.0;8.0;367.0866625691457;False;True;True;False;True;present_in_actual_and_prediction
+25;cimetière;05163pc00027;72 chemin du cimetière;le sauze-du-lac;5160;44.479102;6.315134;;;;;;;False;False;False;True;False;listed_as_disappeared
+26;port st pierre;05163pc00028;650 chemin de port saint-pierre;le sauze-du-lac;5160;44.476396;6.31621;5000.0;5000.0;5000.0;1.0;1.0;154.3550165380375;False;True;True;False;True;present_in_actual_and_prediction
+27;plage port st pierre;05163pc00029;1226 chemin de port saint-pierre;le sauze-du-lac;5160;44.467598;6.323621;5000.0;5000.0;5000.0;1.0;2.0;253.25493490130197;False;True;True;False;True;present_in_actual_and_prediction
+28;les chevaliers;04154pc00030;pré de capitaine;pontis;5160;44.508781;6.363622;5000.0;5000.0;5000.0;1.0;2.0;302.8035911167113;False;True;True;False;True;present_in_actual_and_prediction
+29;pav centre village;05130pc00031;135 route de chorges;saint apollinaire;5160;44.555691;6.360185;5000.0;5000.0;5000.0;1.0;6.0;359.9154574645368;False;True;True;False;True;present_in_actual_and_prediction
+30;les crozans;05130pc00032;1638 route de savines;saint apollinaire;5160;44.549308;6.36286;5000.0;5000.0;5000.0;1.0;1.0;472.4622030237581;False;True;True;False;True;present_in_actual_and_prediction
+31;ponts des vignes (rn 94);05106pc00033;1 impasse du pré;prunieres;5230;44.531968;6.325218;5000.0;5000.0;5000.0;1.0;2.0;420.6649219734419;False;True;True;False;True;present_in_actual_and_prediction
+32;place de la mairie;05106pc00034;30 route de prunières;prunieres;5230;44.542344;6.332655;5000.0;5000.0;5000.0;1.0;2.0;480.19039619207615;False;True;True;False;True;present_in_actual_and_prediction
+33;pra perier;05106pc00035;25 route de pra périer;prunieres;5230;44.540427;6.338296;5000.0;5000.0;5000.0;1.0;5.0;402.2292221952993;False;True;True;False;True;present_in_actual_and_prediction
+34;le serre;05106pc00036;162 route de chabrière;prunieres;5230;44.54947;6.328987;5000.0;5000.0;5000.0;1.0;3.0;434.07043407043403;False;True;True;False;True;present_in_actual_and_prediction
+35;centre village / bascule / eglise;05106pc00037;2 route de chabrière;prunieres;5230;44.543702;6.326666;5000.0;5000.0;5000.0;1.0;2.0;475.91354075797227;False;True;True;False;True;present_in_actual_and_prediction
+36;pra prunier;05114pc00038;77 charrière des chalets d’estive;reallon;5160;44.577244;6.365925;5000.0;5000.0;5000.0;1.0;1.0;472.51535674909434;False;True;True;False;True;present_in_actual_and_prediction
+37;parking central;05114pc00039;584 charrière grande de pra goudin;reallon;5160;44.575953;6.361514;5000.0;5000.0;5000.0;1.0;1.0;472.4622030237581;False;True;True;False;True;present_in_actual_and_prediction
+38;bas de la station;05114pc00040;4 charrière grande de pra goudin;reallon;5160;44.574402;6.365035;10000.0;10000.0;10000.0;1.0;1.0;945.0307134981887;False;True;True;False;True;present_in_actual_and_prediction
+39;devant commerces;05114pc00041;388 charrière grande de pra goudin;reallon;5160;44.577214;6.363201;10000.0;10000.0;10000.0;1.0;1.0;944.2431879036069;False;True;True;False;True;present_in_actual_and_prediction
+40;centre  de vacances chadenas;05111pc00042;319 chemin de chadenas;puy-sanieres;5200;44.547358;6.461433;5000.0;5000.0;5000.0;1.0;4.0;388.57049953257734;False;True;True;False;True;present_in_actual_and_prediction
+41;ime centre jean cluzel;05164pc00043;17 route de réallon;savines-le-lac;5160;44.538977;6.378694;5000.0;5000.0;5000.0;1.0;3.0;394.0921181576368;False;True;True;False;True;present_in_actual_and_prediction
+42;cv vtf les pigneroux;05164pc00044;1 route des pigneroux;savines-le-lac;5160;44.551868;6.376052;5000.0;5000.0;5000.0;1.0;5.0;419.1516169676607;False;True;True;False;True;present_in_actual_and_prediction
+43;camping le roustou;05106pc00045;32 chemin du roustou;prunieres;5230;44.523053;6.340976;10000.0;5000.0;10000.0;2.0;4.0;861.9128243493326;False;True;True;False;True;present_in_actual_and_prediction
+44;camping le nautic;05106pc00046;255 route du lac;prunieres;5230;44.527258;6.358344;5000.0;5000.0;5000.0;1.0;2.0;450.4220738314225;False;True;True;False;True;present_in_actual_and_prediction
+45;cv ccas / maison centrale;05164pc00047;1 route du sauze;savines-le-lac;5160;44.517926;6.384902;5000.0;5000.0;5000.0;1.0;1.0;367.4926501469971;False;True;True;False;True;present_in_actual_and_prediction
+46;montagne aux marmottes;05163pc00048;444 route départementale 954;le sauze-du-lac;5160;44.47243;6.327381;5000.0;5000.0;5000.0;1.0;2.0;480.47039059218815;False;True;True;False;True;present_in_actual_and_prediction
+47;demoiselles coiffées / souvenirs;05163pc00049;507 route des demoiselles coiffées;le sauze-du-lac;5160;44.494644;6.340876;5000.0;5000.0;5000.0;1.0;3.0;349.29301413971723;False;True;True;False;True;present_in_actual_and_prediction
+48;camping la palatrière;05163pc00050;201 route d’orbanne;le sauze-du-lac;5160;44.498575;6.344786;5000.0;5000.0;5000.0;1.0;1.0;366.6834677419355;False;True;True;False;True;present_in_actual_and_prediction
+49;camping de st apollinaire;05130pc00051;2353 route du lac;saint apollinaire;5160;44.561583;6.346529;5000.0;5000.0;5000.0;1.0;1.0;408.72578358796665;False;True;True;False;True;present_in_actual_and_prediction
+50;camping les granges;04154pc00052;;pontis;5160;44.51404;6.364286;5000.0;5000.0;5000.0;1.0;7.0;355.88284706277653;False;True;True;False;True;present_in_actual_and_prediction
+51;camping les chappas;04154pc00053;;pontis;5160;44.514355;6.362179;5000.0;5000.0;5000.0;1.0;2.0;267.3026730267303;False;True;True;False;True;present_in_actual_and_prediction
+52;jeunesse et avenir;04154pc00054;;pontis;5160;44.509928;6.355159;;;;;;;False;False;False;True;False;listed_as_disappeared
+53;centre vacances val ubaye;05012pc00055;1214 chemin de la serbie;baratier;5200;44.526126;6.500747;;;;;;;False;False;False;True;False;listed_as_disappeared
+54;hôtel restaurant les peupliers;05012pc00056;239 chemin de lesdier;baratier;5200;44.536388;6.491931;5000.0;5000.0;5000.0;1.0;3.0;360.1034551362822;False;True;True;False;True;present_in_actual_and_prediction
+55;décheterie de savines le lac;05164pc00057;2 chemin de la chapelle;savines-le-lac;5160;44.545509;6.393907;5000.0;5000.0;5000.0;1.0;2.0;387.90387903879036;False;True;True;False;True;present_in_actual_and_prediction
+56;optex;05164pc00058;7 avenue du faubourg;savines-le-lac;5160;44.523307;6.399009;;;;;;;False;False;False;True;False;listed_as_disappeared
+57;gcu camping / snack;05164pc00059;3 allee des alouettes;savines-le-lac;5160;44.516639;6.376639;;;;;;;False;False;False;True;False;listed_as_disappeared
+58;cv ccas  / camp d'ados / pré d'emeraude;05164pc00060;4 impasse de la galinette;savines-le-lac;5160;44.517377;6.369304;5000.0;5000.0;5000.0;1.0;1.0;367.4926501469971;False;True;True;False;True;present_in_actual_and_prediction
+59;pré d'emeraude / la plage;05164pc00061;6 rue des chardonnerets;savines-le-lac;5160;44.519106;6.37241;4000.0;4000.0;4000.0;1.0;4.0;250.8312430729744;False;True;True;False;True;present_in_actual_and_prediction
+60;maison de retraite savines le lac;05164pc00062;2 rue des marronniers;savines-le-lac;5160;44.526869;6.404488;5000.0;5000.0;5000.0;1.0;16.0;361.19909700225753;False;True;True;False;True;present_in_actual_and_prediction
+61;centre village;04154pc00063;champ audin;pontis;5160;44.503941;6.357085;5000.0;5000.0;5000.0;1.0;1.0;153.7298387096774;False;True;True;False;True;present_in_actual_and_prediction
+62;riou bourdou;05164pc00064;;savines-le-lac;5160;44.530368;6.37143;3000.0;3000.0;3000.0;1.0;1.0;245.7983193277311;False;True;True;False;True;present_in_actual_and_prediction
+63;les gourres;05106pc00065;6 chemin des blanchons;prunieres;5230;44.55281;6.326178;5000.0;5000.0;5000.0;1.0;1.0;492.20349661363997;False;True;True;False;True;present_in_actual_and_prediction
+64;le moulin, petit liou, ctm;05012pc00066;230 route des vachères;baratier;5200;44.549218;6.48752;10000.0;5000.0;10000.0;2.0;9.0;814.5977866500689;False;True;True;False;True;present_in_actual_and_prediction
+65;le viautaud, direction la mûre;05012pc00067;762 route de pra fouran;baratier;5200;44.541682;6.492813;5000.0;5000.0;5000.0;1.0;4.0;343.7326747643768;False;True;True;False;True;present_in_actual_and_prediction
+66;square charles gieu;05012pc00068;102 impasse du serre;baratier;5200;44.539092;6.48763;5000.0;5000.0;5000.0;1.0;5.0;408.4036375588912;False;True;True;False;True;present_in_actual_and_prediction
+67;embranchement ailloud, imp des aubépines;05012pc00069;17 impasse des aubépines;baratier;5200;44.541171;6.490093;5000.0;5000.0;5000.0;1.0;7.0;403.40193196136084;False;True;True;False;True;present_in_actual_and_prediction
+68;square des baladins;05012pc00070;376 chemin des fruits d’or;baratier;5200;44.539818;6.486499;5000.0;5000.0;5000.0;1.0;4.0;431.01637967240663;False;True;True;False;True;present_in_actual_and_prediction
+69;pav le provence;05164pc00071;7 avenue du faubourg;savines-le-lac;5160;44.522403;6.39957;5000.0;5000.0;5000.0;1.0;3.0;400.05040005040007;False;True;True;False;True;present_in_actual_and_prediction
+70;parking du cimetière;05012pc00072;10 chemin de lesdier;baratier;5200;44.538369;6.491999;10000.0;10000.0;10000.0;1.0;7.0;796.3815523786446;False;True;True;False;True;present_in_actual_and_prediction
+71;entrée village, place des lavandières;05012pc00073;28 place des lavandières;baratier;5200;44.5383;6.496947;5000.0;5000.0;5000.0;1.0;7.0;406.4136772408341;False;True;True;False;True;present_in_actual_and_prediction
+72;pav pont de vachères;05012pc00074;1765 route des orres;baratier;5200;44.537649;6.497446;5000.0;5000.0;5000.0;1.0;6.0;418.3582995006767;False;True;True;False;True;present_in_actual_and_prediction
+73;baie des italiens / eaux douces;05045pc00075;;crots;5200;44.531262;6.429998;10000.0;10000.0;10000.0;1.0;4.0;595.7982977191494;False;True;True;False;True;present_in_actual_and_prediction
+74;sortie embrun;05045pc00076;466 rue de vicherette;crots;5230;44.537871;6.474201;5000.0;5000.0;5000.0;1.0;13.0;381.6434654562567;False;True;True;False;True;present_in_actual_and_prediction
+75;ecole de crots;05045pc00077;route de chanterenne;crots;5200;44.533991;6.468497;5000.0;5000.0;5000.0;1.0;7.0;363.0378630378631;False;True;True;False;True;present_in_actual_and_prediction
+76;pav sortie de gap;05045pc00078;60 route de chanterenne;crots;5200;44.533314;6.46717;10000.0;5000.0;10000.0;2.0;14.0;771.4251154164064;False;True;True;False;True;present_in_actual_and_prediction
+77;parking au dessus de la mairie / picomtal;05045pc00079;154 avenue du château;crots;5200;44.532887;6.470976;5000.0;5000.0;5000.0;1.0;14.0;387.1215484861939;False;True;True;False;True;present_in_actual_and_prediction
+78;route du poët croisement route de baratier;05045pc00080;7 rue du poët;crots;5200;44.531571;6.481536;5000.0;5000.0;5000.0;1.0;4.0;378.43239485575253;False;True;True;False;True;present_in_actual_and_prediction
+79;entrée du forest;05045pc00081;5 chemin du forest;crots;5200;44.524612;6.467943;5000.0;5000.0;5000.0;1.0;4.0;411.01842196732713;False;True;True;False;True;present_in_actual_and_prediction
+80;quartier st jean;05045pc00082;83 route de beauvillard;crots;5200;44.511218;6.468579;5000.0;5000.0;5000.0;1.0;1.0;416.60103953378484;False;True;True;False;True;present_in_actual_and_prediction
+81;les thozans parking / la montagne;05045pc00083;151 chemin de la draye;crots;5200;44.495129;6.471867;5000.0;5000.0;5000.0;1.0;4.0;402.57040257040256;False;True;True;False;True;present_in_actual_and_prediction
+82;montmirail;05045pc00084;10 route de montmirail;crots;5200;44.531589;6.439892;5000.0;5000.0;5000.0;1.0;2.0;426.4451094660576;False;True;True;False;True;present_in_actual_and_prediction
+83;sortie beauvillard;05045pc00085;200 chemin du canal;crots;5200;44.520352;6.457252;5000.0;5000.0;5000.0;1.0;2.0;388.3538835388355;False;True;True;False;True;present_in_actual_and_prediction
+84;abbaye de boscodon;05045pc00086;3815 route de boscodon;crots;5200;44.499784;6.456003;5000.0;5000.0;5000.0;1.0;2.0;390.601838126297;False;True;True;False;True;present_in_actual_and_prediction
+85;za des moulins;05045pc00087;593 chemin du lac;crots;5200;44.529064;6.447605;4000.0;4000.0;4000.0;1.0;14.0;320.1648650750447;False;True;True;False;True;present_in_actual_and_prediction
+86;les dourioux;05045pc00088;11 chemin des bosquis;crots;5200;44.508045;6.469142;5000.0;5000.0;5000.0;1.0;4.0;412.0117597648047;False;True;True;False;True;present_in_actual_and_prediction
+87;camping du petit liou;05012pc00089;25 ancienne route de baratier;baratier;5200;44.546849;6.49053;;;;;;;False;False;False;True;False;listed_as_disappeared
+88;chemin des sarments;05046pc00090;19 rue des vignes;embrun;5200;44.562353;6.486729;5000.0;5000.0;5000.0;1.0;5.0;396.0775720390052;False;True;True;False;True;present_in_actual_and_prediction
+89;la chaussière;05046pc00091;4 rue du bois vézin;embrun;5200;44.567943;6.501936;10000.0;5000.0;10000.0;2.0;15.0;737.1529947785416;False;True;True;False;True;present_in_actual_and_prediction
+90;parking paramart;05046pc00092;19bis avenue du general nicolas;embrun;5200;44.568081;6.497755;5000.0;5000.0;5000.0;1.0;7.0;390.3910106789498;False;True;True;False;True;present_in_actual_and_prediction
+91;bd pasteur bas;05046pc00093;12 boulevard pasteur;embrun;5200;44.56343;6.492777;10000.0;10000.0;10000.0;1.0;9.0;754.9369413925884;False;True;True;False;True;present_in_actual_and_prediction
+92;bd pasteur crédit agricole;05046pc00094;42 boulevard pasteur;embrun;5200;44.565044;6.495005;5000.0;5000.0;5000.0;1.0;13.0;374.5481272593637;False;True;True;False;True;present_in_actual_and_prediction
+93;bd pasteur farandole;05046pc00095;13 rue de la tannerie;embrun;5200;44.564165;6.493576;10000.0;5000.0;10000.0;2.0;17.0;762.067231160912;False;True;True;False;True;present_in_actual_and_prediction
+94;bd pasteur la poste;05046pc00096;25 boulevard pasteur;embrun;5200;44.565579;6.496121;5000.0;5000.0;5000.0;1.0;5.0;340.19727842177264;False;True;True;False;True;present_in_actual_and_prediction
+95;pav piscine;05046pc00097;11 hameau du lac;embrun;5200;44.551121;6.481862;5000.0;5000.0;5000.0;1.0;6.0;350.97317550316666;False;True;True;False;True;present_in_actual_and_prediction
+96;pav plan d'eau commerces;05046pc00098;10 avenue du lac;embrun;5200;44.550952;6.478112;5000.0;5000.0;5000.0;1.0;10.0;392.64430444406605;False;True;True;False;True;present_in_actual_and_prediction
+97;parc des 4 soleils;05046pc00099;27 avenue des acacias;embrun;5200;44.555434;6.481998;15000.0;5000.0;15000.0;3.0;16.0;1147.886383738589;False;True;True;False;True;present_in_actual_and_prediction
+98;parking de la libération - leader price;05046pc00100;2 esplanade de la résistance;embrun;5200;44.562419;6.491968;5000.0;5000.0;5000.0;1.0;16.0;382.4628824628824;False;True;True;False;True;present_in_actual_and_prediction
+99;les chardouires;05046pc00101;78 route de chalvet;embrun;5200;44.574739;6.500121;10000.0;10000.0;10000.0;1.0;7.0;782.0534650093649;False;True;True;False;True;present_in_actual_and_prediction
+100;pav rue dunant (derrière la gare);05046pc00102;1 avenue du general nicolas;embrun;5200;44.566477;6.49524;5000.0;5000.0;5000.0;1.0;8.0;331.3495254946115;False;True;True;False;True;present_in_actual_and_prediction
+101;vignes iv pav;05046pc00103;2 rue saint-georges;embrun;5200;44.561658;6.484701;5000.0;5000.0;5000.0;1.0;5.0;376.9971271609294;False;True;True;False;True;present_in_actual_and_prediction
+102;cimetière pav;05046pc00104;4 route des puys;embrun;5200;44.559865;6.484853;5000.0;5000.0;5000.0;1.0;6.0;354.7771617827058;False;True;True;False;True;present_in_actual_and_prediction
+103;st surnin hlm;05046pc00105;5 rue du mont guillaume;embrun;5200;44.57008;6.507153;5000.0;5000.0;5000.0;1.0;8.0;344.278090720427;False;True;True;False;True;present_in_actual_and_prediction
+104;aire des gens du voyage;05046pc00106;route de la madeleine;embrun;5200;44.55424;6.50032;5000.0;5000.0;5000.0;1.0;5.0;395.7091775923718;False;True;True;False;True;present_in_actual_and_prediction
+105;avenue des acacias / terrains de tennis / rés lupins;05046pc00107;19 avenue des acacias;embrun;5200;44.554418;6.480138;5000.0;5000.0;5000.0;1.0;8.0;373.3076390947722;False;True;True;False;True;present_in_actual_and_prediction
+106;chemin de chadenas / face rés petit nice;05046pc00108;30 chemin de chadenas;embrun;5200;44.553904;6.478034;5000.0;5000.0;5000.0;1.0;3.0;351.3929721405571;False;True;True;False;True;present_in_actual_and_prediction
+107;pontfrache;05046pc00109;41 avenue charles de gaulle;embrun;5200;44.569909;6.502133;5000.0;5000.0;5000.0;1.0;16.0;360.65689813831676;False;True;True;False;True;present_in_actual_and_prediction
+108;immeuble champ de mars;05046pc00110;7 avenue de verdun;embrun;5200;44.565944;6.498144;5000.0;5000.0;5000.0;1.0;8.0;380.2869333638785;False;True;True;False;True;present_in_actual_and_prediction
+109;chemin des croix;05046pc00111;8 rue du maréchal de lattre de tassigny;embrun;5200;44.565061;6.499288;5000.0;5000.0;5000.0;1.0;8.0;369.74278762599926;False;True;True;False;True;present_in_actual_and_prediction
+110;edf / route de st andré;05046pc00112;23 rue edouard przybylski;embrun;5200;44.566887;6.501399;5000.0;5000.0;5000.0;1.0;11.0;348.6847180436627;False;True;True;False;True;present_in_actual_and_prediction
+111;hlm rochassons;05046pc00113;10 rue des rochassons;embrun;5200;44.566097;6.500498;5000.0;5000.0;5000.0;1.0;17.0;382.3006225911651;False;True;True;False;True;present_in_actual_and_prediction
+112;gare sncf / jardins du réal;05046pc00114;5 avenue charles de gaulle;embrun;5200;44.567219;6.49787;5000.0;5000.0;5000.0;1.0;13.0;370.46692156181206;False;True;True;False;True;present_in_actual_and_prediction
+113;le moulin (montée de chalvet);05046pc00115;10 route de chalvet;embrun;5200;44.570897;6.498936;5000.0;5000.0;5000.0;1.0;6.0;383.3230665845327;False;True;True;False;True;present_in_actual_and_prediction
+114;oratoire chalvet;05046pc00116;1 chemin du clot des nevières;embrun;5200;44.581171;6.503171;5000.0;5000.0;5000.0;1.0;5.0;388.95888748891696;False;True;True;False;True;present_in_actual_and_prediction
+115;champ bossu;05046pc00117;8 route de caléyères;embrun;5200;44.567043;6.492188;10000.0;10000.0;10000.0;1.0;6.0;766.8506172445691;False;True;True;False;True;present_in_actual_and_prediction
+116;au dessus marigny / rue des pins;05046pc00118;20 rue des pins;embrun;5200;44.565736;6.48813;5000.0;5000.0;5000.0;1.0;4.0;392.98748696558914;False;True;True;False;True;present_in_actual_and_prediction
+117;rue isnel centre / côté mairie;05046pc00119;1 rue isnel;embrun;5200;44.564002;6.496174;;;;;;;False;False;False;False;False;absent_from_actual_and_prediction
+118;rue des vendanges / rue des violettes;05046pc00120;16 rue des violettes;embrun;5200;44.564163;6.488271;5000.0;5000.0;5000.0;1.0;4.0;376.5447055972861;False;True;True;False;True;present_in_actual_and_prediction
+119;av des vignes /rue des vendanges;05046pc00121;1 hameau des vignes;embrun;5200;44.562273;6.483677;5000.0;5000.0;5000.0;1.0;6.0;384.11692706458354;False;True;True;False;True;present_in_actual_and_prediction
+120;pervenches - cîmes : au dessus de st esprit / bât peller;05046pc00122;10 rue du saint esprit;embrun;5200;44.562357;6.488349;5000.0;5000.0;5000.0;1.0;6.0;385.37691698466415;False;True;True;False;True;present_in_actual_and_prediction
+121;face centre aéré / tour des portes;05046pc00123;18 promenade du tour des portes;embrun;5200;44.565397;6.493121;5000.0;5000.0;5000.0;1.0;3.0;366.97536697536697;False;True;True;False;True;present_in_actual_and_prediction
+122;au-dessus du lep / weldom;05046pc00124;4 rue de la plaine sous le roc;embrun;5200;44.556137;6.484111;5000.0;5000.0;5000.0;1.0;16.0;382.0567852986087;False;True;True;False;True;present_in_actual_and_prediction
+123;la truite qui parle / bar des pêcheurs;05046pc00125;2 impasse des merisiers;embrun;5200;44.552574;6.484344;10000.0;5000.0;10000.0;2.0;5.0;780.9566162664295;False;True;True;False;True;present_in_actual_and_prediction
+124;pont fourré;05046pc00126;28 avenue justin gras;embrun;5200;44.558788;6.48425;5000.0;5000.0;5000.0;1.0;17.0;378.5262617542059;False;True;True;False;True;present_in_actual_and_prediction
+125;haut de la belotte / st jacques;05046pc00127;30 route de caléyères;embrun;5200;44.566105;6.486039;5000.0;5000.0;5000.0;1.0;7.0;397.04317634541076;False;True;True;False;True;present_in_actual_and_prediction
+126;petit puy / les terrasses;05046pc00128;2 route du petit puy;embrun;5200;44.561846;6.470994;5000.0;5000.0;5000.0;1.0;2.0;376.592468150637;False;True;True;False;True;present_in_actual_and_prediction
+127;hameau caléyère;05046pc00129;66 route de caléyères;embrun;5200;44.571278;6.483528;5000.0;5000.0;5000.0;1.0;4.0;391.4321713565729;False;True;True;False;True;present_in_actual_and_prediction
+128;square lapeyrouse;05046pc00130;1 rue pierre et marie curie;embrun;5200;44.562624;6.493601;5000.0;5000.0;5000.0;1.0;16.0;382.5169089590738;False;True;True;False;True;present_in_actual_and_prediction
+129;le boussolenc;05046pc00131;25 avenue charles de gaulle;embrun;5200;44.568343;6.500316;5000.0;5000.0;5000.0;1.0;9.0;380.47880478804785;False;True;True;False;True;present_in_actual_and_prediction
+130;hlm le roc / devant hôpital;05046pc00132;13 rue pierre et marie curie;embrun;5200;44.561734;6.493021;5000.0;5000.0;5000.0;1.0;9.0;376.95037695037695;False;True;True;False;True;present_in_actual_and_prediction
+131;rue sénateur bonniard;05046pc00133;6 rue du senateur bonniard;embrun;5200;44.562876;6.496055;5000.0;5000.0;5000.0;1.0;15.0;372.3855123593961;False;True;True;False;True;present_in_actual_and_prediction
+132;rue des acacias / rue du rif clair;05046pc00134;12 avenue des acacias;embrun;5200;44.55319;6.479328;5000.0;5000.0;5000.0;1.0;5.0;364.0054600819013;False;True;True;False;True;present_in_actual_and_prediction
+133;ste marthe;05046pc00135;15 chemin de chadenas;embrun;5200;44.557891;6.48224;5000.0;5000.0;5000.0;1.0;3.0;325.99620493358634;False;True;True;False;True;present_in_actual_and_prediction
+134;chemin de l'aigle;05098pc00136;4 chemin de l’aigle;les orres;5200;44.494385;6.554539;;;;;;;False;False;False;True;False;listed_as_disappeared
+135;côte chamois;05046pc00137;1 chemin cote chamois;embrun;5200;44.561952;6.490615;5000.0;5000.0;5000.0;1.0;8.0;342.8495639775855;False;True;True;False;True;present_in_actual_and_prediction
+136;chanchore;05046pc00138;70 route de la madeleine;embrun;5200;44.542333;6.497518;10000.0;10000.0;10000.0;1.0;9.0;721.1595379437483;False;True;True;False;True;present_in_actual_and_prediction
+137;place de l'archevêché;05046pc00139;rue de l’archevéché;embrun;5200;44.562665;6.495395;5000.0;5000.0;5000.0;1.0;16.0;367.5677945932324;False;True;True;False;True;present_in_actual_and_prediction
+138;place dosse;05046pc00140;22 place du general dosse;embrun;5200;44.564964;6.49602;5000.0;5000.0;5000.0;1.0;9.0;359.966979492527;False;True;True;False;True;present_in_actual_and_prediction
+139;camping les grillons;05046pc00141;1 route de la madeleine;embrun;5200;44.548105;6.49628;5000.0;5000.0;5000.0;1.0;1.0;450.79098418031634;False;True;True;False;True;present_in_actual_and_prediction
+140;place aux herbes;05046pc00142;16 place du general dosse;embrun;5200;44.56488;6.495881;5000.0;5000.0;10000.0;2.0;23.0;377.7803055492361;False;True;True;False;True;present_in_actual_and_prediction
+141;rue victor maurel;05046pc00143;45 rue victor maurel;embrun;5200;44.5646;6.497253;5000.0;5000.0;5000.0;1.0;16.0;354.84895358485545;False;True;True;False;True;present_in_actual_and_prediction
+142;bd pasteur cinema;05046pc00144;29 boulevard pasteur;embrun;5200;44.565566;6.496542;5000.0;5000.0;5000.0;1.0;17.0;375.12859159310034;False;True;True;False;True;present_in_actual_and_prediction
+143;delaroche pav;05046pc00145;18 rue colonel bonnet;embrun;5200;44.5639;6.49797;10000.0;5000.0;10000.0;2.0;15.0;721.6226580475512;False;True;True;False;True;present_in_actual_and_prediction
+144;face au super u / entraigues;05046pc00146;1 avenue des métiers;embrun;5200;44.551156;6.486694;5000.0;5000.0;5000.0;1.0;7.0;366.8100451859577;False;True;True;False;True;present_in_actual_and_prediction
+145;déchèterie;05046pc00147;;embrun;5200;44.585437;6.515581;;;;;;;False;False;False;True;False;listed_as_disappeared
+146;cna;05046pc00148;64 chemin de chadenas;embrun;5200;44.548849;6.466587;5000.0;5000.0;5000.0;1.0;4.0;391.75883149003687;False;True;True;False;True;present_in_actual_and_prediction
+147;cna touristes;05046pc00149;9 chemin de chadenas;embrun;5200;44.547431;6.466735;3000.0;3000.0;3000.0;1.0;2.0;244.91403071269193;False;True;True;False;True;present_in_actual_and_prediction
+148;chalets de chalvet;05046pc00150;1 rue de la tarriere;embrun;5200;44.577952;6.497808;5000.0;5000.0;5000.0;1.0;3.0;379.57537957537966;False;True;True;False;True;present_in_actual_and_prediction
+149;rue des capucines;05046pc00151;15 rue des capucines;embrun;5200;44.563752;6.485537;5000.0;5000.0;5000.0;1.0;7.0;393.8890638870594;False;True;True;False;True;present_in_actual_and_prediction
+150;rue de la levée;05046pc00152;32 rue de la levee;embrun;5200;44.55454;6.482018;5000.0;5000.0;5000.0;1.0;5.0;397.7210474416566;False;True;True;False;True;present_in_actual_and_prediction
+151;le diamant / l'eterlou;05046pc00153;31 route de chalvet;embrun;5200;44.573696;6.501765;5000.0;5000.0;5000.0;1.0;2.0;425.24149517009664;False;True;True;False;True;present_in_actual_and_prediction
+152;la robeyère;05046pc00154;19 rue de la robéyère;embrun;5200;44.559627;6.488378;5000.0;5000.0;5000.0;1.0;4.0;383.24233515329695;False;True;True;False;True;present_in_actual_and_prediction
+153;le vautisse;05046pc00155;46 promenade du tour des portes;embrun;5200;44.562941;6.490977;5000.0;5000.0;5000.0;1.0;5.0;396.49636223224815;False;True;True;False;True;present_in_actual_and_prediction
+154;paradis;05046pc00156;4 chemin de paradis;embrun;5200;44.567369;6.506;5000.0;5000.0;5000.0;1.0;2.0;366.9869270751299;False;True;True;False;True;present_in_actual_and_prediction
+155;st surnin rue du razis;05046pc00157;4 rue du razis;embrun;5200;44.569999;6.50608;5000.0;5000.0;5000.0;1.0;3.0;358.7853587853589;False;True;True;False;True;present_in_actual_and_prediction
+156;les orres sortie village sortie côté station;05098pc00158;2 impasse serre-lacroix;les orres;5200;44.512886;6.554414;5000.0;5000.0;5000.0;1.0;2.0;422.680412371134;False;True;True;False;True;present_in_actual_and_prediction
+157;les violettes;05046pc00159;2 allée des fonts couvertes;embrun;5200;44.564802;6.49053;5000.0;5000.0;5000.0;1.0;4.0;399.12540764897716;False;True;True;False;True;present_in_actual_and_prediction
+158;st esprit hlm;05046pc00160;1 rue des allieres;embrun;5200;44.562539;6.488873;5000.0;5000.0;5000.0;1.0;7.0;391.3999249370007;False;True;True;False;True;present_in_actual_and_prediction
+159;château de caleyère;05046pc00161;96 route de caléyères;embrun;5200;44.575339;6.476133;5000.0;5000.0;5000.0;1.0;4.0;389.38696389629274;False;True;True;False;True;present_in_actual_and_prediction
+160;praveyral;05044pc00162;115 rue du brunel;crevoux;5200;44.546452;6.595205;5000.0;5000.0;5000.0;1.0;3.0;365.7404337157637;False;True;True;False;True;present_in_actual_and_prediction
+161;la chalp;05044pc00163;1 route du parpaillon;crevoux;5200;44.547742;6.619333;5000.0;5000.0;5000.0;1.0;2.0;408.3619702176403;False;True;True;False;True;present_in_actual_and_prediction
+162;centre village;05044pc00164;41 rue de la cime;crevoux;5200;44.547544;6.607383;5000.0;5000.0;5000.0;1.0;1.0;367.4926501469971;False;True;True;False;True;present_in_actual_and_prediction
+163;station;05044pc00165;14 route de pra vesqua;crevoux;5200;44.546489;6.605832;15000.0;15000.0;15000.0;1.0;2.0;951.2809743805122;False;True;True;False;True;present_in_actual_and_prediction
+164;foyer de ski de fond;05044pc00166;7 chemin des arnauds;crevoux;5200;44.548107;6.624334;5000.0;5000.0;5000.0;1.0;2.0;309.6030960309603;False;True;True;False;True;present_in_actual_and_prediction
+165;beauregard / lot les miroirs du lac;05156pc00167;15 route de beauregard;saint-sauveur;5200;44.548077;6.500547;5000.0;5000.0;5000.0;1.0;5.0;418.83906847410503;False;True;True;False;True;present_in_actual_and_prediction
+166;pav st sauveur;05156pc00168;1474 route de saint sauveur;saint-sauveur;5200;44.526434;6.519761;5000.0;5000.0;5000.0;1.0;8.0;363.2484751295782;False;True;True;False;True;present_in_actual_and_prediction
+167;les augustins / inter route des charniers;05156pc00169;348 route de saint sauveur;saint-sauveur;5200;44.539219;6.520989;5000.0;5000.0;5000.0;1.0;8.0;375.99877074370005;False;True;True;False;True;present_in_actual_and_prediction
+168;les manins / les gaillards;05156pc00170;1369 route des manins;saint-sauveur;5200;44.531836;6.526889;5000.0;5000.0;5000.0;1.0;3.0;377.3459778499901;False;True;True;False;True;present_in_actual_and_prediction
+169;le coin bas;05156pc00171;282 route du coin;saint-sauveur;5200;44.555492;6.527133;5000.0;5000.0;5000.0;1.0;1.0;251.994960100798;False;True;True;False;True;present_in_actual_and_prediction
+170;hameau des salettes;05156pc00172;159 route des sallettes;saint-sauveur;5200;44.521339;6.520823;5000.0;5000.0;5000.0;1.0;2.0;378.01228539927547;False;True;True;False;True;present_in_actual_and_prediction
+171;les sagnettes;05098pc00173;6 route des sagnettes;les orres;5200;44.50989;6.53525;5000.0;5000.0;5000.0;1.0;2.0;364.9536495364954;False;True;True;False;True;present_in_actual_and_prediction
+172;les orres sortie village;05098pc00174;1 rue de l’arenier;les orres;5200;44.512166;6.545302;5000.0;5000.0;5000.0;1.0;1.0;611.0877782444352;False;True;True;False;True;present_in_actual_and_prediction
+173;le mélezet caserne;05098pc00175;3 rue du cadran solaire;les orres;5200;44.503869;6.555301;5000.0;5000.0;5000.0;1.0;2.0;403.71692566148687;False;True;True;False;True;present_in_actual_and_prediction
+174;le forest;05098pc00176;1 impasse clot des lilas;les orres;5200;44.515211;6.563068;;;;;;;False;False;False;False;False;absent_from_actual_and_prediction
+175;les ribes;05098pc00177;11 rue de vachères;les orres;5200;44.512602;6.569166;5000.0;5000.0;5000.0;1.0;2.0;364.9536495364954;False;True;True;False;True;present_in_actual_and_prediction
+176;le mélezet entrée;05098pc00178;2 rue de pra chapelle;les orres;5200;44.506134;6.554228;5000.0;5000.0;5000.0;1.0;3.0;332.25014921413884;False;True;True;False;True;present_in_actual_and_prediction
+177;le mélezet bas;05098pc00179;20 rue font cordeille;les orres;5200;44.503364;6.550166;5000.0;5000.0;5000.0;1.0;1.0;611.0877782444352;False;True;True;False;True;present_in_actual_and_prediction
+178;pramouton;05098pc00180;20 route du boussolenc;les orres;5200;44.49685;6.554881;5000.0;5000.0;5000.0;1.0;7.0;378.264864155401;False;True;True;False;True;present_in_actual_and_prediction
+179;descente immeuble tennis hlm;05098pc00181;4 chemin de l’aigle;les orres;5200;44.494433;6.554605;10000.0;5000.0;10000.0;2.0;4.0;674.1042131513323;False;True;True;False;True;present_in_actual_and_prediction
+180;intersection rn prébois / l'estomac;05098pc00182;2 route de bois méans;les orres;5200;44.491136;6.553369;5000.0;5000.0;5000.0;1.0;2.0;310.65232141126296;False;True;True;False;True;present_in_actual_and_prediction
+181;pav des trois chemins;05098pc00184;54 chemin de croty;les orres;5200;44.516427;6.533457;5000.0;5000.0;5000.0;1.0;5.0;389.8279041180087;False;True;True;False;True;present_in_actual_and_prediction
+182;champs laccas;05098pc00185;16 traverse sainte-marguerite;les orres;5200;44.499608;6.555465;5000.0;5000.0;5000.0;1.0;6.0;394.9431595452764;False;True;True;False;True;present_in_actual_and_prediction
+183;le milieu intersection d994/d39;05128pc00186;mille hommes;saint-andre-d embrun;5200;44.591699;6.535586;5000.0;5000.0;5000.0;1.0;4.0;421.4704214704215;False;True;True;False;True;present_in_actual_and_prediction
+184;chabret;05128pc00187;le chabret;saint-andre-d embrun;5200;44.60358;6.547764;5000.0;5000.0;5000.0;1.0;3.0;356.7303653926922;False;True;True;False;True;present_in_actual_and_prediction
+185;chef-lieu;05128pc00188;80 place de la mairie;saint-andre-d embrun;5200;44.586194;6.534313;5000.0;5000.0;5000.0;1.0;7.0;406.84928054834563;False;True;True;False;True;present_in_actual_and_prediction
+186;les lagiers;05128pc00189;594 route de saluces;saint-andre-d embrun;5200;44.582892;6.534957;5000.0;5000.0;5000.0;1.0;1.0;451.2521656953851;False;True;True;False;True;present_in_actual_and_prediction
+187;serre lombard;05128pc00190;2515 route de crévoux;saint-andre-d embrun;5200;44.57812;6.52622;10000.0;5000.0;10000.0;2.0;7.0;792.3536611707108;False;True;True;False;True;present_in_actual_and_prediction
+188;les rencuraux;05128pc00191;4730 route de crévoux;saint-andre-d embrun;5200;44.572738;6.534754;10000.0;5000.0;10000.0;2.0;7.0;794.9316910879875;False;True;True;False;True;present_in_actual_and_prediction
+189;la pinée;05128pc00192;la pinèe;saint-andre-d embrun;5200;44.581028;6.528903;;;;;;;False;False;False;True;False;listed_as_disappeared
+190;le villard;05128pc00193;le villard;saint-andre-d embrun;5200;44.564916;6.547009;5000.0;5000.0;5000.0;1.0;1.0;451.2521656953851;False;True;True;False;True;present_in_actual_and_prediction
+191;serre bellon;05128pc00194;serre bellon;saint-andre-d embrun;5200;44.567005;6.521033;5000.0;5000.0;5000.0;1.0;3.0;373.19253614927703;False;True;True;False;True;present_in_actual_and_prediction
+192;route de prébois haut;05098pc00195;12 chemin du riou sec;les orres;5200;44.490767;6.556655;;;;;;;False;False;False;True;False;listed_as_disappeared
+193;centre village la forge;05036pc00196;35 rue des aubergeries;chateauroux-les-alpes;5380;44.613151;6.520265;5000.0;5000.0;5000.0;1.0;13.0;380.2697622539401;False;True;True;False;True;present_in_actual_and_prediction
+194;pav  tourrache;05036pc00197;17 avenue de la gare;chateauroux-les-alpes;5380;44.611564;6.525283;10000.0;5000.0;10000.0;2.0;10.0;772.3768286951391;False;True;True;False;True;present_in_actual_and_prediction
+195;parking mairie;05036pc00198;2 descente castel rudolphi;chateauroux-les-alpes;5380;44.613457;6.521837;10000.0;10000.0;10000.0;1.0;8.0;778.8108280170298;False;True;True;False;True;present_in_actual_and_prediction
+196;stade municipal;05036pc00199;18 chemin des aubépines;chateauroux-les-alpes;5380;44.609536;6.52431;5000.0;5000.0;5000.0;1.0;2.0;316.5852890218931;False;True;True;False;True;present_in_actual_and_prediction
+197;en face du garage collet;05036pc00200;39 route d’italie;chateauroux-les-alpes;5380;44.616872;6.521039;5000.0;5000.0;5000.0;1.0;8.0;393.22745767161047;False;True;True;False;True;present_in_actual_and_prediction
+198;fontfourane;05036pc00201;34 routes des chamousses;chateauroux-les-alpes;5380;44.621947;6.530552;5000.0;5000.0;5000.0;1.0;2.0;449.9640028797696;False;True;True;False;True;present_in_actual_and_prediction
+199;st marcellin;05036pc00202;430 route saint-marcellin;chateauroux-les-alpes;5380;44.619664;6.525003;5000.0;5000.0;5000.0;1.0;2.0;450.4220738314225;False;True;True;False;True;present_in_actual_and_prediction
+200;derrière cimetière communal;05036pc00203;50 chemin des pins;chateauroux-les-alpes;5380;44.614714;6.517396;10000.0;5000.0;10000.0;2.0;6.0;737.5573755737557;False;True;True;False;True;present_in_actual_and_prediction
+201;chapelle st roch;05036pc00204;883 route de saint-roch;chateauroux-les-alpes;5380;44.608563;6.512949;10000.0;10000.0;10000.0;1.0;7.0;739.794081647347;False;True;True;False;True;present_in_actual_and_prediction
+202;les garcins / les taxils;05036pc00205;10 chemin des chènevières;chateauroux-les-alpes;5380;44.613815;6.53128;5000.0;5000.0;5000.0;1.0;3.0;449.99100017999643;False;True;True;False;True;present_in_actual_and_prediction
+203;camping les pins;05036pc00206;2 impasse camping les pins;chateauroux-les-alpes;5380;44.616008;6.517415;5000.0;5000.0;5000.0;1.0;1.0;366.792664146717;False;True;True;False;True;present_in_actual_and_prediction
+204;camping du rabioux;05036pc00207;1500 route de la vague;chateauroux-les-alpes;5380;44.620804;6.546134;5000.0;5000.0;5000.0;1.0;1.0;492.090158196836;False;True;True;False;True;present_in_actual_and_prediction
+205;camping les cariamas;05036pc00208;999 chemins des traverses;chateauroux-les-alpes;5380;44.602998;6.522264;5000.0;5000.0;5000.0;1.0;4.0;422.0915581688366;False;True;True;False;True;present_in_actual_and_prediction
+206;camping les eygas;05036pc00209;617 chemin de fontmoline;chateauroux-les-alpes;5380;44.601649;6.527447;5000.0;5000.0;5000.0;1.0;3.0;454.58951245517113;False;True;True;False;True;present_in_actual_and_prediction
+207;camping la garenne (municipal crots);05045pc00211;1170 route de la plage;crots;5200;44.538318;6.454667;10000.0;10000.0;10000.0;1.0;1.0;734.5344588635504;False;True;True;False;True;present_in_actual_and_prediction
+208;camping manu;05045pc00212;route de la plage;crots;5200;44.538086;6.457303;;;;;;;False;False;False;True;False;listed_as_disappeared
+209;st etienne;05036pc00213;1147 route de saint-êtienne;chateauroux-les-alpes;5380;44.628345;6.532019;5000.0;5000.0;5000.0;1.0;2.0;450.4220738314225;False;True;True;False;True;present_in_actual_and_prediction
+210;les bartavelles;05045pc00214;807 route de gap;crots;5200;44.542298;6.478694;5000.0;5000.0;5000.0;1.0;7.0;393.0417341664738;False;True;True;False;True;present_in_actual_and_prediction
+211;camping la clapière (municipal embrun);05046pc00215;10 avenue du lac;embrun;5200;44.551077;6.477788;5000.0;5000.0;5000.0;1.0;1.0;366.6834677419355;False;True;True;False;True;present_in_actual_and_prediction
+212;camping les tourelles;05046pc00216;5 chemin de ste marthe;embrun;5200;44.558417;6.482232;5000.0;5000.0;5000.0;1.0;3.0;328.0134397312054;False;True;True;False;True;present_in_actual_and_prediction
+213;camping la vieille ferme;05046pc00217;12 allée du méâle;embrun;5200;44.554015;6.485847;5000.0;5000.0;5000.0;1.0;3.0;482.9903401931961;False;True;True;False;True;present_in_actual_and_prediction
+214;camping la madeleine;05046pc00218;1940 route de la madeleine;embrun;5200;44.556992;6.507277;5000.0;5000.0;5000.0;1.0;4.0;395.68693966561665;False;True;True;False;True;present_in_actual_and_prediction
+215;camping les esparons;05046pc00219;344 route de la madeleine;embrun;5200;44.544683;6.49818;;;;;;;False;False;False;True;False;listed_as_disappeared
+216;camping la tour;05046pc00220;7 route de la madeleine;embrun;5200;44.555564;6.506069;5000.0;5000.0;5000.0;1.0;3.0;450.7124164001163;False;True;True;False;True;present_in_actual_and_prediction
+217;st claude;05036pc00221;4 impasse des argousiers;chateauroux-les-alpes;5380;44.609174;6.518586;5000.0;5000.0;5000.0;1.0;2.0;414.9041490414904;False;True;True;False;True;present_in_actual_and_prediction
+218;futur antérieur;05046pc00222;43 route de chalvet;embrun;5200;44.574495;6.504044;5000.0;5000.0;5000.0;1.0;2.0;367.1248568155785;False;True;True;False;True;present_in_actual_and_prediction
+219;cité scolaire honoré romane;05046pc00223;10 chemin des rossignols;embrun;5200;44.568094;6.494468;5000.0;5000.0;5000.0;1.0;6.0;398.1319162923195;False;True;True;False;True;present_in_actual_and_prediction
+220;hôpital;05046pc00224;8 rue pierre et marie curie;embrun;5200;44.560897;6.49335;5000.0;5000.0;5000.0;1.0;22.0;388.7824096257254;False;True;True;False;True;present_in_actual_and_prediction
+221;route de prébois bas;05098pc00225;2 chemin du riou sec;les orres;5200;44.490663;6.553707;5000.0;5000.0;5000.0;1.0;2.0;364.692706145877;False;True;True;False;True;present_in_actual_and_prediction
+222;lep;05046pc00226;11 chemin sous le roc;embrun;5200;44.55675;6.486398;5000.0;5000.0;5000.0;1.0;4.0;403.59097531204475;False;True;True;False;True;present_in_actual_and_prediction
+223;hôtel restau château de la robeyère;05046pc00227;24 avenue justin gras;embrun;5200;44.559713;6.486228;5000.0;5000.0;5000.0;1.0;8.0;382.04316360816745;False;True;True;False;True;present_in_actual_and_prediction
+224;maison de retraite les chanterelles;05046pc00228;6 rue du maréchal de lattre de tassigny;embrun;5200;44.564429;6.498799;5000.0;5000.0;5000.0;1.0;15.0;380.17456644750405;False;True;True;False;True;present_in_actual_and_prediction
+225;maison de retraite lou village;05046pc00229;22 chemin des croix;embrun;5200;44.564787;6.501721;5000.0;5000.0;5000.0;1.0;16.0;381.5178815178815;False;True;True;False;True;present_in_actual_and_prediction
+226;super u;05046pc00230;17 avenue des métiers;embrun;5200;44.550527;6.488926;;;;;;;False;False;False;True;False;listed_as_disappeared
+227;entraigues i / teuteu;05046pc00231;14 rue des bouilleurs de crue;embrun;5200;44.552124;6.491989;5000.0;5000.0;5000.0;1.0;15.0;385.8334752256087;False;True;True;False;True;present_in_actual_and_prediction
+228;entraigues ii / régie de l'eau;05046pc00232;2 rue des ardoisiers;embrun;5200;44.551709;6.489024;5000.0;5000.0;5000.0;1.0;5.0;359.75993899001963;False;True;True;False;True;present_in_actual_and_prediction
+229;vague du rabioux;05036pc00233;1500 route de la vague;chateauroux-les-alpes;5380;44.618041;6.544578;;;;;;;False;False;False;True;False;listed_as_disappeared
+230;centre ucpa embrun;05046pc00234;4 impasse des merisiers;embrun;5200;44.551516;6.485039;5000.0;5000.0;5000.0;1.0;3.0;366.9676606467871;False;True;True;False;True;present_in_actual_and_prediction
+231;cv ucpa les orres;05098pc00235;2 traverse sainte-marguerite;les orres;5200;44.497833;6.554532;5000.0;5000.0;5000.0;1.0;3.0;401.3544729105418;False;True;True;False;True;present_in_actual_and_prediction
+232;centre de vacances epaf;05046pc00236;319 chemin de chadenas;embrun;5200;44.547349;6.461345;;;;;;;False;False;False;True;False;listed_as_disappeared
+233;la garenne commerces;05045pc00237;1170 route de la plage;crots;5200;44.538987;6.455889;10000.0;10000.0;10000.0;1.0;2.0;804.8089038219236;False;True;True;False;True;present_in_actual_and_prediction
+234;centre de vacances lou cabri;05012pc00238;84 impasse des baladins;baratier;5200;44.53907;6.484629;;;;;;;False;False;False;True;False;listed_as_disappeared
+235;camping les airelles;05012pc00239;602 chemin de la serbie;baratier;5200;44.530846;6.501309;5000.0;5000.0;5000.0;1.0;1.0;451.4909701805964;False;True;True;False;True;present_in_actual_and_prediction
+236;camping le verger;05012pc00240;8 impasse du vieux noyer;baratier;5200;44.538328;6.487338;5000.0;5000.0;5000.0;1.0;3.0;450.6374147643048;False;True;True;False;True;present_in_actual_and_prediction
+237;centre de vacances lpm;05012pc00241;227 chemin des clôsures;baratier;5200;44.54004;6.495226;5000.0;5000.0;5000.0;1.0;2.0;450.4220738314225;False;True;True;False;True;present_in_actual_and_prediction
+238;zone du liou derrière wc;05012pc00242;60 traverse des epis;baratier;5200;44.548083;6.481652;15000.0;5000.0;15000.0;3.0;18.0;1111.1111111111113;False;True;True;False;True;present_in_actual_and_prediction
+239;intermarché (colonne om);05012pc00243;60 traverse des epis;baratier;5200;44.547372;6.481156;5000.0;5000.0;5000.0;1.0;23.0;383.53063556714625;False;True;True;False;True;present_in_actual_and_prediction
+240;mac do;05012pc00244;60 traverse des epis;baratier;5200;44.547801;6.482529;5000.0;5000.0;5000.0;1.0;22.0;364.4618460513162;False;True;True;False;True;present_in_actual_and_prediction
+241;bouygues route de st andré / l'air du temps;05046pc00245;13 rue edouard przybylski;embrun;5200;44.566936;6.500174;5000.0;5000.0;5000.0;1.0;12.0;375.1912519125192;False;True;True;False;True;present_in_actual_and_prediction
+242;hôtel le lac;05046pc00246;1 rue des chardons;embrun;5200;44.551371;6.48258;5000.0;5000.0;5000.0;1.0;5.0;395.25876149143687;False;True;True;False;True;present_in_actual_and_prediction
+243;rochelaire;05046pc00247;10 avenue charles de gaulle;embrun;5200;44.567235;6.499102;5000.0;5000.0;5000.0;1.0;8.0;346.3306657585561;False;True;True;False;True;present_in_actual_and_prediction
+244;tourmaline;05046pc00248;18 chemin des croix;embrun;5200;44.564631;6.501177;5000.0;5000.0;5000.0;1.0;8.0;347.9839905128965;False;True;True;False;True;present_in_actual_and_prediction
+245;les vignes iii / route des puys;05046pc00249;10 route des puys;embrun;5200;44.559596;6.478999;5000.0;5000.0;5000.0;1.0;1.0;472.4622030237581;False;True;True;False;True;present_in_actual_and_prediction
+246;la gardette / route des puys;05046pc00250;1 rue du siebels;embrun;5200;44.560458;6.480021;5000.0;5000.0;5000.0;1.0;7.0;372.66779743154837;False;True;True;False;True;present_in_actual_and_prediction
+247;st alban;05036pc00251;;chateauroux-les-alpes;5380;44.635377;6.563243;5000.0;5000.0;5000.0;1.0;3.0;392.4656671286381;False;True;True;False;True;present_in_actual_and_prediction
+248;za des moulins lotissement;05045pc00252;rue de la montagnette;crots;5200;44.530675;6.451246;5000.0;5000.0;5000.0;1.0;3.0;381.70767862437003;False;True;True;False;True;present_in_actual_and_prediction
+249;gendarmerie;05098pc00253;1 chemin des mouflons;les orres;5200;44.493274;6.555625;10000.0;10000.0;10000.0;1.0;1.0;748.8074880748808;False;True;True;False;True;present_in_actual_and_prediction
+250;allée des chamois;05098pc00254;1 allée des fouonts;les orres;5200;44.495239;6.557009;10000.0;10000.0;10000.0;1.0;2.0;741.2234966979491;False;True;True;False;True;present_in_actual_and_prediction
+251;entrée station;05098pc00255;30 route du boussolenc;les orres;5200;44.492495;6.556172;5000.0;5000.0;5000.0;1.0;1.0;362.9032258064516;False;True;True;False;True;present_in_actual_and_prediction
+252;centre station;05098pc00256;4 allée des chamois;les orres;5200;44.494258;6.557244;30000.0;5000.0;30000.0;3.0;3.0;1383.9775637117425;False;True;True;False;True;present_in_actual_and_prediction
+253;résidence la gardette;05114pc00257;253 charrière grande de pra goudin;reallon;5160;44.576697;6.363793;10000.0;10000.0;10000.0;1.0;1.0;943.8717067583049;False;True;True;False;True;present_in_actual_and_prediction
+254;résidence la comète;05114pc00258;388 charrière grande de pra goudin;reallon;5160;44.577254;6.362939;15000.0;15000.0;15000.0;1.0;1.0;1416.7632679804444;False;True;True;False;True;present_in_actual_and_prediction
+255;plan d'eau;05114pc00259;l’iscle;reallon;5160;44.606157;6.337895;3000.0;3000.0;3000.0;1.0;1.0;283.41497550734783;False;True;True;False;True;present_in_actual_and_prediction
+256;centre station devant local carton;05098pc00260;7 place jean rippert;les orres;5200;44.485609;6.553238;;;;;;;False;False;False;True;False;listed_as_disappeared
+257;parking de prébois;05098pc00261;5 route de bois méans;les orres;5200;44.488173;6.551733;;;;;;;False;False;False;True;False;listed_as_disappeared
+258;semlore;05098pc00262;7 route de bois méans;les orres;5200;44.487651;6.5516;10000.0;10000.0;10000.0;1.0;1.0;726.5854682906341;False;True;True;False;True;present_in_actual_and_prediction
+259;route d'accès à bois méans;05098pc00263;30 route de bois méans;les orres;5200;44.483471;6.551918;;;;;;;False;False;False;True;False;listed_as_disappeared
+260;entrée haute bois méans (drapeaux);05098pc00264;28 route de bois méans;les orres;5200;44.482921;6.552531;;;;;;;False;False;False;True;False;listed_as_disappeared
+261;au dessus caisse remontée;05098pc00265;32 route de bois méans;les orres;5200;44.483854;6.553024;;;;;;;False;False;False;True;False;listed_as_disappeared
+262;en face caisse remontée;05098pc00266;32 route de bois méans;les orres;5200;44.483854;6.553024;10000.0;10000.0;10000.0;1.0;1.0;726.3072630726307;False;True;True;False;True;present_in_actual_and_prediction
+263;sous caisse remontée;05098pc00267;27 route de bois méans;les orres;5200;44.484547;6.553299;10000.0;10000.0;10000.0;1.0;1.0;726.356359324044;False;True;True;False;True;present_in_actual_and_prediction
+264;bas route principale bois méans;05098pc00268;40 route de bois méans;les orres;5200;44.484905;6.552459;10000.0;10000.0;10000.0;1.0;1.0;726.2313860252005;False;True;True;False;True;present_in_actual_and_prediction
+265;parking face spar;05098pc00269;40 route de bois méans;les orres;5200;44.484905;6.552459;;;;;;;False;False;False;True;False;listed_as_disappeared
+266;parking point sous 8 à 8;05098pc00270;7 place jean rippert;les orres;5200;44.485461;6.553236;15000.0;15000.0;15000.0;1.0;1.0;1089.2632137409644;False;True;True;False;True;present_in_actual_and_prediction
+267;fond du parking;05098pc00271;20 place jean rippert;les orres;5200;44.485656;6.554266;15000.0;15000.0;15000.0;1.0;1.0;1088.9782204355913;False;True;True;False;True;present_in_actual_and_prediction
+268;parking devant chalet cartons;05098pc00272;15 place jean rippert;les orres;5200;44.485482;6.553967;;;;;;;False;False;False;True;False;listed_as_disappeared
+269;fond point les monts du bois d'or;05098pc00273;7 place jean rippert;les orres;5200;44.485641;6.553242;10000.0;10000.0;10000.0;1.0;1.0;726.0985982044417;False;True;True;False;True;present_in_actual_and_prediction
+270;neuvière / les girauds / les maures;05046pc00274;84 route de chalvet;embrun;5200;44.584421;6.502554;5000.0;5000.0;5000.0;1.0;2.0;403.20733104238263;False;True;True;False;True;present_in_actual_and_prediction
+271;pep 05;05046pc00277;1 impasse du parpaillon;embrun;5200;44.572383;6.508502;5000.0;5000.0;5000.0;1.0;7.0;368.1193793853148;False;True;True;False;True;present_in_actual_and_prediction
+272;rue serre verger;05164pc00279;6 avenue de la combe d’or;savines-le-lac;5160;44.525909;6.405812;5000.0;5000.0;5000.0;1.0;3.0;451.95762751411644;False;True;True;False;True;present_in_actual_and_prediction
+273;les closures / entrée lpm;05012pc00280;222 chemin des clôsures;baratier;5200;44.539832;6.495278;5000.0;5000.0;5000.0;1.0;3.0;363.44306189951175;False;True;True;False;True;present_in_actual_and_prediction
+274;les terres du château;05012pc00281;388 chemin de lesdier;baratier;5200;44.534651;6.491381;5000.0;5000.0;5000.0;1.0;4.0;427.745915884602;False;True;True;False;True;present_in_actual_and_prediction
+275;entraigues ii;05012pc00282;1 rue de l’arenier;baratier;5200;44.512166;6.545256;;;;;;;False;False;False;True;False;listed_as_disappeared
+276;entraigues i /cartons;05046pc00283;2 rue des meuniers;embrun;5200;44.552553;6.490416;;;;;;;False;False;False;True;False;listed_as_disappeared
+277;l'eglise;05098pc00285;4 rue du commun;les orres;5200;44.514531;6.548515;5000.0;5000.0;5000.0;1.0;1.0;363.7795275590551;False;True;True;False;True;present_in_actual_and_prediction
+278;rooftop;05046pc00284;5 chemin de chadenas;embrun;5200;44.551725;6.473497;5000.0;5000.0;5000.0;1.0;5.0;348.1428727950039;False;True;True;False;True;present_in_actual_and_prediction
+279;capitainerie;05164pc00280;4 promenade du théâtre;savines-le-lac;5160;44.528375;6.403366;5000.0;5000.0;5000.0;1.0;3.0;420.7542075420754;False;True;True;False;True;present_in_actual_and_prediction
+280;paillote du lac;04154pc00064;93 route d’orbanne;pontis;5160;44.501504;6.345666;5000.0;5000.0;5000.0;1.0;2.0;308.70561282932414;False;True;True;False;True;present_in_actual_and_prediction
+281;aire 1 les bertrands;05040pc00340;;chorges;5230;44.538429;6.291666;1000.0;1000.0;1000.0;1.0;3.0;82.41469816272966;False;True;True;False;True;present_in_actual_and_prediction
+282;aire 2 le villard baie st michel;05106pc00066;2 chemin du port;prunieres;5230;44.529841;6.332718;5000.0;4000.0;5000.0;2.0;4.0;459.6628361430321;False;True;True;False;True;present_in_actual_and_prediction
+283;aire 3 parking rn 94;05106pc00067;;prunieres;5230;44.525041;6.350433;1000.0;1000.0;1000.0;1.0;4.0;80.72455207718055;False;True;True;False;True;present_in_actual_and_prediction
+284;aire 4 la baie des pirates;05106pc00068;;prunieres;5230;44.525815;6.354673;1000.0;1000.0;1000.0;1.0;4.0;80.47144889250151;False;True;True;False;True;present_in_actual_and_prediction
+285;aire 5 la bascule 1;05164pc00282;11 route de réallon;savines-le-lac;5160;44.535646;6.381809;1000.0;1000.0;1000.0;1.0;4.0;84.6084608460846;False;True;True;False;True;present_in_actual_and_prediction
+286;aire 6 la bascule 2;05164pc00281;3 impasse coste béraude;savines-le-lac;5160;44.535477;6.384336;1000.0;1000.0;1000.0;1.0;4.0;85.0496728858735;False;True;True;False;True;present_in_actual_and_prediction
+287;aire 7 savines-le-lac;05045pc00253;;crots;5200;44.528752;6.42585;1000.0;1000.0;1000.0;1.0;3.0;51.10255512775638;False;True;True;False;True;present_in_actual_and_prediction
+288;aire 8 pré-buisson;05036pc00252;;chateauroux-les-alpes;5380;44.597068;6.523848;1000.0;1000.0;1000.0;1.0;3.0;83.77952755905513;False;True;True;False;True;present_in_actual_and_prediction
+289;place du grand logis;05040pc00300;29 place du grand logis;chorges;5230;44.547214;6.277047;20000.0;15000.0;20000.0;2.0;17.0;1518.341463414634;False;True;True;False;True;present_in_actual_and_prediction
+290;parking centre jallut;05040pc00301;jallut parking;chorges;5230;44.546232;6.276634;5000.0;5000.0;5000.0;1.0;14.0;392.5167086665937;False;True;True;False;True;present_in_actual_and_prediction
+291;champ de foire;05040pc00302;111 avenue d’embrun;chorges;5230;44.544783;6.279518;5000.0;5000.0;5000.0;1.0;17.0;386.67728553258763;False;True;True;False;True;present_in_actual_and_prediction
+292;ecoles;05040pc00303;2 rue des ecoles;chorges;5230;44.544522;6.276952;5000.0;5000.0;5000.0;1.0;17.0;396.77075756001244;False;True;True;False;True;present_in_actual_and_prediction
+293;rue de la gare - commerces;05040pc00304;allée du 11 mars 1962;chorges;5230;44.545945;6.273763;10000.0;10000.0;10000.0;1.0;17.0;763.7595412877544;False;True;True;False;True;present_in_actual_and_prediction
+294;avenue du piolit;05040pc00305;8 place de chabrières;chorges;5230;44.547267;6.270437;5000.0;5000.0;5000.0;1.0;17.0;386.0261519651307;False;True;True;False;True;present_in_actual_and_prediction
+295;intermarché parking;05040pc00306;130 chemin du pontillas;chorges;5230;44.546374;6.270638;5000.0;5000.0;5000.0;1.0;17.0;385.16658971991376;False;True;True;False;True;present_in_actual_and_prediction
+296;hlm pré valière;05040pc00307;393 route des moulettes;chorges;5230;44.541699;6.279547;5000.0;5000.0;5000.0;1.0;14.0;371.2470300237598;False;True;True;False;True;present_in_actual_and_prediction
+297;hlm pré du château;05040pc00308;223 route de la montagne;chorges;5230;44.549925;6.27771;5000.0;5000.0;5000.0;1.0;17.0;383.36133339228087;False;True;True;False;True;present_in_actual_and_prediction
+298;résidence la pousterle ii;05040pc00309;532 route de la montagne;chorges;5230;44.549925;6.27771;5000.0;5000.0;5000.0;1.0;8.0;420.843366746934;False;True;True;False;True;present_in_actual_and_prediction
+299;résidence les nays;05040pc00310;20 rue des nays;chorges;5230;44.549387;6.274927;5000.0;5000.0;5000.0;1.0;8.0;419.4436155044929;False;True;True;False;True;present_in_actual_and_prediction
+300;lotissement le pré vert;05040pc00311;3 rue de la coupa;chorges;5230;44.550632;6.272158;5000.0;5000.0;5000.0;1.0;8.0;415.5400971256071;False;True;True;False;True;present_in_actual_and_prediction
+301;sous le martouret;05040pc00312;1169 route de la montagne;chorges;5230;44.556369;6.276381;5000.0;5000.0;5000.0;1.0;8.0;415.91955415556095;False;True;True;False;True;present_in_actual_and_prediction
+302;le martouret;05040pc00313;2022 route de la montagne;chorges;5230;44.559861;6.271423;5000.0;5000.0;5000.0;1.0;7.0;406.5079065079065;False;True;True;False;True;present_in_actual_and_prediction
+303;les seymats;05040pc00314;2986 route des hameaux du lac;chorges;5230;44.543798;6.307406;5000.0;5000.0;5000.0;1.0;3.0;405.8624577226607;False;True;True;False;True;present_in_actual_and_prediction
+304;les bernards;05040pc00315;1592 route des hameaux du lac;chorges;5230;44.537966;6.314323;5000.0;5000.0;5000.0;1.0;9.0;366.05853786586164;False;True;True;False;True;present_in_actual_and_prediction
+305;les chabes - le sépulcre;05040pc00316;314 route des hameaux du lac;chorges;5230;44.537087;6.303296;5000.0;5000.0;5000.0;1.0;8.0;417.8291782917829;False;True;True;False;True;present_in_actual_and_prediction
+306;route de st apollinaire;05040pc00317;2224 route de réallon;chorges;5230;44.549042;6.303048;5000.0;5000.0;5000.0;1.0;15.0;371.41507137641213;False;True;True;False;True;present_in_actual_and_prediction
+307;olliviers / chaussins;05040pc00318;3150 route d’203 bois sagnières;chorges;5230;44.53223;6.263595;5000.0;5000.0;5000.0;1.0;15.0;365.5378067731594;False;True;True;False;True;present_in_actual_and_prediction
+308;le fein;05040pc00319;;chorges;5230;44.516445;6.270032;5000.0;5000.0;5000.0;1.0;8.0;376.4685850502299;False;True;True;False;True;present_in_actual_and_prediction
+309;grande ile nord - bas autovision pl;05040pc00320;16 impasse du dévezet;chorges;5230;44.552002;6.256887;5010.0;10.0;5010.0;3.0;17.0;381.1311510713901;False;True;True;False;True;present_in_actual_and_prediction
+310;grande ile sud - hapian;05040pc00321;51 rue coste belle;chorges;5230;44.551244;6.257499;5000.0;5000.0;5000.0;1.0;1.0;405.57568120963936;False;True;True;False;True;present_in_actual_and_prediction
+311;baie st michel entrée camping municipal;05040pc00322;1 impasse du pré;chorges;5230;44.528987;6.324281;10000.0;10000.0;10000.0;1.0;5.0;858.3995784747199;False;True;True;False;True;present_in_actual_and_prediction
+312;baie st michel parking plage;05040pc00323;1 lieu dit baie de saint michel;chorges;5230;44.524897;6.326624;10000.0;5000.0;10000.0;2.0;5.0;804.0834169045231;False;True;True;False;True;present_in_actual_and_prediction
+313;chanteloube entrée;05040pc00324;;chorges;5230;44.513763;6.304985;5000.0;5000.0;5000.0;1.0;3.0;395.9920801583968;False;True;True;False;True;present_in_actual_and_prediction
+314;chanteloube parking;05040pc00325;;chorges;5230;44.509087;6.312239;5000.0;5000.0;5000.0;1.0;2.0;413.88000387709604;False;True;True;False;True;present_in_actual_and_prediction
+315;vvf baie st michel;05040pc00326;1 lieu dit baie de saint michel;chorges;5230;44.525916;6.321836;5000.0;5000.0;5000.0;1.0;4.0;442.12942129421293;False;True;True;False;True;present_in_actual_and_prediction
+316;camping serre du lac;05040pc00327;;chorges;5230;44.52881;6.31926;5000.0;5000.0;5000.0;1.0;5.0;437.70224220383153;False;True;True;False;True;present_in_actual_and_prediction
+317;camping clé des champs;05040pc00328;;chorges;5230;44.526361;6.318803;5000.0;5000.0;5000.0;1.0;2.0;318.3536329273415;False;True;True;False;True;present_in_actual_and_prediction
+318;ecrins du lac l'ami soleil;05040pc00329;;chorges;5230;44.50387;6.304013;10000.0;5000.0;10000.0;2.0;4.0;746.5471286648898;False;True;True;False;True;present_in_actual_and_prediction
+319;intermarché pro;05040pc00330;185 route nationale 94;chorges;5230;44.546831;6.269503;5000.0;5000.0;5000.0;1.0;15.0;379.66981487663827;False;True;True;False;True;present_in_actual_and_prediction
+320;vacances bleues;05040pc00331;;chorges;5230;44.527536;6.287408;5000.0;5000.0;5000.0;1.0;9.0;406.9077972131634;False;True;True;False;True;present_in_actual_and_prediction
+321;camping la valière;05040pc00332;447 route des moulettes;chorges;5230;44.538888;6.280458;5000.0;5000.0;5000.0;1.0;1.0;366.6834677419355;False;True;True;False;True;present_in_actual_and_prediction
+322;vc les hyvans - btp vacances;05040pc00333;;chorges;5230;44.49785;6.303802;15010.0;10.0;15010.0;4.0;5.0;1249.065208038842;False;True;True;False;True;present_in_actual_and_prediction
+323;grande ile nord - haut axe hôtel;05040pc00334;67 rue de la source;chorges;5230;44.553354;6.258294;5000.0;5000.0;5000.0;1.0;17.0;385.02201367164866;False;True;True;False;True;present_in_actual_and_prediction
+324;rue du moulin;05040pc00335;779 chemin du moulin;chorges;5230;44.550976;6.282621;5000.0;5000.0;5000.0;1.0;8.0;420.0791270821259;False;True;True;False;True;present_in_actual_and_prediction
+325;relais total;05040pc00336;1401 route nationale 94;chorges;5230;44.551234;6.255413;5000.0;5000.0;5000.0;1.0;3.0;367.07265854682913;False;True;True;False;True;present_in_actual_and_prediction
+326;camping de campéole / baie de la chapelle;05040pc00337;1 lieu dit baie de saint michel;chorges;5230;44.52427;6.324417;5000.0;5000.0;5000.0;1.0;5.0;370.1287012870129;False;True;True;False;True;present_in_actual_and_prediction
+327;grande ile nord - parking club 30;05040pc00338;150 impasse du dévezet;chorges;5230;44.552718;6.255627;;;;;;;False;False;False;True;False;listed_as_disappeared
+328;depot;;depot;embrun;5200;44.5862;6.51652;;;;;;;True;False;False;False;False;depot

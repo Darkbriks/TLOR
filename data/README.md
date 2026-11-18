@@ -5,8 +5,17 @@ This package contains the seven CSV tables produced for Role 1, together with a 
 ## Package contents
 
 - `tables/`: the seven shareable CSV tables.
+- `original/`: read-only source files supplied with the project.
+- `documentation/`: one bilingual English/French column guide per table.
 - `COLUMN_DICTIONARY_EN_FR.csv`: one row per table/column, with type, unit, English description, French description, and usage notes.
 - `MANIFEST_SHA256.csv`: file checksums for integrity verification.
+
+The tables can be regenerated from the repository root with:
+
+```bash
+python -m pip install -r scripts/requirements-role1.txt
+python scripts/run_role1_analysis.py
+```
 
 ## Tables
 
@@ -55,7 +64,9 @@ Recommended use: Role 1/Role 4 sensitivity analysis and policy review. point_pol
 ## Shared conventions
 
 - Dates use ISO format `YYYY-MM-DD`.
+- CSV files use UTF-8, `;` as separator, and `.` as decimal mark.
 - Volumes are in litres (`l`); masses are in kilograms (`kg`).
+- `capacity_kg` is the canonical capacity field for optimization. It is converted with each point's own kg-per-litre ratio from the supplied forecast; litre fields are retained for traceability and fill-rate calculations.
 - Fill rates and thresholds are fractions: `0.80` means 80%.
 - Scenario suffixes `_80pct`, `_100pct`, and `_120pct` mean demand scaled to 80%, baseline 100%, and 120% respectively.
 - Blank/`NaN` mean-fill values indicate that no collection occurred in that scenario.

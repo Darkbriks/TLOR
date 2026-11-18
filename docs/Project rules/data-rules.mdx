@@ -115,8 +115,8 @@ fallback.
 
 | File | Content | To know when reading it |
 | --- | --- | --- |
-| `Data/Actual_Situation_Spring2023.xlsx` | The 2,165 collections actually made from 2023-04-14 to 2023-06-15, one row per point collected, grouped by `Turn number` (one tour) | Dates are Excel serial numbers (`45030` is 2023-04-14). `Rate` is the fill rate, from 0 to 1. `Collected volume` and `Total volume` are in litres. The header `Collected Kg ` ends with a space. |
-| `Data/Linear Prediction.csv` | Daily and cumulative waste of the 300 points over the same 63 days, in kilograms and litres | The header has a space after each `;` (`Identifier; Date; Daily (Kg); …`): trim the column names. |
+| `data/original/Actual_Situation_Spring2023.xlsx` | The 2,165 collections actually made from 2023-04-14 to 2023-06-15, one row per point collected, grouped by `Turn number` (one tour) | Dates are Excel serial numbers (`45030` is 2023-04-14). `Rate` is the fill rate, from 0 to 1. `Collected volume` and `Total volume` are in litres. The header `Collected Kg ` ends with a space. |
+| `data/original/Linear Prediction.csv` | Daily and cumulative waste of the 300 points over the same 63 days, in kilograms and litres | The header has a space after each `;` (`Identifier; Date; Daily (Kg); …`): trim the column names. |
 | `Maps/*/data/points.csv` | The 328 points, then the depot: label, code, address, municipality, coordinates | Names have accents: read it as UTF-8. |
 | `Maps/*/data/distances.json`, `durations.json` | 329 × 329 matrices, in metres and seconds | Not symmetric, see §2. |
 | `Maps/Disappeared points .rtf` | The 26 points that no longer exist | RTF, and the file name has a space before `.rtf`. |
