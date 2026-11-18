@@ -199,7 +199,7 @@ This role does not need to wait for Role 1.
 At the beginning, the participant can use:
 
 ```
-Data/Linear Prediction.csv
+data/original/Linear Prediction.csv
 ```
 
 It already contains daily predictions for 300 points.
