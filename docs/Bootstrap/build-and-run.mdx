@@ -30,7 +30,7 @@ so building takes the same two commands for everyone:
 ```bash frame="terminal"
 cmake --preset linux-debug
 cmake --build --preset linux-debug
-./build/linux-debug/bin/TLOR
+./build/linux-debug/bin/TLOR --help
 ```
 
 </TabItem>
@@ -39,7 +39,7 @@ cmake --build --preset linux-debug
 ```bash frame="terminal"
 cmake --preset macos-debug
 cmake --build --preset macos-debug
-./build/macos-debug/bin/TLOR
+./build/macos-debug/bin/TLOR --help
 ```
 
 </TabItem>
@@ -48,7 +48,7 @@ cmake --build --preset macos-debug
 ```powershell frame="terminal"
 cmake --preset windows
 cmake --build --preset windows-debug
-.\build\windows\bin\Debug\TLOR.exe
+.\build\windows\bin\Debug\TLOR.exe --help
 ```
 
 On Windows, a single configure preset (`windows`) serves both build types;
@@ -61,6 +61,25 @@ The first command, which configures the build, only needs to run once. After
 that, `cmake --build` is enough: it re-runs the configuration by itself when
 `CMakeLists.txt` changes. Every `.cpp` file under `src/` is compiled, and
 headers go in `include/`, so adding a file needs no CMake edit.
+
+`TLOR` runs every step on the project data, one rolling window after the
+other, then writes the routes of each day, `collection_schedule.csv` and
+`route_statistics.csv` into the `--out` directory. The fleet is not in the
+data, so its size and limits are always given:
+
+```bash frame="terminal"
+./build/linux-debug/bin/TLOR --tables data/tables --maps "Maps/offline map/data" \
+    --out local/runs/first --trucks 6 --truck-capacity-kg 8000 --truck-max-work-s 28800 \
+    --weekends-off --report local/runs/first/report.json
+```
+
+It prints the total of each indicator and the number of violations. `--help`
+lists the other options: the day range (`--first`, `--last`, as day indices
+or `YYYY-MM-DD` dates), the window (`--horizon`, `--step`), the methods
+(`--schedule`, `--route`, `--improve`), their parameters
+(`--param route.criterion=distance`) and the objective weights
+(`--weight distance_m=1`). It exits with 2 on a command-line mistake and with
+1 when the data or a parameter is rejected.
 
 ## 3. Presets
 
@@ -79,7 +98,87 @@ CLion, Visual Studio, and VS Code with the CMake Tools extension all read
 configuration by hand. The build also writes `compile_commands.json` into its
 directory, for clangd and other tools.
 
-## 4. When something goes wrong
+## 4. Tests
+
+The tests use the same presets. Build first: `ctest` runs what was last built.
+
+```bash frame="terminal"
+cmake --build --preset linux-debug
+ctest --preset linux-debug                       # every test
+ctest --preset linux-debug -R '^io:'             # only the tests whose name matches
+ctest --preset linux-debug -R '^io:' -V          # with their output
+```
+
+Test names follow `<module>: <behaviour>`, such as `check: visit_count` or
+`capi: load tiny fixture`, so `-R '^<module>:'` selects one module. The C++
+library tests come from `tlor_tests`, the C interface tests from
+`tlor_capi_tests`, and the `app.*` tests run the `TLOR` executable on the
+small data set in `tests/fixtures/tiny/`. One test, `python`, runs the whole
+Python suite with pytest; it only exists when CMake was configured with a
+Python that has numpy and pytest (see below). `io: real data loads` reads
+`data/tables/` when it is there and is skipped otherwise.
+
+## 5. Python package
+
+`python/tlor/` gives Python the same library, through the shared library
+`tlor` (`libtlor.so`, `libtlor.dylib` or `tlor.dll`) built next to `TLOR`.
+It needs Python 3.10 or newer with numpy; the tests also need pytest. From the
+root of the repository:
+
+<Tabs syncKey="os">
+<TabItem label="Linux">
+
+```bash frame="terminal"
+python3 -m venv .venv
+.venv/bin/pip install -r python/requirements.txt
+cmake --preset linux-debug -DPython3_EXECUTABLE=$PWD/.venv/bin/python
+```
+
+</TabItem>
+<TabItem label="macOS">
+
+```bash frame="terminal"
+python3 -m venv .venv
+.venv/bin/pip install -r python/requirements.txt
+cmake --preset macos-debug -DPython3_EXECUTABLE=$PWD/.venv/bin/python
+```
+
+</TabItem>
+<TabItem label="Windows">
+
+```powershell frame="terminal"
+py -m venv .venv
+.venv\Scripts\pip install -r python\requirements.txt
+cmake --preset windows -DPython3_EXECUTABLE="$PWD\.venv\Scripts\python.exe"
+```
+
+</TabItem>
+</Tabs>
+
+The last command tells CMake which Python runs the `python` test; it only
+needs to run once. To use the package from a script, put `python/` on
+`PYTHONPATH`. The package looks for the library in `build/*/bin/`, release
+builds first; set `TLOR_LIBRARY` to the full path of the library to choose
+another one.
+
+```python title="run.py"
+import tlor
+
+inst = tlor.Instance.load("data/tables", "Maps/offline map/data")
+fleet = tlor.Fleet([8000] * 6, [8 * 3600] * 6, inst.day_count)
+with tlor.Report("local/runs/nn/report.json", experiment="nn-baseline") as report:
+    result = tlor.run_rolling(inst, fleet, first=0, last=inst.day_count - 1, horizon=7, step=1,
+                              schedule=("threshold", {"threshold": 0.85}), route="nearest_neighbour",
+                              weights={"distance_m": 1.0, "overflow_point_days": 1e6}, report=report)
+    tlor.write_solution("local/runs/nn", inst, result.solution)
+print(result.evaluation.total["distance_m"], len(result.violations))
+```
+
+```bash frame="terminal"
+PYTHONPATH=python .venv/bin/python run.py
+```
+
+## 6. When something goes wrong
 
 | Message | Cause |
 | --- | --- |
@@ -87,6 +186,8 @@ directory, for clangd and other tools.
 | CMake cannot read `CMakePresets.json` | CMake is older than 3.31; see [Requirements](../requirements/). |
 | `Cannot use disabled configure preset` | The preset belongs to another platform. |
 | `could not find any instance of Visual Studio` | Visual Studio 2022 or its C++ workload is missing. |
+| `cannot find libtlor.so under …/build` (Python) | The library is not built yet, or lives elsewhere: build a preset, or set `TLOR_LIBRARY`. |
+| No test named `python` | CMake was configured with a Python lacking numpy or pytest; configure again with `-DPython3_EXECUTABLE`. |
 
 <Aside type="tip">
 When the build behaves strangely after a large change, delete the preset's
