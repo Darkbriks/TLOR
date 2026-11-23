@@ -8,7 +8,7 @@ if(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR)
             "Remove the CMakeCache.txt and CMakeFiles/ this attempt just created before retrying.")
 endif()
 
-project(TLOR LANGUAGES CXX)
+project(TLOR VERSION 0.1.0 LANGUAGES C CXX)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
@@ -17,12 +17,35 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+set(CMAKE_C_VISIBILITY_PRESET hidden)
+set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+set(CMAKE_VISIBILITY_INLINES_HIDDEN ON)
+
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib")
 
-file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/*.cpp)
+include(cmake/Dependencies.cmake)
+include(cmake/BuildInfo.cmake)
 
-add_executable(${PROJECT_NAME} ${SOURCES})
+function(tlor_add_library name type)
+    set(sources "")
+    foreach(dir IN LISTS ARGN)
+        file(GLOB_RECURSE dir_sources CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/src/${dir}/*.cpp)
+        list(APPEND sources ${dir_sources})
+    endforeach()
+    add_library(${name} ${type} ${sources})
+    target_include_directories(${name} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+endfunction()
 
-target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+tlor_add_library(tlor_model STATIC model)
+target_include_directories(tlor_model PRIVATE ${TLOR_GENERATED_DIR})
+target_compile_definitions(tlor_model PRIVATE TLOR_BUILD_TYPE="$<CONFIG>")
+
+file(GLOB_RECURSE TLOR_APP_SOURCES CONFIGURE_DEPENDS src/app/*.cpp)
+add_executable(${PROJECT_NAME} ${TLOR_APP_SOURCES})
+target_link_libraries(${PROJECT_NAME} PRIVATE tlor_model)
+
+enable_testing()
+add_subdirectory(tests)

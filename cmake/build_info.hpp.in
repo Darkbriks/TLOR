@@ -1,0 +1,12 @@
+#pragma once
+
+#include <string_view>
+
+namespace tlor::detail {
+
+inline constexpr std::string_view library_version = "@PROJECT_VERSION@";
+inline constexpr std::string_view git_commit = "@TLOR_GIT_COMMIT@";
+inline constexpr std::string_view compiler = "@CMAKE_CXX_COMPILER_ID@ @CMAKE_CXX_COMPILER_VERSION@";
+inline constexpr std::string_view os_name = "@CMAKE_SYSTEM_NAME@";
+
+}
