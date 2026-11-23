@@ -47,7 +47,7 @@ TEST_CASE("params: typed access") {
     CHECK(p.get_int("k") == 3);
     CHECK(p.get_double("k") == 3.0);
     CHECK(p.get_double("t") == doctest::Approx(0.85));
-    CHECK_THROWS_AS(p.get_int("t"), tlor::Error);
+    CHECK_THROWS_AS((void)p.get_int("t"), tlor::Error);
     CHECK(status_of([&] { (void)p.get_int("t"); }) == Status::invalid_param);
     CHECK(status_of([&] { (void)p.get_bool("missing"); }) == Status::invalid_param);
     CHECK(p.contains("k"));

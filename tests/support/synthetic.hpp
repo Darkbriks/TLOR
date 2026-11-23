@@ -1,7 +1,10 @@
 #pragma once
 
 #include <tlor/error.hpp>
+#include <tlor/fleet.hpp>
+#include <tlor/instance.hpp>
 
+#include <cstdint>
 #include <utility>
 
 namespace tlor::test {
@@ -15,5 +18,9 @@ Status status_of(F&& f) {
     }
     return Status::ok;
 }
+
+Instance small_instance();
+
+Fleet small_fleet(double capacity_kg = 150, double max_work_s = 3600, std::int32_t trucks = 2);
 
 }
