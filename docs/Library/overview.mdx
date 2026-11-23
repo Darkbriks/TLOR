@@ -45,8 +45,8 @@ flowchart LR
 - **Steps.** `schedule`, `route` and `improve` each take a **method name**
   and its parameters. `run_rolling` chains them over a rolling horizon, day by
   day or week by week. See [Steps and the rolling driver](../steps/).
-- **Methods.** Each step has a registry of methods. Three reference methods
-  ship with the library (`threshold`, `nearest_neighbour`, `shift_day`), and
+- **Methods.** Each step has a registry of methods. Four methods ship with
+  the library (`threshold`, `nearest_neighbour`, `greedy`, `shift_day`), and
   anyone can add more, in C++ or in Python, without touching the steps. See
   [Built-in methods](../methods/).
 - **Judges.** `evaluate` computes 14 indicators per day and in total; the

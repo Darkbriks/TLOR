@@ -1,17 +1,18 @@
 ---
 title: Built-in methods
-description: The three reference methods shipped with the library, threshold, nearest_neighbour and shift_day, their exact rules and their parameters.
+description: The methods shipped with the library, threshold, nearest_neighbour, greedy and shift_day, their exact rules and their parameters.
 sidebar:
   order: 4
 ---
 
-The library ships one reference method per step. Together they give a
-complete, checkable solution on the real data, serve as the baseline other
-methods are compared with, and show how a method is written. The owners of
-the schedule, routing and improvement roles take them over: tune them,
-replace them, or add better methods next to them.
+The library ships one reference method per step, plus a second route
+method, `greedy`. Together they give a complete, checkable solution on the
+real data, serve as the baseline other methods are compared with, and show
+how a method is written. The owners of the schedule, routing and improvement
+roles take them over: tune them, replace them, or add better methods next to
+them.
 
-All three are deterministic: the same inputs and parameters give the same
+All four are deterministic: the same inputs and parameters give the same
 result, and ties are broken by the smaller node index.
 
 To list the methods of a step and their parameters at run time, including
@@ -81,7 +82,38 @@ The time limit always uses durations, whatever the criterion.
 Report counter: `candidates_evaluated` (points examined while choosing the
 next one), in the phase `construction`.
 
-## 3. `shift_day` (improve)
+## 3. `greedy` (route)
+
+The first routing heuristic of the project, written to get an upper bound on
+the distance of a day: a nearest-neighbour tour built for a single truck,
+with its capacity as the only limit. It has no parameter.
+
+1. Every tour is driven by the **first truck available** that day (truck 0
+   when none is), and filled up to that truck's capacity.
+2. From the depot, the truck repeatedly goes to the nearest unvisited point,
+   by distance from the current node (ties to the smaller index), among those
+   whose load still fits. When none fits, it returns to the depot and starts
+   a new tour.
+3. A point heavier than the truck on its own gets a tour of its own.
+
+Unlike `nearest_neighbour`, it ignores the work time and the other trucks:
+on a busy day, its tours exceed the truck's `max_work_s`, and `check` reports
+`work_time`. When the work time of that first truck never binds, and no
+point is heavier than the truck, `nearest_neighbour` builds the same tours:
+both give the 934.4 km below.
+
+Report phase: `construction`.
+
+The `greedy_bound` program, built with every preset, runs it on all active
+points with every container full and one 10 t truck, and prints the number of
+tours and their distance: 14 tours and 934.4 km on the project data. It
+finds `data/` and `Maps/` from any directory inside the repository:
+
+```bash frame="terminal"
+./build/linux-release/bin/greedy_bound
+```
+
+## 4. `shift_day` (improve)
 
 Local search that moves one collection of one point to a nearby day when this
 lowers the objective.
@@ -120,7 +152,7 @@ Report phases and counters: `initial_routing`, then `search` with
 `moves_evaluated` and `moves_accepted`; the routing calls appear inside as
 `call:route/<method>`.
 
-## 4. Choosing parameters
+## 5. Choosing parameters
 
 Parameters are checked before the method runs: an unknown name, a wrong type
 or a value out of bounds fails with `invalid_param`, and the message names
