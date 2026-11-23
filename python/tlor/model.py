@@ -1,5 +1,7 @@
 import ctypes
+import datetime
 import numbers
+import os
 from ctypes import POINTER, byref, c_char_p, c_double, c_int, c_int32, c_int64, c_size_t, c_uint8, c_void_p
 
 import numpy as np
@@ -77,6 +79,10 @@ class Handle:
             except Exception:
                 pass
             self._h = None
+
+
+def fs_path(value):
+    return os.fsencode(os.fspath(value))
 
 
 def create(function, *args):
@@ -167,6 +173,18 @@ class Instance(Handle):
             pointer(capacity, c_double), pointer(flags, c_uint8), pointer(demand, c_double),
         )
         super().__init__(create(lib.tlor_instance_create, byref(desc)))
+
+    @classmethod
+    def load(cls, tables, maps, service_time=None, point_policy=True):
+        out = c_void_p()
+        date = ctypes.create_string_buffer(11)
+        check_status(lib.tlor_instance_load(
+            fs_path(tables), fs_path(maps), None if service_time is None else fs_path(service_time),
+            int(bool(point_policy)), byref(out), date,
+        ))
+        instance = cls.own(out.value)
+        instance.first_date = datetime.date.fromisoformat(date.value.decode())
+        return instance
 
     def __copy__(self):
         return self

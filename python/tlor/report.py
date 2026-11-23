@@ -1,9 +1,8 @@
-import os
 from contextlib import contextmanager
 
 from ._lib import lib, text
 from .errors import check_status
-from .model import Handle, create
+from .model import Handle, create, fs_path
 
 
 class Report(Handle):
@@ -35,4 +34,4 @@ class Report(Handle):
         check_status(lib.tlor_report_count(self._handle, text(name), int(delta)))
 
     def write(self, path):
-        check_status(lib.tlor_report_write_json(self._handle, os.fsencode(os.fspath(path))))
+        check_status(lib.tlor_report_write_json(self._handle, fs_path(path)))

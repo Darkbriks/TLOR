@@ -18,6 +18,7 @@
 #include <map>
 #include <memory>
 #include <new>
+#include <optional>
 #include <string>
 #include <vector>
 
@@ -155,6 +156,18 @@ inline tlor_evaluation evaluation_handle(std::shared_ptr<Evaluation> evaluation)
     }
     handle.value = std::move(evaluation);
     return handle;
+}
+
+inline State state_or_initial(const tlor_state* state, const Instance& instance) {
+    return state == nullptr ? State::initial(instance.node_count()) : *state->value;
+}
+
+inline std::optional<Demand> demand_of(const Instance& instance, const double* demand_kg) {
+    if (demand_kg == nullptr) {
+        return std::nullopt;
+    }
+    const auto size = static_cast<std::size_t>(instance.day_count()) * static_cast<std::size_t>(instance.node_count());
+    return Demand(instance.day_count(), instance.node_count(), std::vector<double>(demand_kg, demand_kg + size));
 }
 
 inline const Params& params_or_empty(const tlor_params* params) {

@@ -1,7 +1,7 @@
 import ctypes
 import os
 import sys
-from ctypes import POINTER, c_char_p, c_double, c_int, c_int32, c_int64, c_size_t, c_uint8, c_void_p
+from ctypes import POINTER, c_char, c_char_p, c_double, c_int, c_int32, c_int64, c_size_t, c_uint8, c_void_p
 from pathlib import Path
 
 _NAMES = {"linux": "libtlor.so", "darwin": "libtlor.dylib", "win32": "tlor.dll"}
@@ -156,6 +156,9 @@ _SIGNATURES = {
     "tlor_report_phase_end": (STATUS, [H]),
     "tlor_report_count": (STATUS, [H, S, c_int64]),
     "tlor_report_write_json": (STATUS, [H, S]),
+    "tlor_instance_load": (STATUS, [S, S, S, c_int, PH, POINTER(c_char)]),
+    "tlor_write_solution": (STATUS, [S, H, H, H, PD, S]),
+    "tlor_write_routes_json": (STATUS, [S, H]),
     "tlor_schedule": (STATUS, [H, H, H, c_int32, c_int32, S, H, H, H, PH]),
     "tlor_route": (STATUS, [H, H, c_int32, PI32, PD, c_size_t, S, H, H, H, PH]),
     "tlor_improve": (STATUS, [H, H, H, H, S, H, S, H, H, H, PH]),

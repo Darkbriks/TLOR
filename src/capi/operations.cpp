@@ -6,24 +6,14 @@
 #include <optional>
 #include <span>
 
+using tlor::capi::demand_of;
 using tlor::capi::guard;
 using tlor::capi::need;
 using tlor::capi::need_text;
 using tlor::capi::params_or_empty;
+using tlor::capi::state_or_initial;
 
 namespace {
-
-tlor::State state_or_initial(const tlor_state* state, const tlor::Instance& instance) {
-    return state == nullptr ? tlor::State::initial(instance.node_count()) : *state->value;
-}
-
-std::optional<tlor::Demand> demand_of(const tlor::Instance& instance, const double* demand_kg) {
-    if (demand_kg == nullptr) {
-        return std::nullopt;
-    }
-    const auto size = static_cast<std::size_t>(instance.day_count()) * static_cast<std::size_t>(instance.node_count());
-    return tlor::Demand(instance.day_count(), instance.node_count(), std::vector<double>(demand_kg, demand_kg + size));
-}
 
 tlor::Report* report_of(tlor_report* report) { return report == nullptr ? nullptr : report->value.get(); }
 

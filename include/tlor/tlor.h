@@ -6,6 +6,7 @@
 #define TLOR_TLOR_H
 
 #include <tlor/c/common.h>
+#include <tlor/c/io.h>
 #include <tlor/c/model.h>
 #include <tlor/c/operations.h>
 #include <tlor/c/registry.h>
