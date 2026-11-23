@@ -229,7 +229,7 @@ std::string command_line(std::span<char*> args) {
     std::string text = "TLOR";
     for (const char* arg : args) {
         text += ' ';
-        text += arg;
+        text += tlor::io::shown(std::filesystem::path(arg));
     }
     return text;
 }

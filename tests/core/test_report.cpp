@@ -190,3 +190,15 @@ TEST_CASE("report: a phase closed under an open call closes the call") {
     CHECK(j["phases"][0]["count"] == 1);
     CHECK(j["phases"][1]["name"] == "later");
 }
+
+TEST_CASE("report: text that is not utf-8 is replaced instead of failing") {
+    tlor::Report r;
+    r.set_context("command_line", "TLOR --out lat\xe9n");
+    std::string json;
+    REQUIRE_NOTHROW(json = r.to_json());
+    CHECK(nlohmann::json::parse(json)["context"]["user"]["command_line"] == "TLOR --out lat\xEF\xBF\xBDn");
+    auto dir = fresh_temp_dir();
+    r.write_json(dir / "report.json");
+    std::ifstream in(dir / "report.json");
+    CHECK(nlohmann::json::parse(in)["context"]["user"]["command_line"] == "TLOR --out lat\xEF\xBF\xBDn");
+}
