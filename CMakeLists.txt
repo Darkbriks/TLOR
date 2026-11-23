@@ -48,6 +48,7 @@ target_link_libraries(tlor_check PUBLIC tlor_model)
 
 tlor_add_library(tlor_core STATIC sim eval report registry steps methods pipeline io)
 target_link_libraries(tlor_core PUBLIC tlor_model tlor_check PRIVATE nlohmann_json)
+target_include_directories(tlor_core PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 file(GLOB_RECURSE TLOR_APP_SOURCES CONFIGURE_DEPENDS src/app/*.cpp)
 add_executable(${PROJECT_NAME} ${TLOR_APP_SOURCES})
