@@ -5,6 +5,7 @@ file(GLOB_RECURSE TLOR_TEST_SOURCES CONFIGURE_DEPENDS
 add_executable(tlor_tests ${TLOR_TEST_SOURCES})
 target_include_directories(tlor_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(tlor_tests PRIVATE tlor_core doctest nlohmann_json)
+target_compile_definitions(tlor_tests PRIVATE TLOR_SOURCE_DIR="${CMAKE_SOURCE_DIR}")
 doctest_discover_tests(tlor_tests)
 
 add_executable(tlor_check_isolation ${CMAKE_CURRENT_SOURCE_DIR}/check_isolation/main.cpp)
@@ -24,6 +25,7 @@ file(GLOB_RECURSE TLOR_CAPI_TEST_SOURCES CONFIGURE_DEPENDS
 add_executable(tlor_capi_tests ${TLOR_CAPI_TEST_SOURCES} ${CMAKE_CURRENT_SOURCE_DIR}/support/small_arrays.cpp)
 target_include_directories(tlor_capi_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(tlor_capi_tests PRIVATE tlor doctest)
+target_compile_definitions(tlor_capi_tests PRIVATE TLOR_SOURCE_DIR="${CMAKE_SOURCE_DIR}")
 doctest_discover_tests(tlor_capi_tests)
 
 find_package(Python3 COMPONENTS Interpreter)
