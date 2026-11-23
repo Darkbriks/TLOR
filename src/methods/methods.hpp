@@ -6,4 +6,7 @@ namespace tlor {
 
 void register_builtin_methods(Registry& registry);
 
+Plan schedule_threshold(const ScheduleRequest& request);
+MethodInfo threshold_info();
+
 }
