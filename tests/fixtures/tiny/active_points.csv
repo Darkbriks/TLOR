@@ -1,0 +1,6 @@
+point_id;capacity_kg;is_depot;active
+0;30;False;True
+1;200;False;True
+2;50;False;True
+3;;False;False
+4;;True;False
