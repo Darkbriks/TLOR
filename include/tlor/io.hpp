@@ -53,7 +53,8 @@ void write_routes_json(const std::filesystem::path& file, const DayRoutes& route
  * @brief Writes routes_<date>.json for every routed day, collection_schedule.csv and route_statistics.csv.
  *
  * Collected masses come from simulating the plan on @p demand from @p start, the state at the plan's first day.
- * The directory is created when missing; failures are io_error.
+ * The directory is created when missing, and routes_<date>.json files left in it by an earlier run are removed;
+ * failures are io_error.
  */
 void write_solution(const std::filesystem::path& out_dir, const Instance& instance, const State& start,
                     const Solution& solution, const Demand& demand, std::chrono::sys_days first_date);

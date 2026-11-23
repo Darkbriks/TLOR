@@ -107,3 +107,34 @@ TEST_CASE("io: write to an impossible path") {
           }) == Status::io_error);
     CHECK(status_of([&] { tlor::write_routes_json(bad / "routes.json", tlor::DayRoutes(0)); }) == Status::io_error);
 }
+
+TEST_CASE("io: write_solution removes the routes files of an earlier run") {
+    TempDir tmp;
+    auto instance = tlor::test::small_instance();
+    const auto first = tlor::parse_date("2023-04-14");
+    const auto state = tlor::State::initial(instance.node_count());
+    tlor::Plan plan(0, 3);
+    plan.add(1, 3);
+    plan.add(2, 0);
+    tlor::Solution longer(plan);
+    tlor::DayRoutes day1(1);
+    day1.add({0, {5, 3, 5}});
+    tlor::DayRoutes day2(2);
+    day2.add({0, {5, 0, 5}});
+    longer.set_routes(day1);
+    longer.set_routes(day2);
+    tlor::write_solution(tmp.path(), instance, state, longer, instance.demand(), first);
+    REQUIRE(std::filesystem::exists(tmp.path() / "routes_2023-04-16.json"));
+    std::ofstream(tmp.path() / "routes_notes.json") << "[]";
+    std::ofstream(tmp.path() / "notes.txt") << "kept";
+
+    tlor::Plan short_plan(0, 2);
+    short_plan.add(1, 3);
+    tlor::Solution shorter(short_plan);
+    shorter.set_routes(day1);
+    tlor::write_solution(tmp.path(), instance, state, shorter, instance.demand(), first);
+    CHECK(std::filesystem::exists(tmp.path() / "routes_2023-04-15.json"));
+    CHECK_FALSE(std::filesystem::exists(tmp.path() / "routes_2023-04-16.json"));
+    CHECK(std::filesystem::exists(tmp.path() / "routes_notes.json"));
+    CHECK(std::filesystem::exists(tmp.path() / "notes.txt"));
+}

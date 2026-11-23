@@ -8,6 +8,7 @@
 #include <charconv>
 #include <fstream>
 #include <set>
+#include <string_view>
 #include <system_error>
 #include <vector>
 
@@ -40,6 +41,30 @@ void make_directory(const std::filesystem::path& dir) {
     if (error || !std::filesystem::is_directory(dir, ignored)) {
         throw Error(Status::io_error,
                     "cannot create directory " + io::shown(dir) + (error ? ": " + error.message() : std::string{}));
+    }
+}
+
+bool is_routes_file(std::string_view name) {
+    if (name.size() != 22 || !name.starts_with("routes_") || !name.ends_with(".json")) {
+        return false;
+    }
+    try {
+        (void)parse_date(name.substr(7, 10));
+        return true;
+    } catch (const Error&) {
+        return false;
+    }
+}
+
+void remove_routes_files(const std::filesystem::path& dir) {
+    try {
+        for (const auto& entry : std::filesystem::directory_iterator(dir)) {
+            if (entry.is_regular_file() && is_routes_file(io::shown(entry.path().filename()))) {
+                std::filesystem::remove(entry.path());
+            }
+        }
+    } catch (const std::filesystem::filesystem_error& e) {
+        throw Error(Status::io_error, "cannot remove old routes files from " + io::shown(dir) + ": " + e.what());
     }
 }
 
@@ -106,6 +131,7 @@ void write_solution(const std::filesystem::path& out_dir, const Instance& instan
     const Plan& plan = solution.plan();
     const auto simulation = simulate(instance, start, plan.start(), plan.horizon(), plan, demand);
     make_directory(out_dir);
+    remove_routes_files(out_dir);
     std::string schedule = "date;point_id;collected_kg;fill_rate\n";
     std::string statistics = "date;route;truck;distance;duration;load_kg;points\n";
     for (Day day = plan.start(); day < plan.end(); ++day) {
