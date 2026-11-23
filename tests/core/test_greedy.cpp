@@ -19,8 +19,9 @@ tlor::Params none;
 Routes run(const tlor::Fleet& fleet, tlor::Day day, const std::vector<tlor::Node>& points,
            const std::vector<double>& loads) {
     auto inst = tlor::test::small_instance();
+    const auto routes = tlor::route(inst, fleet, day, points, loads, "greedy", none, none, nullptr);
     Routes out;
-    for (const auto& r : tlor::route(inst, fleet, day, points, loads, "greedy", none, none, nullptr).routes()) {
+    for (const auto& r : routes.routes()) {
         out.emplace_back(r.truck, r.nodes);
     }
     return out;

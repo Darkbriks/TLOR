@@ -4,6 +4,7 @@
 #include <tlor/simulate.hpp>
 #include <tlor/steps.hpp>
 
+#include <algorithm>
 #include <optional>
 
 #include <string>

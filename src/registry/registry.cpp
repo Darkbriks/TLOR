@@ -4,6 +4,8 @@
 
 #include "methods/methods.hpp"
 
+#include <algorithm>
+
 namespace tlor {
 
 namespace {

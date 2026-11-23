@@ -11,6 +11,7 @@ FetchContent_MakeAvailable(doctest nlohmann_json)
 add_library(doctest INTERFACE)
 target_include_directories(doctest SYSTEM INTERFACE ${doctest_SOURCE_DIR})
 target_compile_options(doctest INTERFACE "$<$<CXX_COMPILER_ID:Clang,AppleClang>:-Wno-#warnings>")
+target_compile_definitions(doctest INTERFACE DOCTEST_CONFIG_USE_STD_HEADERS)
 
 add_library(nlohmann_json INTERFACE)
 target_include_directories(nlohmann_json SYSTEM INTERFACE ${nlohmann_json_SOURCE_DIR}/include)

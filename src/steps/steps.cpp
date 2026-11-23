@@ -3,6 +3,7 @@
 #include <tlor/error.hpp>
 #include <tlor/evaluate.hpp>
 
+#include <algorithm>
 #include <cmath>
 #include <set>
 #include <string>
