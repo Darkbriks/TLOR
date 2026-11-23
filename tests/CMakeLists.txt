@@ -25,3 +25,21 @@ add_executable(tlor_capi_tests ${TLOR_CAPI_TEST_SOURCES} ${CMAKE_CURRENT_SOURCE_
 target_include_directories(tlor_capi_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(tlor_capi_tests PRIVATE tlor doctest)
 doctest_discover_tests(tlor_capi_tests)
+
+find_package(Python3 COMPONENTS Interpreter)
+if(Python3_FOUND)
+    execute_process(COMMAND ${Python3_EXECUTABLE} -c "import numpy, pytest"
+            RESULT_VARIABLE tlor_python_ready OUTPUT_QUIET ERROR_QUIET)
+    if(tlor_python_ready EQUAL 0)
+        add_test(NAME python
+                COMMAND ${Python3_EXECUTABLE} -m pytest -q -p no:cacheprovider ${CMAKE_SOURCE_DIR}/python/tests)
+        set_tests_properties(python PROPERTIES
+                ENVIRONMENT "TLOR_LIBRARY=$<TARGET_FILE:tlor>"
+                ENVIRONMENT_MODIFICATION "PYTHONPATH=path_list_prepend:${CMAKE_SOURCE_DIR}/python"
+                LABELS python)
+    else()
+        message(STATUS "Python tests disabled: numpy or pytest is missing for ${Python3_EXECUTABLE}")
+    endif()
+else()
+    message(STATUS "Python tests disabled: no Python 3 interpreter found")
+endif()
