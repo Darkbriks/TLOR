@@ -8,6 +8,7 @@
 #include <tlor/c/common.h>
 #include <tlor/c/model.h>
 #include <tlor/c/operations.h>
+#include <tlor/c/registry.h>
 #include <tlor/c/report.h>
 
 #endif
