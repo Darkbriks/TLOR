@@ -1,10 +1,14 @@
 #pragma once
 
+#include <tlor/check.hpp>
 #include <tlor/error.hpp>
+#include <tlor/evaluate.hpp>
 #include <tlor/fleet.hpp>
 #include <tlor/instance.hpp>
 #include <tlor/params.hpp>
+#include <tlor/pipeline.hpp>
 #include <tlor/plan.hpp>
+#include <tlor/report.hpp>
 #include <tlor/routes.hpp>
 #include <tlor/solution.hpp>
 #include <tlor/state.hpp>
@@ -46,6 +50,32 @@ struct tlor_solution {
     std::shared_ptr<tlor::Solution> value;
     mutable std::unique_ptr<tlor_plan> plan_view;
     mutable std::map<int32_t, std::unique_ptr<tlor_day_routes>> route_views;
+};
+
+struct tlor_report {
+    std::shared_ptr<tlor::Report> value;
+};
+
+struct tlor_indicators {
+    std::shared_ptr<const tlor::Indicators> value;
+};
+
+struct tlor_evaluation {
+    std::shared_ptr<tlor::Evaluation> value;
+    tlor_indicators total;
+    std::vector<tlor_indicators> days;
+};
+
+struct tlor_violations {
+    std::shared_ptr<std::vector<tlor::Violation>> value;
+};
+
+struct tlor_rolling_result {
+    std::shared_ptr<tlor::RollingResult> value;
+    tlor_solution solution;
+    tlor_evaluation evaluation;
+    tlor_violations violations;
+    tlor_state end_state;
 };
 
 namespace tlor::capi {
@@ -108,6 +138,16 @@ inline std::unique_ptr<tlor_fleet> fleet_handle(std::shared_ptr<Fleet> fleet) {
         handle->max_work_s.push_back(fleet->truck(t).max_work_s);
     }
     handle->value = std::move(fleet);
+    return handle;
+}
+
+inline tlor_evaluation evaluation_handle(std::shared_ptr<Evaluation> evaluation) {
+    tlor_evaluation handle;
+    handle.total.value = std::shared_ptr<const Indicators>(evaluation, &evaluation->total);
+    for (const Indicators& day : evaluation->per_day) {
+        handle.days.push_back(tlor_indicators{std::shared_ptr<const Indicators>(evaluation, &day)});
+    }
+    handle.value = std::move(evaluation);
     return handle;
 }
 
