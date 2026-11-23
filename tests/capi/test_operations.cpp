@@ -235,9 +235,8 @@ TEST_CASE("capi: report") {
     auto dir = temp_dir();
     auto path = dir / "report.json";
     REQUIRE(tlor_report_write_json(report, path.string().c_str()) == TLOR_OK);
-    std::ifstream in(path);
     std::stringstream text;
-    text << in.rdbuf();
+    text << std::ifstream(path).rdbuf();
     CHECK(text.str().find("\"schema_version\": 1") != std::string::npos);
     CHECK(text.str().find("\"step\": \"route\"") != std::string::npos);
     CHECK(text.str().find("\"experiment\": \"capi\"") != std::string::npos);

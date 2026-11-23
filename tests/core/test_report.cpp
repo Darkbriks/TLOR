@@ -150,8 +150,7 @@ TEST_CASE("report: write to a missing directory") {
     }
     auto ok = dir / "report.json";
     r.write_json(ok);
-    std::ifstream in(ok);
-    auto j = nlohmann::json::parse(in);
+    auto j = nlohmann::json::parse(std::ifstream(ok));
     CHECK(j["schema_version"] == 1);
     std::filesystem::remove_all(dir);
 }
