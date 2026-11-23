@@ -45,3 +45,31 @@ if(Python3_FOUND)
 else()
     message(STATUS "Python tests disabled: no Python 3 interpreter found")
 endif()
+
+set(TLOR_APP_FIXTURE ${CMAKE_SOURCE_DIR}/tests/fixtures/tiny)
+set(TLOR_APP_OUT ${CMAKE_BINARY_DIR}/app-test)
+set(TLOR_APP_REQUIRED --tables ${TLOR_APP_FIXTURE} --maps ${TLOR_APP_FIXTURE}
+        --service-time ${TLOR_APP_FIXTURE}/service_time.csv --out ${TLOR_APP_OUT}
+        --trucks 1 --truck-capacity-kg 1000 --truck-max-work-s 28800)
+add_test(NAME app.clean COMMAND ${CMAKE_COMMAND} -E rm -rf ${TLOR_APP_OUT})
+set_tests_properties(app.clean PROPERTIES FIXTURES_SETUP app_clean)
+add_test(NAME app.run COMMAND $<TARGET_FILE:TLOR> ${TLOR_APP_REQUIRED} --horizon 2 --report ${TLOR_APP_OUT}/report.json)
+set_tests_properties(app.run PROPERTIES FIXTURES_REQUIRED app_clean FIXTURES_SETUP app
+        PASS_REGULAR_EXPRESSION "distance_m [0-9]")
+add_test(NAME app.outputs COMMAND ${CMAKE_COMMAND} -DOUT=${TLOR_APP_OUT} -P ${CMAKE_CURRENT_SOURCE_DIR}/app/check_outputs.cmake)
+set_tests_properties(app.outputs PROPERTIES FIXTURES_REQUIRED app)
+
+function(tlor_app_exit_test name expect stderr)
+    list(JOIN ARGN "," arguments)
+    add_test(NAME app.${name} COMMAND ${CMAKE_COMMAND} -DEXE=$<TARGET_FILE:TLOR> -DEXPECT=${expect}
+            "-DSTDERR=${stderr}" "-DARGS=${arguments}" -P ${CMAKE_CURRENT_SOURCE_DIR}/app/expect_exit.cmake)
+endfunction()
+tlor_app_exit_test(usage 2 "usage: TLOR" --bogus)
+tlor_app_exit_test(missing-value 2 "--horizon needs a value" ${TLOR_APP_REQUIRED} --horizon)
+tlor_app_exit_test(missing-option 2 "--trucks is required" --tables ${TLOR_APP_FIXTURE} --maps ${TLOR_APP_FIXTURE}
+        --out ${TLOR_APP_OUT}-missing --truck-capacity-kg 1000 --truck-max-work-s 28800)
+tlor_app_exit_test(bad-number 2 "--step" ${TLOR_APP_REQUIRED} --step 1.5)
+tlor_app_exit_test(bad-param 2 "--param" ${TLOR_APP_REQUIRED} --param threshold=1)
+tlor_app_exit_test(library-error 1 "active_points.csv" --tables ${TLOR_APP_FIXTURE}/nowhere --maps ${TLOR_APP_FIXTURE}
+        --out ${TLOR_APP_OUT}-error --trucks 1 --truck-capacity-kg 1000 --truck-max-work-s 28800)
+tlor_app_exit_test(unknown-method 1 "unknown" ${TLOR_APP_REQUIRED} --route nowhere)

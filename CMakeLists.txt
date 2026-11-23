@@ -67,6 +67,7 @@ endif()
 file(GLOB_RECURSE TLOR_APP_SOURCES CONFIGURE_DEPENDS src/app/*.cpp)
 add_executable(${PROJECT_NAME} ${TLOR_APP_SOURCES})
 target_link_libraries(${PROJECT_NAME} PRIVATE tlor_core)
+target_include_directories(${PROJECT_NAME} PRIVATE src)
 
 enable_testing()
 add_subdirectory(tests)

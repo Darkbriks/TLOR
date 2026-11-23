@@ -1,0 +1,8 @@
+string(REPLACE "," ";" arguments "${ARGS}")
+execute_process(COMMAND ${EXE} ${arguments} RESULT_VARIABLE code OUTPUT_VARIABLE out ERROR_VARIABLE err)
+if(NOT code EQUAL EXPECT)
+    message(FATAL_ERROR "exit code ${code}, expected ${EXPECT}\nstdout:\n${out}\nstderr:\n${err}")
+endif()
+if(DEFINED STDERR AND NOT err MATCHES "${STDERR}")
+    message(FATAL_ERROR "stderr does not match '${STDERR}':\n${err}")
+endif()
