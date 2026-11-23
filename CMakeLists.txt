@@ -18,7 +18,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 add_compile_options("$<$<COMPILE_LANG_AND_ID:CXX,Clang,AppleClang,GNU>:-ffp-contract=off>"
-                    "$<$<COMPILE_LANG_AND_ID:C,Clang,AppleClang,GNU>:-ffp-contract=off>")
+                    "$<$<COMPILE_LANG_AND_ID:C,Clang,AppleClang,GNU>:-ffp-contract=off>"
+                    "$<$<COMPILE_LANG_AND_ID:CXX,MSVC>:/utf-8>"
+                    "$<$<COMPILE_LANG_AND_ID:C,MSVC>:/utf-8>")
 
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_C_VISIBILITY_PRESET hidden)
