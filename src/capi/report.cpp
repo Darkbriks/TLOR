@@ -45,7 +45,7 @@ tlor_status tlor_report_count(tlor_report* report, const char* name, int64_t del
 }
 
 tlor_status tlor_report_write_json(const tlor_report* report, const char* path) {
-    return guard([&] { need(report, "report").value->write_json(std::filesystem::path(need_text(path, "path"))); });
+    return guard([&] { need(report, "report").value->write_json(tlor::capi::utf8_path(path, "path")); });
 }
 
 }

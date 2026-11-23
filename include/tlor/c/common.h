@@ -2,7 +2,8 @@
  * @file common.h
  * @brief Status codes, error messages and version of the C interface.
  *
- * Every function returning a tlor_status clears the last error on entry and sets it on failure.
+ * Every function returning a tlor_status clears the last error on entry and sets it on failure. Strings, file
+ * paths included, are UTF-8.
  */
 #ifndef TLOR_C_COMMON_H
 #define TLOR_C_COMMON_H

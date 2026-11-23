@@ -251,3 +251,18 @@ TEST_CASE("capi: report") {
     tlor_report_destroy(nullptr);
     std::filesystem::remove_all(dir);
 }
+
+TEST_CASE("capi: report paths are utf-8") {
+    tlor_report* report = nullptr;
+    REQUIRE(tlor_report_create(&report) == TLOR_OK);
+    auto dir = temp_dir() / std::filesystem::path(u8"clément");
+    std::filesystem::create_directories(dir);
+    const std::u8string file = (dir / "report.json").u8string();
+    REQUIRE(tlor_report_write_json(report, reinterpret_cast<const char*>(file.c_str())) == TLOR_OK);
+    CHECK(std::filesystem::exists(dir / "report.json"));
+    const std::u8string missing = (dir / "absent" / "report.json").u8string();
+    CHECK(tlor_report_write_json(report, reinterpret_cast<const char*>(missing.c_str())) == TLOR_ERROR_IO);
+    CHECK(std::string(tlor_last_error()).find("cl\xc3\xa9ment") != std::string::npos);
+    tlor_report_destroy(report);
+    std::filesystem::remove_all(dir.parent_path());
+}

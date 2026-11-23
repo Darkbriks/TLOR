@@ -14,6 +14,7 @@
 #include <tlor/state.hpp>
 #include <tlor/tlor.h>
 
+#include <filesystem>
 #include <map>
 #include <memory>
 #include <new>
@@ -118,6 +119,11 @@ inline const char* need_text(const char* text, const char* what) {
         throw Error(Status::invalid_argument, std::string(what) + " is null");
     }
     return text;
+}
+
+inline std::filesystem::path utf8_path(const char* text, const char* what) {
+    const char* checked = need_text(text, what);
+    return std::filesystem::path(std::u8string(reinterpret_cast<const char8_t*>(checked)));
 }
 
 template <class Handle, class T>

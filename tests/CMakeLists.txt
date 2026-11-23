@@ -34,7 +34,7 @@ if(Python3_FOUND)
         add_test(NAME python
                 COMMAND ${Python3_EXECUTABLE} -m pytest -q -p no:cacheprovider ${CMAKE_SOURCE_DIR}/python/tests)
         set_tests_properties(python PROPERTIES
-                ENVIRONMENT "TLOR_LIBRARY=$<TARGET_FILE:tlor>"
+                ENVIRONMENT "TLOR_LIBRARY=$<TARGET_FILE:tlor>;PYTHONDONTWRITEBYTECODE=1"
                 ENVIRONMENT_MODIFICATION "PYTHONPATH=path_list_prepend:${CMAKE_SOURCE_DIR}/python"
                 LABELS python)
     else()

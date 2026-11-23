@@ -264,14 +264,16 @@ std::string Report::to_json() const {
 }
 
 void Report::write_json(const std::filesystem::path& path) const {
+    const std::u8string shown = path.u8string();
+    const std::string name(reinterpret_cast<const char*>(shown.data()), shown.size());
     std::ofstream out(path, std::ios::binary | std::ios::trunc);
     if (!out) {
-        throw Error(Status::io_error, "cannot open report file " + path.string());
+        throw Error(Status::io_error, "cannot open report file " + name);
     }
     out << to_json() << '\n';
     out.close();
     if (!out) {
-        throw Error(Status::io_error, "cannot write report file " + path.string());
+        throw Error(Status::io_error, "cannot write report file " + name);
     }
 }
 
