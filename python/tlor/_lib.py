@@ -4,7 +4,7 @@ import sys
 from ctypes import POINTER, c_char, c_char_p, c_double, c_int, c_int32, c_int64, c_size_t, c_uint8, c_void_p
 from pathlib import Path
 
-_NAMES = {"linux": "libtlor.so", "darwin": "libtlor.dylib", "win32": "tlor.dll"}
+_NAMES = {"linux": "libtlor.so", "darwin": "libtlor.dylib", "win32": "libtlor.dll"}
 
 
 def _find_library():

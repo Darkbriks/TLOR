@@ -53,7 +53,7 @@ set(TLOR_APP_REQUIRED --tables ${TLOR_APP_FIXTURE} --maps ${TLOR_APP_FIXTURE}
         --trucks 1 --truck-capacity-kg 1000 --truck-max-work-s 28800)
 add_test(NAME app.clean COMMAND ${CMAKE_COMMAND} -E rm -rf ${TLOR_APP_OUT})
 set_tests_properties(app.clean PROPERTIES FIXTURES_SETUP app_clean)
-add_test(NAME app.run COMMAND $<TARGET_FILE:TLOR> ${TLOR_APP_REQUIRED} --horizon 2 --report ${TLOR_APP_OUT}/report.json)
+add_test(NAME app.run COMMAND $<TARGET_FILE:tlor_app> ${TLOR_APP_REQUIRED} --horizon 2 --report ${TLOR_APP_OUT}/report.json)
 set_tests_properties(app.run PROPERTIES FIXTURES_REQUIRED app_clean FIXTURES_SETUP app
         PASS_REGULAR_EXPRESSION "distance_m [0-9]")
 add_test(NAME app.outputs COMMAND ${CMAKE_COMMAND} -DOUT=${TLOR_APP_OUT} -P ${CMAKE_CURRENT_SOURCE_DIR}/app/check_outputs.cmake)
@@ -61,7 +61,7 @@ set_tests_properties(app.outputs PROPERTIES FIXTURES_REQUIRED app)
 
 function(tlor_app_exit_test name expect stderr)
     list(JOIN ARGN "," arguments)
-    add_test(NAME app.${name} COMMAND ${CMAKE_COMMAND} -DEXE=$<TARGET_FILE:TLOR> -DEXPECT=${expect}
+    add_test(NAME app.${name} COMMAND ${CMAKE_COMMAND} -DEXE=$<TARGET_FILE:tlor_app> -DEXPECT=${expect}
             "-DSTDERR=${stderr}" "-DARGS=${arguments}" -P ${CMAKE_CURRENT_SOURCE_DIR}/app/expect_exit.cmake)
 endfunction()
 tlor_app_exit_test(usage 2 "usage: TLOR" --bogus)

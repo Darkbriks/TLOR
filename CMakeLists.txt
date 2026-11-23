@@ -56,6 +56,7 @@ target_link_libraries(tlor_core PUBLIC tlor_model tlor_check PRIVATE nlohmann_js
 target_include_directories(tlor_core PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 tlor_add_library(tlor SHARED capi)
+set_target_properties(tlor PROPERTIES PREFIX lib IMPORT_PREFIX lib)
 target_link_libraries(tlor PRIVATE tlor_core)
 target_include_directories(tlor PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
 target_compile_definitions(tlor PRIVATE TLOR_BUILDING_LIBRARY)
@@ -67,9 +68,10 @@ elseif(APPLE)
 endif()
 
 file(GLOB_RECURSE TLOR_APP_SOURCES CONFIGURE_DEPENDS src/app/*.cpp)
-add_executable(${PROJECT_NAME} ${TLOR_APP_SOURCES})
-target_link_libraries(${PROJECT_NAME} PRIVATE tlor_core)
-target_include_directories(${PROJECT_NAME} PRIVATE src)
+add_executable(tlor_app ${TLOR_APP_SOURCES})
+set_target_properties(tlor_app PROPERTIES OUTPUT_NAME ${PROJECT_NAME})
+target_link_libraries(tlor_app PRIVATE tlor_core)
+target_include_directories(tlor_app PRIVATE src)
 
 add_executable(greedy_bound src/tools/greedy_bound.cpp)
 target_link_libraries(greedy_bound PRIVATE tlor_core)

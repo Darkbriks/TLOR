@@ -15,7 +15,7 @@ function is listed with its documentation in the
 
 Building any preset produces the shared library next to `TLOR`:
 `build/<preset>/bin/libtlor.so` on Linux, `libtlor.dylib` on macOS,
-`build\windows\bin\<Debug or Release>\tlor.dll` on Windows. Include one
+`build\windows\bin\<Debug or Release>\libtlor.dll` on Windows. Include one
 header and link the library:
 
 ```bash frame="terminal"
