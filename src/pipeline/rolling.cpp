@@ -4,6 +4,8 @@
 #include <tlor/simulate.hpp>
 #include <tlor/steps.hpp>
 
+#include <optional>
+
 #include <string>
 
 namespace tlor {
@@ -29,6 +31,23 @@ void validate(const Instance& instance, const Fleet& fleet, const State& initial
         invalid("the fleet does not cover the instance's days");
     }
     validate_state(initial, instance.node_count(), o.first_day);
+    (void)objective(Indicators{}, o.weights);
+}
+
+struct Validated {
+    Params schedule;
+    Params route;
+    std::optional<Params> improve;
+};
+
+Validated validated_params(const RollingOptions& o) {
+    const Registry& registry = Registry::global();
+    Validated v{validate_params(registry.info(Step::schedule, o.schedule.name), o.schedule.params),
+                validate_params(registry.info(Step::route, o.route.name), o.route.params), std::nullopt};
+    if (o.improve) {
+        v.improve = validate_params(registry.info(Step::improve, o.improve->name), o.improve->params);
+    }
+    return v;
 }
 
 std::string method_label(const RollingOptions& o) {
@@ -39,13 +58,28 @@ std::string method_label(const RollingOptions& o) {
     return label;
 }
 
-Params recorded(const RollingOptions& o) {
+void prefixed(Params& into, const std::string& prefix, const Params& from) {
+    for (const auto& [name, value] : from.values()) {
+        into.set(prefix + name, value);
+    }
+}
+
+Params recorded(const RollingOptions& o, const Validated& v) {
     Params p;
     p.set("first_day", std::int64_t{o.first_day});
     p.set("last_day", std::int64_t{o.last_day});
     p.set("horizon", std::int64_t{o.horizon});
     p.set("step", std::int64_t{o.step});
     p.set("check_each_step", o.check_each_step);
+    prefixed(p, "schedule.", v.schedule);
+    prefixed(p, "route.", v.route);
+    if (v.improve) {
+        prefixed(p, "improve.", *v.improve);
+        if (const Value* seed = v.improve->find("seed")) {
+            p.set("seed", *seed);
+        }
+    }
+    prefixed(p, "weight.", o.weights);
     return p;
 }
 
@@ -140,9 +174,10 @@ private:
 RollingResult run_rolling(const Instance& instance, const Fleet& fleet, const State& initial,
                           const RollingOptions& options, const Demand* realized, Report* report) {
     validate(instance, fleet, initial, options, realized);
+    const Validated validated = validated_params(options);
     const Demand& actual = realized != nullptr ? *realized : instance.demand();
     if (report != nullptr) {
-        report->begin_call(CallInfo{"rolling", method_label(options), recorded(options),
+        report->begin_call(CallInfo{"rolling", method_label(options), recorded(options, validated),
                                     {instance.node_count(), instance.active_point_count(), instance.day_count(),
                                      fleet.truck_count()}});
     }

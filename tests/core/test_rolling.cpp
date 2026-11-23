@@ -116,3 +116,37 @@ TEST_CASE("rolling: one call record") {
     CHECK(schedule["children"][0]["name"] == "call:schedule/threshold");
     CHECK(schedule["children"][0]["count"] == 7);
 }
+
+TEST_CASE("rolling: call record holds method parameters, weights and seed") {
+    auto o = options(0, 6, 7, 7);
+    o.route.params.set("criterion", std::string("duration"));
+    tlor::Params improve;
+    improve.set("max_iterations", std::int64_t{5});
+    improve.set("seed", std::int64_t{3});
+    o.improve = tlor::MethodChoice{"shift_day", improve};
+    o.weights.set("distance_m", 1.0);
+    tlor::Report report;
+    (void)run(o, nullptr, &report);
+    auto call = nlohmann::json::parse(report.to_json())["calls"][0];
+    CHECK(call["method"] == "threshold+nearest_neighbour+shift_day");
+    CHECK(call["params"]["schedule.threshold"] == 0.85);
+    CHECK(call["params"]["route.criterion"] == "duration");
+    CHECK(call["params"]["improve.max_iterations"] == 5);
+    CHECK(call["params"]["improve.max_shift"] == 1);
+    CHECK(call["params"]["weight.distance_m"] == 1.0);
+    CHECK(call["seed"] == 3);
+}
+
+TEST_CASE("rolling: bad method parameters fail before any step") {
+    auto o = options(0, 6, 3, 1);
+    o.schedule.params.set("threshold", 2.0);
+    tlor::Report report;
+    CHECK(status_of([&] { (void)run(o, nullptr, &report); }) == Status::invalid_param);
+    CHECK(nlohmann::json::parse(report.to_json())["calls"].empty());
+    auto unknown = options(0, 6, 3, 1);
+    unknown.route = {"nope", {}};
+    CHECK(status_of([&] { (void)run(unknown); }) == Status::unknown_method);
+    auto weights = options(0, 6, 3, 1);
+    weights.weights.set("distance_km", 1.0);
+    CHECK(status_of([&] { (void)run(weights); }) == Status::invalid_param);
+}
