@@ -155,3 +155,38 @@ TEST_CASE("report: write to a missing directory") {
     CHECK(j["schema_version"] == 1);
     std::filesystem::remove_all(dir);
 }
+
+TEST_CASE("report: end_call closes phases left open in the call") {
+    tlor::Report r;
+    r.begin_call({"route", "nn", {}, {6, 4, 7, 2}});
+    r.begin_phase("construction");
+    r.end_call(Status::ok, std::nullopt);
+    CHECK_FALSE(r.in_call());
+    r.begin_call({"schedule", "threshold", {}, {6, 4, 7, 2}});
+    r.end_call(Status::ok, std::nullopt);
+    auto j = parse(r);
+    REQUIRE(j["calls"].size() == 2);
+    CHECK(j["calls"][0]["phases"][0]["name"] == "construction");
+    CHECK(j["calls"][0]["phases"][0]["count"] == 1);
+    CHECK(j["calls"][0]["counters"]["unclosed_phases"] == 1);
+    CHECK(j["calls"][1]["method"] == "threshold");
+}
+
+TEST_CASE("report: a phase closed under an open call closes the call") {
+    tlor::Report r;
+    {
+        tlor::Phase outer(&r, "outer");
+        r.begin_call({"route", "nn", {}, {6, 4, 7, 2}});
+    }
+    CHECK_FALSE(r.in_call());
+    {
+        tlor::Phase later(&r, "later");
+    }
+    auto j = parse(r);
+    REQUIRE(j["calls"].size() == 1);
+    CHECK(j["calls"][0]["status"] == "internal_error");
+    REQUIRE(j["phases"].size() == 2);
+    CHECK(j["phases"][0]["name"] == "outer");
+    CHECK(j["phases"][0]["count"] == 1);
+    CHECK(j["phases"][1]["name"] == "later");
+}

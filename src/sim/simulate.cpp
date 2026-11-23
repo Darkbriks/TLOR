@@ -26,10 +26,11 @@ SimulationResult simulate(const Instance& instance, const State& start, Day star
         throw Error(Status::invalid_argument, "simulation range [" + std::to_string(start_day) + ", " +
                                                   std::to_string(start_day + days) + ") is outside the demand");
     }
-    if (demand.node_count() != n || start.level_kg.size() != static_cast<std::size_t>(n) ||
-        start.last_collection.size() != static_cast<std::size_t>(n)) {
-        throw Error(Status::invalid_argument, "state or demand size differs from the instance");
+    if (demand.node_count() != n) {
+        throw Error(Status::invalid_argument, "demand has " + std::to_string(demand.node_count()) +
+                                                  " nodes, the instance " + std::to_string(n));
     }
+    validate_state(start, n, start_day);
     SimulationResult result{start_day, days, n, start, {}, {}};
     const std::size_t cells = static_cast<std::size_t>(days) * static_cast<std::size_t>(n);
     result.level_kg.resize(cells);
@@ -53,8 +54,14 @@ SimulationResult simulate(const Instance& instance, const State& start, Day star
 }
 
 std::vector<double> day_loads(const SimulationResult& simulation, const Plan& plan, Day day) {
+    if (day < simulation.start_day || day >= simulation.start_day + simulation.days) {
+        throw Error(Status::invalid_argument, "day " + std::to_string(day) + " was not simulated");
+    }
     std::vector<double> loads;
     for (Node point : plan.points(day)) {
+        if (point < 0 || point >= simulation.node_count) {
+            throw Error(Status::invalid_argument, "planned node " + std::to_string(point) + " is out of range");
+        }
         loads.push_back(simulation.level(day, point));
     }
     return loads;

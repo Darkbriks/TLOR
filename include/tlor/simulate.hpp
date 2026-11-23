@@ -29,10 +29,10 @@ struct SimulationResult {
     /** @brief Whether the node was collected that day, same layout. */
     std::vector<std::uint8_t> collected;
 
-    /** @brief Level of a node on a day, before collection. */
+    /** @brief Level of a node on a day, before collection; the day must be simulated and the node in range. */
     [[nodiscard]] double level(Day day, Node node) const noexcept;
 
-    /** @brief Whether a node was collected on a day. */
+    /** @brief Whether a node was collected on a day; same preconditions as level(). */
     [[nodiscard]] bool was_collected(Day day, Node node) const noexcept;
 };
 
@@ -46,7 +46,11 @@ struct SimulationResult {
 SimulationResult simulate(const Instance& instance, const State& start, Day start_day, std::int32_t days,
                           const Plan& plan, const Demand& demand);
 
-/** @brief Collected mass of each point of plan.points(day), in the same order. */
+/**
+ * @brief Collected mass of each point of plan.points(day), in the same order.
+ *
+ * Throws Status::invalid_argument when the day was not simulated or a planned node is out of range.
+ */
 std::vector<double> day_loads(const SimulationResult& simulation, const Plan& plan, Day day);
 
 }

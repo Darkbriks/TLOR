@@ -61,11 +61,18 @@ public:
     /** @brief Adds a free key and value to the context (author, experiment name...). */
     void set_context(std::string key, std::string value);
 
-    /** @brief Opens a phase in the innermost container; phases of the same name are aggregated. */
-    void begin_phase(std::string_view name);
+    /** @brief Opens a phase in the innermost container and returns its id; phases of the same name are aggregated. */
+    std::uint64_t begin_phase(std::string_view name);
 
     /** @brief Closes the innermost phase; throws Status::invalid_argument when it is not a phase. */
     void end_phase();
+
+    /**
+     * @brief Closes the phase of this id if it is still open, closing first whatever is open above it.
+     *
+     * A call closed this way is recorded with Status::internal_error.
+     */
+    void end_phase(std::uint64_t id);
 
     /** @brief Adds delta to a counter of the innermost container. */
     void count(std::string_view name, std::int64_t delta);
@@ -73,7 +80,11 @@ public:
     /** @brief Opens a call: a new record at top level, else a phase named "call:<step>/<method>". */
     void begin_call(CallInfo info);
 
-    /** @brief Closes the innermost call; throws Status::invalid_argument when it is not a call. */
+    /**
+     * @brief Closes the innermost call; throws Status::invalid_argument when no call is open.
+     *
+     * Phases still open inside the call are closed first and counted in its "unclosed_phases" counter.
+     */
     void end_call(Status status, std::optional<Indicators> indicators);
 
     /** @brief Whether a call is open. */
@@ -102,6 +113,7 @@ public:
 
 private:
     Report* report_;
+    std::uint64_t id_ = 0;
 };
 
 /** @brief Adds delta to a counter; does nothing when the report is null. */

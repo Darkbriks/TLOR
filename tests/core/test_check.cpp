@@ -136,3 +136,11 @@ TEST_CASE("check: max_days") {
     CHECK(v[0].day == 1);
     CHECK(v[0].point == 0);
 }
+
+TEST_CASE("check: rejects an invalid start state") {
+    auto inst = tlor::test::small_instance();
+    auto state = tlor::State::initial(6);
+    state.level_kg[3] = NAN;
+    CHECK(tlor::test::status_of([&] { (void)tlor::check(inst, tlor::test::small_fleet(), state, clean(), inst.demand()); }) ==
+          tlor::Status::invalid_argument);
+}

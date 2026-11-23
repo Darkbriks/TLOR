@@ -89,3 +89,22 @@ TEST_CASE("fixture: small instance matches the plan") {
     CHECK(fleet.available_count(4) == 2);
     CHECK(tlor::test::small_fleet(90, 200, 1).truck(0).capacity_kg == 90);
 }
+
+TEST_CASE("solution: replacing the plan keeps routes consistent") {
+    tlor::Solution s(tlor::Plan(0, 2));
+    tlor::DayRoutes early(1);
+    early.add({0, {5, 3, 5}});
+    s.set_routes(early);
+    s.plan() = tlor::Plan(0, 30);
+    tlor::DayRoutes late(20);
+    late.add({1, {5, 2, 5}});
+    s.set_routes(late);
+    REQUIRE(s.routes(20) != nullptr);
+    CHECK(*s.routes(20) == late);
+    s.plan() = tlor::Plan(10, 5);
+    CHECK(s.routes(1) == nullptr);
+    CHECK(s.routes(20) == nullptr);
+    tlor::DayRoutes mid(12);
+    s.set_routes(mid);
+    CHECK(s.routes(12) != nullptr);
+}

@@ -4,6 +4,8 @@
 
 #include "support/synthetic.hpp"
 
+#include <cmath>
+
 using tlor::Status;
 using tlor::test::status_of;
 
@@ -92,4 +94,22 @@ TEST_CASE("objective: unknown weight") {
     tlor::Params known;
     known.set("routes", 2.0);
     CHECK(tlor::objective({}, known) == 0);
+}
+
+TEST_CASE("evaluate: rejects unknown or invalid evaluation params") {
+    auto inst = tlor::test::small_instance();
+    auto run = [&](const tlor::Params& p) {
+        return status_of([&] {
+            (void)tlor::evaluate(inst, tlor::test::small_fleet(), tlor::State::initial(6), week_solution(), inst.demand(), p);
+        });
+    };
+    tlor::Params typo;
+    typo.set("low_fill_treshold", 0.9);
+    CHECK(run(typo) == Status::invalid_param);
+    tlor::Params nan;
+    nan.set("low_fill_threshold", NAN);
+    CHECK(run(nan) == Status::invalid_param);
+    tlor::Params negative;
+    negative.set("low_fill_threshold", -0.1);
+    CHECK(run(negative) == Status::invalid_param);
 }

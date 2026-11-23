@@ -4,6 +4,8 @@
 
 #include "support/synthetic.hpp"
 
+#include <cmath>
+
 using tlor::Status;
 using tlor::test::status_of;
 
@@ -60,4 +62,33 @@ TEST_CASE("simulate: start state and days outside the plan") {
           Status::invalid_argument);
     CHECK(status_of([&] { tlor::simulate(inst, tlor::State::initial(6), 0, -1, plan, inst.demand()); }) ==
           Status::invalid_argument);
+}
+
+TEST_CASE("simulate: day_loads rejects days and nodes outside the simulation") {
+    auto inst = tlor::test::small_instance();
+    tlor::Plan plan(0, 7);
+    plan.add(5, 0);
+    auto sim = tlor::simulate(inst, tlor::State::initial(6), 0, 3, plan, inst.demand());
+    CHECK(status_of([&] { (void)tlor::day_loads(sim, plan, 5); }) == Status::invalid_argument);
+    tlor::Plan wide(0, 7);
+    wide.add(1, 40);
+    auto sim2 = tlor::simulate(inst, tlor::State::initial(6), 0, 3, wide, inst.demand());
+    CHECK(status_of([&] { (void)tlor::day_loads(sim2, wide, 1); }) == Status::invalid_argument);
+}
+
+TEST_CASE("simulate: rejects an invalid start state") {
+    auto inst = tlor::test::small_instance();
+    tlor::Plan plan(0, 7);
+    auto nan_state = tlor::State::initial(6);
+    nan_state.level_kg[3] = NAN;
+    CHECK(status_of([&] { tlor::simulate(inst, nan_state, 0, 3, plan, inst.demand()); }) == Status::invalid_argument);
+    auto negative = tlor::State::initial(6);
+    negative.level_kg[0] = -1;
+    CHECK(status_of([&] { tlor::simulate(inst, negative, 0, 3, plan, inst.demand()); }) == Status::invalid_argument);
+    auto future = tlor::State::initial(6);
+    future.last_collection[0] = 2;
+    CHECK(status_of([&] { tlor::simulate(inst, future, 2, 3, plan, inst.demand()); }) == Status::invalid_argument);
+    auto below = tlor::State::initial(6);
+    below.last_collection[0] = -2;
+    CHECK(status_of([&] { tlor::simulate(inst, below, 0, 3, plan, inst.demand()); }) == Status::invalid_argument);
 }

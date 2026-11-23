@@ -33,7 +33,8 @@ Indicators route_indicators(const Instance& instance, const Fleet& fleet, const 
 /**
  * @brief Every indicator of a solution, for each day of its plan and in total.
  *
- * evaluation_params: low_fill_threshold (default 0.5), below which a collection counts as low-fill.
+ * evaluation_params: low_fill_threshold (default 0.5), below which a collection counts as low-fill. Any other
+ * name, or a non-finite or negative threshold, throws Status::invalid_param.
  */
 Evaluation evaluate(const Instance& instance, const Fleet& fleet, const State& start, const Solution& solution,
                     const Demand& demand, const Params& evaluation_params);

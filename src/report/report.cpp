@@ -59,6 +59,7 @@ struct Frame {
     Node* node;
     Call* call;
     Clock::time_point start;
+    std::uint64_t id;
 };
 
 std::string utc_now() {
@@ -110,11 +111,26 @@ struct Report::Impl {
     Node root;
     std::vector<std::unique_ptr<Call>> calls;
     std::vector<Frame> frames;
+    std::uint64_t next_id = 1;
 
     Node& container() { return frames.empty() ? root : *frames.back().node; }
 
     std::int64_t elapsed(const Frame& frame) const {
         return std::chrono::duration_cast<std::chrono::nanoseconds>(Clock::now() - frame.start).count();
+    }
+
+    void push(FrameKind kind, Node* node, Call* call) { frames.push_back({kind, node, call, Clock::now(), next_id++}); }
+
+    void close_top(Status call_status, std::optional<Indicators> indicators) {
+        const Frame frame = frames.back();
+        frames.pop_back();
+        if (frame.kind == FrameKind::call) {
+            frame.call->wall_ns = elapsed(frame);
+            frame.call->status = call_status;
+            frame.call->indicators = std::move(indicators);
+        } else {
+            frame.node->record(elapsed(frame));
+        }
     }
 };
 
@@ -128,18 +144,28 @@ Report& Report::operator=(Report&&) noexcept = default;
 
 void Report::set_context(std::string key, std::string value) { impl_->user.insert_or_assign(std::move(key), std::move(value)); }
 
-void Report::begin_phase(std::string_view name) {
-    Node* node = impl_->container().child(name);
-    impl_->frames.push_back({FrameKind::phase, node, nullptr, Clock::now()});
+std::uint64_t Report::begin_phase(std::string_view name) {
+    impl_->push(FrameKind::phase, impl_->container().child(name), nullptr);
+    return impl_->frames.back().id;
 }
 
 void Report::end_phase() {
     if (impl_->frames.empty() || impl_->frames.back().kind != FrameKind::phase) {
         throw Error(Status::invalid_argument, "no open phase to end");
     }
-    const Frame frame = impl_->frames.back();
-    impl_->frames.pop_back();
-    frame.node->record(impl_->elapsed(frame));
+    impl_->close_top(Status::ok, std::nullopt);
+}
+
+void Report::end_phase(std::uint64_t id) {
+    auto& frames = impl_->frames;
+    auto it = std::ranges::find_if(frames, [&](const Frame& f) { return f.id == id && f.kind == FrameKind::phase; });
+    if (it == frames.end()) {
+        return;
+    }
+    const auto depth = static_cast<std::size_t>(it - frames.begin());
+    while (frames.size() > depth) {
+        impl_->close_top(Status::internal_error, std::nullopt);
+    }
 }
 
 void Report::count(std::string_view name, std::int64_t delta) {
@@ -154,30 +180,29 @@ void Report::count(std::string_view name, std::int64_t delta) {
 
 void Report::begin_call(CallInfo info) {
     if (in_call()) {
-        Node* node = impl_->container().child("call:" + info.step + "/" + info.method);
-        impl_->frames.push_back({FrameKind::nested_call, node, nullptr, Clock::now()});
+        impl_->push(FrameKind::nested_call, impl_->container().child("call:" + info.step + "/" + info.method), nullptr);
         return;
     }
     auto call = std::make_unique<Call>();
     call->info = std::move(info);
     Call* raw = call.get();
     impl_->calls.push_back(std::move(call));
-    impl_->frames.push_back({FrameKind::call, &raw->root, raw, Clock::now()});
+    impl_->push(FrameKind::call, &raw->root, raw);
 }
 
 void Report::end_call(Status status, std::optional<Indicators> indicators) {
-    if (impl_->frames.empty() || impl_->frames.back().kind == FrameKind::phase) {
+    if (!in_call()) {
         throw Error(Status::invalid_argument, "no open call to end");
     }
-    const Frame frame = impl_->frames.back();
-    impl_->frames.pop_back();
-    if (frame.kind == FrameKind::nested_call) {
-        frame.node->record(impl_->elapsed(frame));
-        return;
+    std::int64_t unclosed = 0;
+    while (impl_->frames.back().kind == FrameKind::phase) {
+        impl_->close_top(Status::ok, std::nullopt);
+        ++unclosed;
     }
-    frame.call->wall_ns = impl_->elapsed(frame);
-    frame.call->status = status;
-    frame.call->indicators = std::move(indicators);
+    if (unclosed > 0) {
+        count("unclosed_phases", unclosed);
+    }
+    impl_->close_top(status, std::move(indicators));
 }
 
 bool Report::in_call() const noexcept {
@@ -252,16 +277,13 @@ void Report::write_json(const std::filesystem::path& path) const {
 
 Phase::Phase(Report* report, std::string_view name) : report_(report) {
     if (report_ != nullptr) {
-        report_->begin_phase(name);
+        id_ = report_->begin_phase(name);
     }
 }
 
 Phase::~Phase() {
     if (report_ != nullptr) {
-        try {
-            report_->end_phase();
-        } catch (...) {
-        }
+        report_->end_phase(id_);
     }
 }
 

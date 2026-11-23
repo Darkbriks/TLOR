@@ -6,9 +6,7 @@
 
 namespace tlor {
 
-Solution::Solution(Plan plan) : plan_(std::move(plan)) {
-    routes_.resize(static_cast<std::size_t>(plan_.horizon()));
-}
+Solution::Solution(Plan plan) : plan_(std::move(plan)) {}
 
 const Plan& Solution::plan() const noexcept { return plan_; }
 
@@ -19,21 +17,18 @@ void Solution::set_routes(DayRoutes routes) {
     if (!plan_.contains(day)) {
         throw Error(Status::invalid_argument, "day " + std::to_string(day) + " is outside the plan");
     }
-    routes_[static_cast<std::size_t>(day - plan_.start())] = std::move(routes);
+    std::erase_if(routes_, [&](const auto& entry) { return !plan_.contains(entry.first); });
+    routes_.insert_or_assign(day, std::move(routes));
 }
 
 const DayRoutes* Solution::routes(Day day) const noexcept {
     if (!plan_.contains(day)) {
         return nullptr;
     }
-    const auto& slot = routes_[static_cast<std::size_t>(day - plan_.start())];
-    return slot ? &*slot : nullptr;
+    auto it = routes_.find(day);
+    return it == routes_.end() ? nullptr : &it->second;
 }
 
-void Solution::clear_routes(Day day) {
-    if (plan_.contains(day)) {
-        routes_[static_cast<std::size_t>(day - plan_.start())].reset();
-    }
-}
+void Solution::clear_routes(Day day) { routes_.erase(day); }
 
 }

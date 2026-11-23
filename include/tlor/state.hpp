@@ -22,4 +22,10 @@ struct State {
     static State initial(std::int32_t node_count);
 };
 
+/**
+ * @brief Throws Status::invalid_argument unless the state has node_count entries, finite non-negative levels and
+ * last collections in [-1, start_day).
+ */
+void validate_state(const State& state, std::int32_t node_count, Day start_day);
+
 }

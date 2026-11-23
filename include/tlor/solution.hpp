@@ -7,8 +7,7 @@
 #include <tlor/plan.hpp>
 #include <tlor/routes.hpp>
 
-#include <optional>
-#include <vector>
+#include <map>
 
 namespace tlor {
 
@@ -21,7 +20,7 @@ public:
     /** @brief The plan. */
     [[nodiscard]] const Plan& plan() const noexcept;
 
-    /** @brief The plan, modifiable. */
+    /** @brief The plan, modifiable; routes of days outside a replaced plan are no longer returned. */
     [[nodiscard]] Plan& plan() noexcept;
 
     /** @brief Sets the routes of their day; throws Status::invalid_argument when the day is outside the plan. */
@@ -35,7 +34,7 @@ public:
 
 private:
     Plan plan_;
-    std::vector<std::optional<DayRoutes>> routes_;
+    std::map<Day, DayRoutes> routes_;
 };
 
 }

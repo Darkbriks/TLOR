@@ -10,3 +10,10 @@ doctest_discover_tests(tlor_tests)
 add_executable(tlor_check_isolation ${CMAKE_CURRENT_SOURCE_DIR}/check_isolation/main.cpp)
 target_link_libraries(tlor_check_isolation PRIVATE tlor_check tlor_model)
 add_test(NAME check-isolation COMMAND tlor_check_isolation)
+
+if(GIT_FOUND)
+    add_test(NAME build-info-commit
+            COMMAND ${CMAKE_COMMAND} -DGIT=${GIT_EXECUTABLE} -DSOURCE_DIR=${CMAKE_SOURCE_DIR}
+            -DHEADER=${TLOR_GENERATED_DIR}/tlor/detail/build_info.hpp
+            -P ${CMAKE_CURRENT_SOURCE_DIR}/build_info/check_commit.cmake)
+endif()

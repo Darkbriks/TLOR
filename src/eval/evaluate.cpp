@@ -4,6 +4,7 @@
 #include <tlor/simulate.hpp>
 
 #include <algorithm>
+#include <cmath>
 #include <limits>
 #include <map>
 #include <set>
@@ -73,9 +74,17 @@ Indicators route_indicators(const Instance& instance, const Fleet& fleet, const 
 
 Evaluation evaluate(const Instance& instance, const Fleet& fleet, const State& start, const Solution& solution,
                     const Demand& demand, const Params& evaluation_params) {
+    for (const auto& [name, value] : evaluation_params.values()) {
+        if (name != "low_fill_threshold") {
+            throw Error(Status::invalid_param, "unknown evaluation parameter '" + name + "'");
+        }
+    }
     const double low_fill = evaluation_params.contains("low_fill_threshold")
                                 ? evaluation_params.get_double("low_fill_threshold")
                                 : 0.5;
+    if (!std::isfinite(low_fill) || low_fill < 0) {
+        throw Error(Status::invalid_param, "low_fill_threshold must be a finite non-negative number");
+    }
     const Plan& plan = solution.plan();
     const SimulationResult sim = simulate(instance, start, plan.start(), plan.horizon(), plan, demand);
     Evaluation evaluation{plan.start(), zeros(), {}};

@@ -33,9 +33,9 @@ public:
           last_(start.last_collection) {
         const auto n = static_cast<std::size_t>(instance.node_count());
         const Plan& plan = solution.plan();
-        if (start.level_kg.size() != n || start.last_collection.size() != n || demand.node_count() != instance.node_count() ||
-            plan.end() > demand.day_count()) {
-            throw Error(Status::invalid_argument, "state, demand or plan do not match the instance");
+        validate_state(start, instance.node_count(), plan.start());
+        if (demand.node_count() != instance.node_count() || plan.end() > demand.day_count()) {
+            throw Error(Status::invalid_argument, "demand does not cover the instance's nodes and the plan's days");
         }
         const std::vector<double>* max_days = instance.attribute("max_days");
         if (max_days != nullptr) {
