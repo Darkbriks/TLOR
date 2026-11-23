@@ -17,3 +17,11 @@ if(GIT_FOUND)
             -DHEADER=${TLOR_GENERATED_DIR}/tlor/detail/build_info.hpp
             -P ${CMAKE_CURRENT_SOURCE_DIR}/build_info/check_commit.cmake)
 endif()
+
+file(GLOB_RECURSE TLOR_CAPI_TEST_SOURCES CONFIGURE_DEPENDS
+        ${CMAKE_CURRENT_SOURCE_DIR}/capi/*.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/capi/*.c)
+add_executable(tlor_capi_tests ${TLOR_CAPI_TEST_SOURCES} ${CMAKE_CURRENT_SOURCE_DIR}/support/small_arrays.cpp)
+target_include_directories(tlor_capi_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(tlor_capi_tests PRIVATE tlor doctest)
+doctest_discover_tests(tlor_capi_tests)

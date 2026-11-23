@@ -50,6 +50,17 @@ tlor_add_library(tlor_core STATIC sim eval report registry steps methods pipelin
 target_link_libraries(tlor_core PUBLIC tlor_model tlor_check PRIVATE nlohmann_json)
 target_include_directories(tlor_core PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
+tlor_add_library(tlor SHARED capi)
+target_link_libraries(tlor PRIVATE tlor_core)
+target_include_directories(tlor PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
+target_compile_definitions(tlor PRIVATE TLOR_BUILDING_LIBRARY)
+if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+    target_link_options(tlor PRIVATE "LINKER:--version-script=${CMAKE_CURRENT_SOURCE_DIR}/cmake/tlor.map")
+    set_property(TARGET tlor APPEND PROPERTY LINK_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/cmake/tlor.map)
+elseif(APPLE)
+    target_link_options(tlor PRIVATE "LINKER:-exported_symbol,_tlor_*")
+endif()
+
 file(GLOB_RECURSE TLOR_APP_SOURCES CONFIGURE_DEPENDS src/app/*.cpp)
 add_executable(${PROJECT_NAME} ${TLOR_APP_SOURCES})
 target_link_libraries(${PROJECT_NAME} PRIVATE tlor_core)
