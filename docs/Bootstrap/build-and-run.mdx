@@ -118,6 +118,10 @@ Python suite with pytest; it only exists when CMake was configured with a
 Python that has numpy and pytest (see below). `io: real data loads` reads
 `data/tables/` when it is there and is skipped otherwise.
 
+GitHub runs the same tests on every pull request to `main` and every push to
+`main`, on Linux (debug and release), macOS and Windows, through
+`.github/workflows/tests.yml`. The result shows on the pull request.
+
 ## 5. Python package
 
 `python/tlor/` gives Python the same library, through the shared library
@@ -162,8 +166,11 @@ builds first; set `TLOR_LIBRARY` to the full path of the library to choose
 another one.
 
 ```python title="run.py"
+from pathlib import Path
+
 import tlor
 
+Path("local/runs/nn").mkdir(parents=True, exist_ok=True)
 inst = tlor.Instance.load("data/tables", "Maps/offline map/data")
 fleet = tlor.Fleet([8000] * 6, [8 * 3600] * 6, inst.day_count)
 with tlor.Report("local/runs/nn/report.json", experiment="nn-baseline") as report:
@@ -177,6 +184,9 @@ print(result.evaluation.total["distance_m"], len(result.violations))
 ```bash frame="terminal"
 PYTHONPATH=python .venv/bin/python run.py
 ```
+
+The [Python package](../../library/python/) page documents every class and
+function, and how to write a method in Python.
 
 ## 6. When something goes wrong
 
