@@ -4,7 +4,11 @@
  */
 #pragma once
 
+#include <tlor/demand.hpp>
 #include <tlor/instance.hpp>
+#include <tlor/routes.hpp>
+#include <tlor/solution.hpp>
+#include <tlor/state.hpp>
 
 #include <chrono>
 #include <filesystem>
@@ -41,5 +45,17 @@ struct LoadedInstance {
 
 /** @brief Loads an instance from the project files; missing files are io_error, malformed ones invalid_argument. */
 LoadedInstance load_instance(const LoadOptions& options);
+
+/** @brief Writes one day's routes as a JSON list of node lists, each starting and ending at the depot. */
+void write_routes_json(const std::filesystem::path& file, const DayRoutes& routes);
+
+/**
+ * @brief Writes routes_<date>.json for every routed day, collection_schedule.csv and route_statistics.csv.
+ *
+ * Collected masses come from simulating the plan on @p demand from @p start, the state at the plan's first day.
+ * The directory is created when missing; failures are io_error.
+ */
+void write_solution(const std::filesystem::path& out_dir, const Instance& instance, const State& start,
+                    const Solution& solution, const Demand& demand, std::chrono::sys_days first_date);
 
 }
