@@ -43,8 +43,11 @@ tlor_add_library(tlor_model STATIC model)
 target_include_directories(tlor_model PRIVATE ${TLOR_GENERATED_DIR})
 target_compile_definitions(tlor_model PRIVATE TLOR_BUILD_TYPE="$<CONFIG>")
 
+tlor_add_library(tlor_check STATIC check)
+target_link_libraries(tlor_check PUBLIC tlor_model)
+
 tlor_add_library(tlor_core STATIC sim eval report registry steps methods pipeline io)
-target_link_libraries(tlor_core PUBLIC tlor_model PRIVATE nlohmann_json)
+target_link_libraries(tlor_core PUBLIC tlor_model tlor_check PRIVATE nlohmann_json)
 
 file(GLOB_RECURSE TLOR_APP_SOURCES CONFIGURE_DEPENDS src/app/*.cpp)
 add_executable(${PROJECT_NAME} ${TLOR_APP_SOURCES})
