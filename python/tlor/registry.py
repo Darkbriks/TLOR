@@ -171,6 +171,11 @@ def _report(handle, owner):
     return None if not handle else Report.borrow(handle, owner)
 
 
+def _borrowed(request):
+    return [value for value in vars(request).values() if isinstance(value, (Instance, Fleet, State, Report))
+            and value.__dict__.get("_owner") is not None]
+
+
 def _schedule_request(r):
     return ScheduleRequest(
         Instance.borrow(_f["schedule_instance"](r), r), Fleet.borrow(_f["schedule_fleet"](r), r),
@@ -211,8 +216,10 @@ def register_method(step, name, fn, params=(), description=""):
     build, expected, assign = _STEP_KINDS[step]
 
     def callback(request, out, _user_data):
+        built = None
         try:
-            result = fn(build(request))
+            built = build(request)
+            result = fn(built)
             if not isinstance(result, expected):
                 raise TypeError(f"a {step} method must return a {expected.__name__}, not {type(result).__name__}")
             check_status(getattr(lib, assign)(out, result._handle))
@@ -220,6 +227,10 @@ def register_method(step, name, fn, params=(), description=""):
         except BaseException as error:
             lib.tlor_set_error(text(f"{type(error).__name__}: {error}"))
             return 6
+        finally:
+            if built is not None:
+                for borrowed in _borrowed(built):
+                    borrowed.expire()
 
     wrapped = _CALLBACK(callback)
     specs, keep = _raw_specs(list(params))

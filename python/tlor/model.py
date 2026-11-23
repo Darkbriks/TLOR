@@ -32,31 +32,51 @@ class Handle:
     _destroy = None
 
     def __init__(self, handle):
-        self._handle = handle
+        self._h = handle
         self._owner = None
 
     @classmethod
     def own(cls, handle):
         obj = cls.__new__(cls)
-        obj._handle = handle
+        obj._h = handle
         obj._owner = None
         return obj
 
     @classmethod
     def borrow(cls, handle, owner):
         obj = cls.__new__(cls)
-        obj._handle = handle
+        obj._h = handle
         obj._owner = owner
         return obj
 
+    @property
+    def _handle(self):
+        handle = self.__dict__.get("_h")
+        if not handle:
+            raise InvalidArgument(1, f"this {type(self).__name__} is no longer valid: objects received by a method "
+                                     "expire when the method returns")
+        return handle
+
+    def expire(self):
+        self._h = None
+
+    def __copy__(self):
+        raise TypeError(f"{type(self).__name__} cannot be copied")
+
+    def __deepcopy__(self, memo):
+        return self.__copy__()
+
+    def __reduce_ex__(self, protocol):
+        raise TypeError(f"{type(self).__name__} wraps a native object and cannot be pickled")
+
     def __del__(self):
-        handle = getattr(self, "_handle", None)
-        if handle and getattr(self, "_owner", True) is None and self._destroy:
+        handle = self.__dict__.get("_h")
+        if handle and self.__dict__.get("_owner", True) is None and self._destroy:
             try:
                 getattr(lib, self._destroy)(handle)
             except Exception:
                 pass
-            self._handle = None
+            self._h = None
 
 
 def create(function, *args):
@@ -85,6 +105,9 @@ class Params(Handle):
             check_status(lib.tlor_params_set_string(self._handle, key, text(value)))
         else:
             raise TypeError(f"parameter {name!r} has unsupported type {type(value).__name__}")
+
+    def __copy__(self):
+        return Params(self.to_dict())
 
     def to_dict(self):
         result = {}
@@ -144,6 +167,9 @@ class Instance(Handle):
             pointer(capacity, c_double), pointer(flags, c_uint8), pointer(demand, c_double),
         )
         super().__init__(create(lib.tlor_instance_create, byref(desc)))
+
+    def __copy__(self):
+        return self
 
     @property
     def node_count(self):
@@ -208,6 +234,9 @@ class Fleet(Handle):
             None if flags is None else pointer(flags, c_uint8),
         ))
 
+    def __copy__(self):
+        return self
+
     @property
     def truck_count(self):
         return lib.tlor_fleet_truck_count(self._handle)
@@ -249,6 +278,9 @@ class State(Handle):
     def initial(cls, instance):
         return cls(instance.node_count)
 
+    def __copy__(self):
+        return State.copy_of(self._handle)
+
     @classmethod
     def copy_of(cls, handle):
         n = lib.tlor_state_node_count(handle)
@@ -273,6 +305,9 @@ class Plan(Handle):
 
     def __init__(self, start, horizon):
         super().__init__(create(lib.tlor_plan_create, int(start), int(horizon)))
+
+    def __copy__(self):
+        return Plan.copy_of(self._handle)
 
     @classmethod
     def copy_of(cls, handle):
@@ -315,6 +350,9 @@ class DayRoutes(Handle):
     def __init__(self, day):
         super().__init__(create(lib.tlor_day_routes_create, int(day)))
 
+    def __copy__(self):
+        return DayRoutes.copy_of(self._handle)
+
     @classmethod
     def copy_of(cls, handle):
         routes = cls(lib.tlor_day_routes_day(handle))
@@ -346,6 +384,9 @@ class Solution(Handle):
 
     def __init__(self, plan):
         super().__init__(create(lib.tlor_solution_create, plan._handle))
+
+    def __copy__(self):
+        return Solution.copy_of(self._handle)
 
     @classmethod
     def copy_of(cls, handle):

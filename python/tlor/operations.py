@@ -34,6 +34,9 @@ def _indicators(handle):
 class Evaluation(Handle):
     _destroy = "tlor_evaluation_destroy"
 
+    def __copy__(self):
+        return self
+
     def _load(self):
         self.start = lib.tlor_evaluation_start_day(self._handle)
         self.total = _indicators(lib.tlor_evaluation_total(self._handle))
