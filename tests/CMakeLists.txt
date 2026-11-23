@@ -73,3 +73,7 @@ tlor_app_exit_test(bad-param 2 "--param" ${TLOR_APP_REQUIRED} --param threshold=
 tlor_app_exit_test(library-error 1 "active_points.csv" --tables ${TLOR_APP_FIXTURE}/nowhere --maps ${TLOR_APP_FIXTURE}
         --out ${TLOR_APP_OUT}-error --trucks 1 --truck-capacity-kg 1000 --truck-max-work-s 28800)
 tlor_app_exit_test(unknown-method 1 "unknown" ${TLOR_APP_REQUIRED} --route nowhere)
+
+add_test(NAME tools.greedy_bound COMMAND $<TARGET_FILE:greedy_bound>)
+set_tests_properties(tools.greedy_bound PROPERTIES WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+        PASS_REGULAR_EXPRESSION "Number of tours: 14\nTotal distance: 934.4 km")

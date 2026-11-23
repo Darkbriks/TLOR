@@ -71,5 +71,8 @@ add_executable(${PROJECT_NAME} ${TLOR_APP_SOURCES})
 target_link_libraries(${PROJECT_NAME} PRIVATE tlor_core)
 target_include_directories(${PROJECT_NAME} PRIVATE src)
 
+add_executable(greedy_bound src/tools/greedy_bound.cpp)
+target_link_libraries(greedy_bound PRIVATE tlor_core)
+
 enable_testing()
 add_subdirectory(tests)

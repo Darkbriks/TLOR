@@ -12,6 +12,9 @@ MethodInfo threshold_info();
 DayRoutes route_nearest_neighbour(const RouteRequest& request);
 MethodInfo nearest_neighbour_info();
 
+DayRoutes route_greedy(const RouteRequest& request);
+MethodInfo greedy_info();
+
 Solution improve_shift_day(const ImproveRequest& request);
 MethodInfo shift_day_info();
 
