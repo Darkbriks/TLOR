@@ -4,5 +4,5 @@ file(GLOB_RECURSE TLOR_TEST_SOURCES CONFIGURE_DEPENDS
 
 add_executable(tlor_tests ${TLOR_TEST_SOURCES})
 target_include_directories(tlor_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
-target_link_libraries(tlor_tests PRIVATE tlor_model doctest)
+target_link_libraries(tlor_tests PRIVATE tlor_core doctest)
 doctest_discover_tests(tlor_tests)
