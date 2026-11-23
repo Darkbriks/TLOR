@@ -36,3 +36,6 @@ Thumbs.db
 # Optional Role 1 analysis artifacts regenerated locally
 /data/figures/
 /data/tables/summary.json
+
+# Executables built outside build/
+/TLOR
