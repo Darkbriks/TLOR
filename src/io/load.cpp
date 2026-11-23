@@ -92,15 +92,21 @@ DailyDemand read_demand(const std::filesystem::path& file, const Points& points)
             invalid(table.where(row, date) + ": " + e.what());
         }
     }
-    const auto [first, last] = std::minmax_element(dates.begin(), dates.end());
-    const auto span = (*last - *first).count() + 1;
-    if (span > std::numeric_limits<std::int32_t>::max() / std::max(points.count, 1)) {
+    std::vector<std::chrono::sys_days> days = dates;
+    std::ranges::sort(days);
+    days.erase(std::unique(days.begin(), days.end()), days.end());
+    for (std::size_t i = 1; i < days.size(); ++i) {
+        if (days[i] - days[i - 1] != std::chrono::days{1}) {
+            invalid(io::shown(file) + ": dates are not contiguous, " + format_date(days[i - 1]) + " is followed by " +
+                    format_date(days[i]));
+        }
+    }
+    if (days.size() > static_cast<std::size_t>(std::numeric_limits<std::int32_t>::max() / std::max(points.count, 1))) {
         invalid(io::shown(file) + " spans too many days");
     }
-    DailyDemand demand{*first, static_cast<std::int32_t>(span), {}};
+    DailyDemand demand{days.front(), static_cast<std::int32_t>(days.size()), {}};
     const auto n = static_cast<std::size_t>(points.count);
     demand.kg.assign(static_cast<std::size_t>(demand.day_count) * n, 0);
-    std::vector<bool> day_seen(static_cast<std::size_t>(demand.day_count), false);
     std::vector<bool> cell_seen(demand.kg.size(), false);
     for (std::size_t row = 0; row < table.row_count(); ++row) {
         const auto node = point_id(table, row, id, points.count);
@@ -114,14 +120,7 @@ DailyDemand read_demand(const std::filesystem::path& file, const Points& points)
                     format_date(dates[row]));
         }
         cell_seen[index] = true;
-        day_seen[day] = true;
         demand.kg[index] = table.number(row, kg);
-    }
-    for (std::size_t day = 0; day < day_seen.size(); ++day) {
-        if (!day_seen[day]) {
-            invalid(io::shown(file) + ": dates are not contiguous, " +
-                    format_date(demand.first_date + std::chrono::days{static_cast<int>(day)}) + " is missing");
-        }
     }
     return demand;
 }

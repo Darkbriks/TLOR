@@ -185,3 +185,14 @@ TEST_CASE("io: real data loads") {
     CHECK(i.active_point_count() == 300);
     CHECK(tlor::format_date(loaded.first_date) == "2023-04-14");
 }
+
+TEST_CASE("io: a mistyped date is named before the day range is built") {
+    TempDir tmp;
+    copy_tiny(tmp.path());
+    auto text = read_file(tmp.path() / "daily_demand.csv");
+    text.replace(text.find("2023-04-15"), 10, "9023-04-15");
+    write_file(tmp.path() / "daily_demand.csv", text);
+    auto message = error_message(options_for(tmp.path()));
+    CHECK(message.find("9023-04-15") != std::string::npos);
+    CHECK(status_of([&] { (void)tlor::load_instance(options_for(tmp.path())); }) == Status::invalid_argument);
+}
